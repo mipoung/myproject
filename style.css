@@ -1,0 +1,16 @@
+#grid {
+    display: grid;
+    grid-template-rows: 100px solid red;
+    border-top: solid brown;
+    border-bottom: solid pink;
+}
+
+h1 {
+    border-bottom: solid blue;
+}
+#menu{
+    background-color: skyblue;
+}
+#back {
+    background-color: rgb(218, 198, 198);
+}
