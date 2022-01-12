@@ -7,23 +7,36 @@
      <style>
          #grid {
     display: grid;
-    grid-template-rows: 100px solid red;
+    grid-template-rows: 200px solid red;
     border-top: solid brown;
     border-bottom: solid pink;
 }
 
 h1 {
     border-bottom: solid blue;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-size: 30px;
 }
+
+#search {
+    width: 1fr;
+    height: 15px;
+}
+
 #menu{
     background-color: skyblue;
-    margin-bottom: 20px;
+    margin-bottom: 1vw;
+    width: 100vw;
+    height: 80px;
 }
 #back {
     background-color: rgb(218, 198, 198);
 }
-     </style>
 
+
+     </style>
+<!-- 가로길이 화면 크기에 따라 자동 조정되게 하기-->
 
 
  </head>
@@ -32,9 +45,10 @@ h1 {
      <div id = grid>
          <div id = menu>
 <h1>project</h1>
-<input type="text">
-<input type="button" name="검색" value="go">
-----------------
+<input id = search type="text">
+<input id = search2 type="button" name="검색" value="검색">
+
+<!-- 메뉴 -->
         </div>
 
         <div id = back>
@@ -85,8 +99,9 @@ map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 var linePath = [
     new kakao.maps.LatLng(37.41170114456612, 126.67745246447903),
     new kakao.maps.LatLng(37.41031930905898, 126.67955933733114),
-    new kakao.maps.LatLng(33.45178067090639, 126.5726886938753) 
 ];
+
+// 선 추가하려면 어떻게해야해?
 
 // 지도에 표시할 선을 생성합니다
 var polyline = new kakao.maps.Polyline({

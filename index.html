@@ -7,17 +7,28 @@
      <style>
          #grid {
     display: grid;
-    grid-template-rows: 100px solid red;
+    grid-template-rows: 200px solid red;
     border-top: solid brown;
     border-bottom: solid pink;
 }
 
 h1 {
     border-bottom: solid blue;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-size: 30px;
 }
+
+#search {
+    width: 1fr;
+    height: 15px;
+}
+
 #menu{
     background-color: skyblue;
-    margin-bottom: 20px;
+    margin-bottom: 1vw;
+    width: 100vw;
+    height: 80px;
 }
 #back {
     background-color: rgb(218, 198, 198);
@@ -34,9 +45,9 @@ h1 {
      <div id = grid>
          <div id = menu>
 <h1>project</h1>
-<input type="text">
-<input type="button" name="검색" value="go">
-----------------
+<input id = search type="text">
+<input id = search2 type="button" name="검색" value="검색">
+
 <!-- 메뉴 -->
         </div>
 

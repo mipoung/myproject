@@ -7,23 +7,36 @@
      <style>
          #grid {
     display: grid;
-    grid-template-rows: 100px solid red;
+    grid-template-rows: 200px solid red;
     border-top: solid brown;
     border-bottom: solid pink;
 }
 
 h1 {
     border-bottom: solid blue;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-size: 30px;
 }
+
+#search {
+    width: 1fr;
+    height: 15px;
+}
+
 #menu{
     background-color: skyblue;
-    margin-bottom: 20px;
+    margin-bottom: 1vw;
+    width: 100vw;
+    height: 80px;
 }
 #back {
     background-color: rgb(218, 198, 198);
 }
-     </style>
 
+
+     </style>
+<!-- 가로길이 화면 크기에 따라 자동 조정되게 하기-->
 
 
  </head>
@@ -32,22 +45,24 @@ h1 {
      <div id = grid>
          <div id = menu>
 <h1>project</h1>
-<input type="text">
-<input type="button" name="검색" value="go">
-----------------
+<input id = search type="text">
+<input id = search2 type="button" name="검색" value="검색">
+
+<!-- 메뉴 -->
         </div>
 
         <div id = back>
 <ol>
-    <li>map</li>
-    <li>infomation</li>
-    <li>schedule</li>
-    <li>history</li>
+    <li><a href="https://mipoung.github.io/myproject/map.html" target="_self">map</a></li>
+    <li><a href="./infomation.html" target="_self">information</a></li>
+    <li><a href="./schedule.html" target="_self">schedule</a></li>
+    <li><a href="./history.html" target="_self">history</a></li>
 
 </ol>
     </div>
 </div>
 <h2>history</h2>
+여기에는 회의 내용 및 구역 변경 사항을 업데이트 할 예정
 
 <input type='checkbox' name="연수동" value="dd">
 <!-- 이름 왜 안나오는지 모르겠다-->
