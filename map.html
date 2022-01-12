@@ -1,41 +1,12 @@
 <!DOCTYPE html>
 <html>
  <meta charset="utp-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+
  <head>
      <title>My project</title>
-    
-     <style>
-         #grid {
-    display: grid;
-    grid-template-rows: 200px solid red;
-    border-top: solid brown;
-    border-bottom: solid pink;
-}
+     <link href="style.css" rel="stylesheet">
 
-h1 {
-    border-bottom: solid blue;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
-    font-size: 30px;
-}
-
-#search {
-    width: 1fr;
-    height: 15px;
-}
-
-#menu{
-    background-color: skyblue;
-    margin-bottom: 1vw;
-    width: 100vw;
-    height: 80px;
-}
-#back {
-    background-color: rgb(218, 198, 198);
-}
-
-
-     </style>
 <!-- 가로길이 화면 크기에 따라 자동 조정되게 하기-->
 
 
@@ -44,7 +15,7 @@ h1 {
  <body>
      <div id = grid>
          <div id = menu>
-<h1>project</h1>
+            <h1><a href="./index.html" target="_self">project</a></h1>
 <input id = search type="text">
 <input id = search2 type="button" name="검색" value="검색">
 
