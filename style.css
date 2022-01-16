@@ -1,15 +1,25 @@
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+body {
+    margin: 0;
+}
 #grid {
     display: grid;
-    grid-template-rows: 200px solid red;
-    border-top: solid brown;
-    border-bottom: solid pink;
+    grid-template-rows: min-content;
+    border: solid black;
+    border-width: 2px;
+    margin: 1vw;
+    
 }
 
 h1 {
-    border-bottom: solid blue;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
-    font-size: 30px;
+    font-size: 35px;
+    margin: 5px;
+    text-align: center;
+    
 }
 
 #search {
@@ -17,16 +27,42 @@ h1 {
     height: 15px;
 }
 
-#menu{
-    background-color: skyblue;
+#first {
+    border: solid gray;
+    border-width: 2px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 1vw;
     margin-bottom: 1vw;
-    width: 100vw;
-    height: 80px;
 }
-#back {
-    background-color: rgb(218, 198, 198);
+
+ol {
+    list-style-type: disc;
 }
 
 #map{
     background-color: aqua;
+}
+
+header {
+    height: 20px;
+    background-color: blueviolet;
+    display: flex;
+    position: fixed;
+}
+
+#test {
+    background-color: coral;
+}
+
+#top{
+    text-align: right;
+    margin-top: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 1vw;
+}
+
+#oo{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
