@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration-line: none;
     color: black;
@@ -20,6 +24,10 @@ h1 {
     margin: 5px;
     text-align: center;
     
+}
+
+h2 {
+    margin: 5px;
 }
 
 #search {
@@ -52,7 +60,7 @@ header {
 }
 
 #test {
-    background-color: coral;
+    background-color: rgb(64, 136, 114);
 }
 
 #top{
@@ -62,7 +70,27 @@ header {
     margin-bottom: 1vw;
 }
 
-#oo{
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+#last{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2vw;
+}
+
+#map2 {
+    display: grid;
+    grid-template-rows: min-content;
+}
+
+#TOPscroll {
+    position: fixed;
+    right: 2vw;
+    bottom: 1.5vh;
+    margin: 0;
+    font-size: 5vmin;
+    font-weight: bold;
+}
+
+#calendardiv {
+    width: inherit;
+    height: inherit;
 }

@@ -8,6 +8,23 @@
      <title>My project</title>
      <!-- 스타일시트를 불러오는 태그-->
      <link href="style.css" rel="stylesheet">
+     
+      <!-- 풀캘린더 헤더-->
+        <meta charset='utf-8' />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+        <script>
+    
+          document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+              initialView: 'dayGridMonth'
+            });
+            calendar.render();
+          });
+    
+        </script>
+    
 
  </head>
 
@@ -21,7 +38,7 @@
 
         <div id = bottom1>
 <ol>
-    <li><a href="https://mipoung.github.io/myproject/map.html" target="_self">map</a></li>
+    <li><a href="./map.html" target="_self">map</a></li>
     <li><a href="./infomation.html" target="_self">information</a></li>
     <li><a href="./schedule.html" target="_self">schedule</a></li>
     <li><a href="./history.html" target="_self">history</a></li>
@@ -38,9 +55,14 @@
 <input type="checkbox" name="asd">
 <input type="checkbox" name="선학동">
 
+<!--풀캘린더 div-->
+<div id='calendar'></div>
+
+<!-- 상단 이동 버튼-->
+<a href="#"><p id=TOPscroll>TOP</p></a>
 </section>
 
- </body>
+</body>
 
 
 

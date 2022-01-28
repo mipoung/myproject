@@ -8,7 +8,12 @@
      <title>My project</title>
      <!-- 스타일시트를 불러오는 태그-->
      <link href="style.css" rel="stylesheet">
+     <script>
 
+        var divdiv = document.getElementById("test");
+        
+        divdiv.scrollTop = divdiv.scrollHeight;
+    </script>
  </head>
 
  <body>
@@ -25,25 +30,46 @@
     <li><a href="./infomation.html" target="_self">information</a></li>
     <li><a href="./schedule.html" target="_self">schedule</a></li>
     <li><a href="./history.html" target="_self">history</a></li>
+    <li><a href="#test">map2</a></li>
 
 </ol>
     </div>
 </div>
 
+<grid id = map2>
+    <div>
 <section id = first>
+<h2>information</h2>
+<a href="#first">dd</a>
+<!--체크 박스-->
+<input type='checkbox' name="연수동" value="dd"> <br>
+<input type="checkbox" name="asd"> <br>
+<input type="checkbox" name="선학동"> <br>
 
-<h2>history</h2>
-여기에는 회의 내용 및 구역 변경 사항을 업데이트 할 예정
+<!--컨텐츠가 들어갈 공간-->
 
-<input type='checkbox' name="연수동" value="dd">
-<!-- 이름 왜 안나오는지 모르겠다-->
-<input type="checkbox" name="asd">
-<input type="checkbox" name="선학동">
+<div id = test style="width:100%; height:100vh"; style="overflow: auto;"></div>
+
+    </div>
+
+    <div>
+<!-- 상단 이동 버튼-->
+<div id = oo>
+<input id = search type="text">
+<input id = search2 type="button" name="검색" value="검색"> 
+<input id = top type="button" name="상단" value="상단" style="cursor:pointer;" onclick="window.scrollTo(0,0);">
+</div>
+
+<a href="#">제일 위로</a>
+<input type = "button" name="top" value="상단" onclick="#">
+    </div>  
 
 
 <!-- 상단 이동 버튼-->
 <a href="#"><p id=TOPscroll>TOP</p></a>
 </section>
+</grid>
+
 
  </body>
 
