@@ -48,7 +48,33 @@ h2 {
 }
 
 ol {
-    list-style-type: disc;
+    list-style-type: none;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+   
+}
+
+
+
+li {
+    float: left;
+    margin: 3vw;
+    font-size: 1.1em;
+}
+
+#boob {
+    float:none;
+}
+
+#bottom2 {
+    border-style: solid;
+    border-radius: 7px;
+    margin: 7px;
+    border-width: 2px;
 }
 
 #map{
