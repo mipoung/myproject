@@ -54,11 +54,30 @@
 <!-- 폼으로 입력창 만든 후에 자바스크립트 getElementById 로 엘리먼츠 네임 선택하고 콘솔 로그로 밸류값 뽑으면 됨, 그 다음에 키워드 입력하는 곳에 콘솔로그값 넣어주면 됨-->
 <form>
     <input type="text" id= "123" name="ABC" value="제물포역">
+    <button onclick="myFunction()">Try it</button>
+
 </form>
     <script type="text/javascript">
-var Myelement = document.getElementById("123");
-console.log(Myelement.value);
-</script>
+
+        if(onclick.bbb) {
+            var Myelement = document.getElementById("123");
+            console.log(Myelement.value);       
+        }
+
+
+
+    </script>
+
+<script>
+    function myFunction() {
+    if (new Date().getHours() < 20) {
+    document.getElementById("demo").innerHTML = "Good day";
+    }
+    }
+    </script>
+    
+    
+    출처: https://palpit.tistory.com/entry/javascript-25-조건문conditions-if-else-자바스크립트-강좌-JS-CSE [Palpit's Techlog]
 
 
 <!-- 지도 생성하기 -->
