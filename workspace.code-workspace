@@ -7,5 +7,7 @@
 			"path": "../web"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "my_project"
+	}
 }
