@@ -7,6 +7,10 @@ a {
     color: black;
 }
 
+p {
+    margin-left: 3vw;
+}
+
 body {
     margin: 0;
 }
@@ -63,7 +67,7 @@ ol {
 li {
     float: left;
     margin: 3vw;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 #boob {

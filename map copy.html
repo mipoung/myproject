@@ -9,6 +9,15 @@
      <!-- 스타일시트를 불러오는 태그-->
      <link href="style.css" rel="stylesheet">
 
+    <!-- 페이지 자동으로 하단으로 이동시키는 스크립트
+    <script>
+    window.onload = function () {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+    </script>
+    -->
+
+    
  </head>
 
  <body>
@@ -21,28 +30,34 @@
 
         <div id = bottom1>
 <ol>
-    <li><a href="https://mipoung.github.io/myproject/map.html" target="_self">map</a></li>
-    <li><a href="./infomation.html" target="_self">information</a></li>
-    <li><a href="./schedule.html" target="_self">schedule</a></li>
-    <li><a href="./history.html" target="_self">history</a></li>
+    <li><a href="https://mipoung.github.io/myproject/map.html" target="_self" style="font-weight: bold;">지도</a></li>
+    <li><a href="./infomation.html" target="_self">정보</a></li>
+    <li><a href="./schedule.html" target="_self">캘린더</a></li>
+    <li><a href="./history.html" target="_self">기록</a></li>
 
 </ol>
     </div>
+            <!--메뉴에 속한 하단메뉴-->
+            <div id = bottom2>
+                <ul>
+                    <li id = boob><a href="#map" role="button">하단 이동</a></li>
+                    <li id = boob>어린이보호구역<input type="checkbox"></li>
+                    <li id = boob>연수,청학,선학</li>
+                    <li id = boob><input type="search"><input type="button" name="b" value="검색"></li>
+                </ul>
+            </div>
+
+
 </div>
 
 <section id = first>
 <h2>map</h2>
 
-<input type='checkbox' name="연수동" value="dd">
-<!-- 이름 왜 안나오는지 모르겠다-->
-<input type="checkbox" name="asd">
-<input type="checkbox" name="선학동">
-
-
 <!-- 지도 생성하기 -->
 <div id="map" style="width:100%;height:100vh;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3"></script>
+
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
@@ -50,102 +65,52 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         level: 3 // 지도의 확대 레벨
     };
 
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
-// 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
-var mapTypeControl = new kakao.maps.MapTypeControl();
-
-// 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-// kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
-map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-var zoomControl = new kakao.maps.ZoomControl();
-map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-
-
-
-// 키워드로 검색 기능
-// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
-var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };  
-
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-// 장소 검색 객체를 생성합니다
-var ps = new kakao.maps.services.Places(); 
 
-// 키워드로 장소를 검색합니다. 여기서 키워드가 들어갈 부분을 다른 곳에서 입력해 불러오는 함수를 써야할 것 같다. 그 다음 온 클릭 이벤트로 전송하는 것까지
-ps.keywordSearch('이태원 맛집', placesSearchCB); 
+// 여기서부터는 폴리라인 데이터 배열 입니다.
+var data = [
+    {
+        path: [new kakao.maps.LatLng(37.41171003134642, 126.67740724386087), new kakao.maps.LatLng(37.41030107462214, 126.67948034707784)],
 
-// 키워드 검색 완료 시 호출되는 콜백함수 입니다
-function placesSearchCB (data, status, pagination) {
-    if (status === kakao.maps.services.Status.OK) {
+        color: '#FFAE00'
+    },
 
-        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-        // LatLngBounds 객체에 좌표를 추가합니다
-        var bounds = new kakao.maps.LatLngBounds();
+    {
+        path: [new kakao.maps.LatLng(37.411151320827514, 126.68069664338564), new kakao.maps.LatLng(37.40866620290351, 126.6779963495658)],
 
-        for (var i=0; i<data.length; i++) {
-            displayMarker(data[i]);    
-            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-        }       
+        color: '#FF3DE5'
+    }
+]; 
 
-        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-        map.setBounds(bounds);
-    } 
-}
-
-// 지도에 마커를 표시하는 함수입니다
-function displayMarker(place) {
     
-    // 마커를 생성하고 지도에 표시합니다
-    var marker = new kakao.maps.Marker({
-        map: map,
-        position: new kakao.maps.LatLng(place.y, place.x) 
-    });
+//배열 이용해서 폴리라인 여러개 표시하기
+for(var i=0; i<data.length; i++) {
 
-    // 마커에 클릭이벤트를 등록합니다
-    kakao.maps.event.addListener(marker, 'click', function() {
-        // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-        infowindow.open(map, marker);
-    });
+    //i번째 정보를 가져옵니다.
+    var item = data[i];
+
+    // 지도에 표시할 선을 생성합니다
+	var polyline = new kakao.maps.Polyline({
+
+        map: map, //지도에 선을 표시합니다.
+    	path: item.path, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 7, // 선의 두께 입니다
+    	strokeColor: item.color, // 선의 색깔입니다
+	    strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    	strokeStyle: 'solid' // 선의 스타일입니다
+	});
+
 }
-
-
-//
-
-
-
-// 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다
-var linePath = [
-    new kakao.maps.LatLng(37.41170114456612, 126.67745246447903),
-    new kakao.maps.LatLng(37.41031930905898, 126.67955933733114),
-];
-
-// 선 추가하려면 어떻게해야해?
-
-// 지도에 표시할 선을 생성합니다
-var polyline = new kakao.maps.Polyline({
-    path: linePath, // 선을 구성하는 좌표배열 입니다
-    strokeWeight: 5, // 선의 두께 입니다
-    strokeColor: '#FFAE00', // 선의 색깔입니다
-    strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-    strokeStyle: 'solid' // 선의 스타일입니다
-});
 
 // 지도에 선을 표시합니다 
 polyline.setMap(map);  
 
 </script>
+
+
+
 
 <!-- 상단 이동 버튼-->
 <a href="#"><p id=TOPscroll>TOP</p></a>
