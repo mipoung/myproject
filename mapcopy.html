@@ -42,12 +42,6 @@
                 <p>주정차 단속 관련한 지도입니다</p>
                 <ul>
                     <li id = boob><a href="#map" role="button">보기</a></li>
-                    <div>
-                        <form onsubmit="searchPlaces(); return false;">
-                            키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> 
-                            <button type="submit">검색하기</button> 
-                        </form>
-                    </div>
                 </ul>
             </div>
 
@@ -62,13 +56,16 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3"></script>
 
+<div id="map" style="width:100%;height:350px;"></div>
 <script>
+// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new kakao.maps.LatLng(37.409530953058635, 126.67791358122334), // 지도의 중심좌표
+    mapOption = {
+        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
         level: 3 // 지도의 확대 레벨
-    };
+    };  
 
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
@@ -77,7 +74,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 var ps = new kakao.maps.services.Places(); 
 
 // 키워드로 장소를 검색합니다
-ps.keywordSearch('이태원 맛집', placesSearchCB); 
+ps.keywordSearch('제물포 스타벅스', placesSearchCB); 
 
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
 function placesSearchCB (data, status, pagination) {
@@ -113,48 +110,6 @@ function displayMarker(place) {
         infowindow.open(map, marker);
     });
 }
-
-
-
-
-// 여기서부터는 폴리라인 데이터 배열 입니다.
-var data = [
-    {
-        path: [new kakao.maps.LatLng(37.41171003134642, 126.67740724386087), new kakao.maps.LatLng(37.41030107462214, 126.67948034707784)],
-
-        color: '#FFAE00'
-    },
-
-    {
-        path: [new kakao.maps.LatLng(37.411151320827514, 126.68069664338564), new kakao.maps.LatLng(37.40866620290351, 126.6779963495658)],
-
-        color: '#FF3DE5'
-    }
-]; 
-
-    
-//배열 이용해서 폴리라인 여러개 표시하기
-for(var i=0; i<data.length; i++) {
-
-    //i번째 정보를 가져옵니다.
-    var item = data[i];
-
-    // 지도에 표시할 선을 생성합니다
-	var polyline = new kakao.maps.Polyline({
-
-        map: map, //지도에 선을 표시합니다.
-    	path: item.path, // 선을 구성하는 좌표배열 입니다
-	    strokeWeight: 7, // 선의 두께 입니다
-    	strokeColor: item.color, // 선의 색깔입니다
-	    strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-    	strokeStyle: 'solid' // 선의 스타일입니다
-	});
-
-}
-
-// 지도에 선을 표시합니다 
-polyline.setMap(map);  
-
 </script>
 
 
