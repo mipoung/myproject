@@ -129,3 +129,16 @@ header {
    margin: 0px;
 
 }
+
+#seachplaces {
+    margin: auto;
+    margin-bottom: 5px;
+    width: fit-content;
+
+}
+
+#searchplacesUL{
+    border-bottom: double;
+    border-bottom-color: gray;
+    margin-bottom: 6px;
+}   
