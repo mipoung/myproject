@@ -8,6 +8,7 @@
      <title>My project</title>
      <!-- 스타일시트를 불러오는 태그-->
      <link href="style.css" rel="stylesheet">
+     <!--지도 라이브러리 불러오기(함수 선언 오류 뜨는건 라이브러리를 안불러왔거나 두개 불러와서 그런거였음)-->
      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3&libraries=services,clusterer,drawing"></script>
     
      <!-- 페이지 자동으로 하단으로 이동시키는 스크립
@@ -73,8 +74,8 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
-        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
+        center: new kakao.maps.LatLng(37.40960506201756, 126.67865875458125), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
     };  
 
 // 지도를 생성합니다    
