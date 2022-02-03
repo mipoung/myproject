@@ -91,9 +91,9 @@ function searchPlaces() {
 
     var keyword = document.getElementById('keyword').value;
 
-
+    var places = new kakao.maps.services.Places();
     // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-    ps.keywordSearch( keyword, placesSearchCB); 
+    //ps.keywordSearch( keyword, placesSearchCB); 
 }
 
 
