@@ -45,19 +45,20 @@
                 <ul id = searchplacesUL>
                     <li id = boob><a href="#map" role="button">보기</a></li>
                 </ul>
-                    <div id = seachplaces>
-                         <form onsubmit="searchPlaces(); return false;">
-                        <input type="text" value="" id="keyword" width="50%" style="width: 200px;">
-                       <button type="submit" onclick="window.scrollTo(0, 500);">검색</button> 
-                    
-                         </form>
-                    </div>
+                <div id = seachplaces>
+                    <form onsubmit="searchPlaces(); return false;">
+                   <input type="text" value="" id="keyword" width="50%" style="width: 200px;">
+                  <button type="submit">검색</button> <button type="button"><a href = "#first">아래로</a></button>
+                       
+                    </form>
+               </div>
             </div>
 
 
     </div>
 
 <section id = first>
+
 <!-- 지도 생성하기 -->
 <div id="map" style="width:100%;height:100vh;"></div>
 
@@ -177,7 +178,7 @@ polyline.setMap(map);
 
 
 <!-- 상단 이동 버튼-->
-<a href="#"><p id=TOPscroll>TOP</p></a>
+<button id=TOPscroll><a href="./map_copy.html">위로</a></button>
 </section>
  </body>
 

@@ -48,7 +48,8 @@
                     <div id = seachplaces>
                          <form onsubmit="searchPlaces(); return false;">
                         <input type="text" value="" id="keyword" width="50%" style="width: 200px;">
-                       <button type="submit">검색</button> 
+                        <button type="submit">검색</button> <button type="button"><a href = "#first">아래로</a></button>
+                    
                          </form>
                     </div>
             </div>
@@ -123,6 +124,8 @@ function displayMarker(place) {
         position: new kakao.maps.LatLng(place.y, place.x) 
     });
 
+    
+
     // 마커에 클릭이벤트를 등록합니다
     kakao.maps.event.addListener(marker, 'click', function() {
         // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
@@ -130,12 +133,17 @@ function displayMarker(place) {
         infowindow.open(map, marker);
     });
 }
-    
+
+
+
+
+// 폴리라인 배열 데이터
+    // 어린이 보호구역
     var data = [
     {
         path: [new kakao.maps.LatLng(37.41171003134642, 126.67740724386087), new kakao.maps.LatLng(37.41030107462214, 126.67948034707784)],
 
-        color: '#FFAE00'
+        color: 'orange'
     },
 
     {
@@ -174,7 +182,7 @@ polyline.setMap(map);
 
 
 <!-- 상단 이동 버튼-->
-<a href="#"><p id=TOPscroll>TOP</p></a>
+<button id=TOPscroll><a href="./map_copy.html">위로</a></button>
 </section>
  </body>
 
