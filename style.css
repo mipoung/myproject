@@ -137,7 +137,7 @@ header {
 }
 
 #searchplacesUL{
-    border-bottom: double;
-    border-bottom-color: gray;
+    border-bottom: solid 1.5px;
+    border-bottom-color: black;
     margin-bottom: 6px;
 }   
