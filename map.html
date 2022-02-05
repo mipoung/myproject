@@ -87,7 +87,11 @@ function searchPlaces() {
 
     //var places = new kakao.maps.services.Places();
     // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-    ps.keywordSearch( keyword, placesSearchCB); 
+    ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 10000,
+    location: new kakao.maps.LatLng(37.39787605239137, 126.6562262064169)
+}); 
+   
 }
 
 
@@ -146,22 +150,29 @@ function displayMarker(place) {
     {
         path: [new kakao.maps.LatLng(37.385995608319455, 126.63355014358906), new kakao.maps.LatLng(37.38375316147891, 126.63682427696257)],
 
-        color: '#FF3DE5'
+        color: 'orange'
     },
 
     {
         path: [new kakao.maps.LatLng(37.38433264495929, 126.63774738574803), new kakao.maps.LatLng(37.382904272555635, 126.63619605858467)],
 
-        color: '#FF3DE5'
+        color: 'orange'
     },
 
     {
         path: [new kakao.maps.LatLng(37.38587804248402, 126.63632848348081), new kakao.maps.LatLng(37.3833647778794, 126.6335968205853), new kakao.maps.LatLng(37.38233319489985, 126.63508098796346)],
 
-        color: '#FF3DE5'
+        color: 'orange'
     }
 
 ]; 
+
+
+
+
+
+
+
 
     
 //배열 이용해서 폴리라인 여러개 표시하기
