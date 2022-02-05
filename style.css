@@ -141,3 +141,10 @@ header {
     border-bottom-color: black;
     margin-bottom: 6px;
 }   
+
+#end {
+margin: 5px;
+}
+#end2 {
+    margin: 0px;
+}
