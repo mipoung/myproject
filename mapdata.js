@@ -90,7 +90,7 @@ function displayMarker(place) {
 // 폴리라인 배열 데이터
     // 어린이 보호구역
     // 1.레인보우 유치원
-    var data = [
+    var child = [
     {
         path: [new kakao.maps.LatLng(37.3976233826105, 126.63505204019253), new kakao.maps.LatLng(37.39530029412674, 126.63848512925334)],
 
@@ -1114,8 +1114,19 @@ function displayMarker(place) {
 
 
 
+//소화전, 탄력구간 배열
+//var fireplug = []
+//var elasticity = []
 
 
+
+
+
+
+// 여러개 배열 만들고 data라는 배열 값으로 합쳐 하나의 배열로 만들기
+var data = [
+    ...child,
+]
 
 
 
