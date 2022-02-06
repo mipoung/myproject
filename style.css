@@ -34,6 +34,27 @@ h2 {
     margin: 5px;
 }
 
+h3 {
+    margin: 0px;
+    border-style: groove;
+    padding: 5px;
+}
+
+h4 {
+    margin: 3px;
+}
+
+#indexSection {
+    margin: 3vw;
+
+}
+
+#indexSection > p {
+margin: 2vw;
+
+}
+
+
 #search {
     width: 1fr;
     height: 15px;
@@ -46,9 +67,9 @@ h2 {
     margin-right: 1vw;
     margin-top: 1vw;
     margin-bottom: 0px;
-    height: 100vh;
+    height: 100%;
     z-index: 1;
-    border-bottom: none;
+    border-bottom: solid;
 }
 
 ol {
