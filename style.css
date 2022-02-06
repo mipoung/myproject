@@ -36,8 +36,10 @@ h2 {
 
 h3 {
     margin: 0px;
-    border-style: groove;
+    border-bottom: dotted gray 2px;
+    margin-bottom: 5vw;
     padding: 5px;
+    margin-top: 5vw;
 }
 
 h4 {
@@ -69,7 +71,7 @@ margin: 2vw;
     margin-bottom: 0px;
     height: 100vh;
     z-index: 1;
-    border-bottom: solid;
+    border-bottom: none;
 }
 
 ol {
