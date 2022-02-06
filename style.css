@@ -63,15 +63,12 @@ margin: 2vw;
 }
 
 #first {
-    border: solid gray;
-    border-width: 2px;
     margin-left: 1vw;
     margin-right: 1vw;
     margin-top: 1vw;
     margin-bottom: 0px;
     height: 100vh;
     z-index: 1;
-    border-bottom: none;
 }
 
 ol {
