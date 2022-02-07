@@ -332,9 +332,9 @@ function displayMarker(place) {
     },
 
 
-    // 11. 신정초등학교, 명선초등학교, 연송초등학교, 채드윅송도국제학교, 한스랭어학원, 와이키즈인천송도센터
+     // 11. 신정초등학교, 명선초등학교, 연송초등학교, 채드윅송도국제학교, 한스랭어학원, 와이키즈인천송도센터
 
-    {
+     {
         path: [new kakao.maps.LatLng(37.40326193000644, 126.6448112485935), new kakao.maps.LatLng(37.399942569650094, 126.64963809661887)], 
 
         color: 'orange'
@@ -361,31 +361,31 @@ function displayMarker(place) {
     {
         path: [new kakao.maps.LatLng(37.39601053508311, 126.64842543470449), new kakao.maps.LatLng(37.39688526421396, 126.64716213536254)], 
 
-        color: 'orange'
+        color: 'gray'
     },
 
     {
         path: [new kakao.maps.LatLng(37.39545468634987, 126.6478464322577), new kakao.maps.LatLng(37.39633836880677, 126.64656615358187)], 
 
-        color: 'orange'
+        color: 'gray'
     },
 
     {
         path: [new kakao.maps.LatLng(37.39726015799412, 126.64748788794745), new kakao.maps.LatLng(37.39594943358973, 126.64606543011905)], 
 
-        color: 'orange'
+        color: 'gray'
     },
 
     {
         path: [new kakao.maps.LatLng(37.39687030622332, 126.64818990414096), new kakao.maps.LatLng(37.395586755232806, 126.64681248664532)], 
 
-        color: 'orange'
+        color: 'gray'
     },
 
     {
         path: [new kakao.maps.LatLng(37.39668418185417, 126.64922976363287), new kakao.maps.LatLng(37.39487185515016, 126.64728450442023)], 
 
-        color: 'orange'
+        color: 'gray'
     },
 
     {
@@ -988,7 +988,7 @@ function displayMarker(place) {
     },
 
 
-    // 51. 예량 유치원
+    /* 51. 예량 유치원
     {
         path: [new kakao.maps.LatLng(37.41306111690126, 126.68056428268693), new kakao.maps.LatLng(37.41501745159745, 126.68265705408722)], 
 
@@ -999,6 +999,7 @@ function displayMarker(place) {
 
         color: 'orange'
     },
+    */
 
     // 52. 연화초등학교, 키즈월드 유치원
     {
