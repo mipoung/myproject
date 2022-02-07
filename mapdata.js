@@ -419,9 +419,15 @@ function displayMarker(place) {
     },
 
     {
-        path: [new kakao.maps.LatLng(37.40285548423389, 126.6414982933776), new kakao.maps.LatLng(37.39857059848935, 126.63688831095824)], 
+        path: [new kakao.maps.LatLng(37.40125780363982, 126.63980897397246), new kakao.maps.LatLng(37.39857059848935, 126.63688831095824)], 
 
         color: 'orange'
+    },
+
+    {
+        path: [new kakao.maps.LatLng(37.402731245222704, 126.64138311900906), new kakao.maps.LatLng(37.401393366918704, 126.63994385393624)], 
+
+        color: 'gray'
     },
 
 
