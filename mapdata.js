@@ -98,9 +98,9 @@ var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입
 kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
     searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
         if (status === kakao.maps.services.Status.OK) {
-            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
-            
+            var detailAddr = !!result[0].road_address ? '<div style="width:100%; padding:2px;">도로명: ' + result[0].road_address.address_name + '</div>' : '';
+            detailAddr += '<div style="width:100%; padding:2px;">지번: ' + result[0].address.address_name + '</div>';
+ 
             var content = '<div class="bAddr">' +
                             '<span class="title">법정동 주소정보</span>' + 
                             detailAddr + 
