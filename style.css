@@ -160,6 +160,7 @@ header {
     border-bottom: solid 1.5px;
     border-bottom-color: black;
     margin-bottom: 6px;
+    list-style: disc;
 }   
 
 #end {
@@ -168,3 +169,9 @@ margin: 5px;
 #end2 {
     margin: 0px;
 }
+
+#bottom2_1 {
+border-bottom: 1px solid;
+margin-right: 3vw;
+padding-bottom: 10px; 
+margin-bottom: 6px;}
