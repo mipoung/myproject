@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--구글 웹폰트 불러오기-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!--모든 태그에 폰트 적용-->
+    <style>*{font-family: 'Noto Sans KR', sans-serif;}</style>
+
+    <!--스타일시트 불러오기-->
+    <link href="style2.css" rel="stylesheet">
+
+
+     <!--지도 라이브러리 불러오기(함수 선언 오류 뜨는건 라이브러리를 안불러왔거나 두개 불러와서 그런거였음)-->
+     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3&libraries=services,clusterer,drawing"></script>
+
+    <title>연주단</title>
+</head>
+<body>
+    <nav id = top_menu>
+        <ul>
+            <li><a class="menuLink" href="#">지도</a></li>
+            <li><a class="menuLink" href="#">정보</a></li>
+            <li><a class="menuLink" href="#">일정</a></li>
+            <li><a class="menuLink" href="#">기록</a></li>
+        </ul>
+    </nav>
+    
+<section>
+    <div id="search" style="position: fixed;">
+        <form onsubmit="searchPlaces(); return false;" style="padding-top: 1px;">
+            <input type="text" value="" id="keyword" width="50%" style="width: 50vw;border-color: gray;height: 19px;">
+            <button type="submit" style="height: 22px;width: 40px;">검색</button> <button type="button" style="height: 22px;width: 60px;"><a href="./index.html">새로고침</a></button>
+            <button type="button" style="height: 22px;width: 45px;"><a href="#">지도팁</a></button>
+        </form>
+        </div>
+
+
+<!--지도 관련 스크립트 호출-->
+<script src="mapdata.js"></script>
+</section>
+
+   
+</body>
+</html>
