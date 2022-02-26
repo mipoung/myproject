@@ -1,88 +1,67 @@
 <!DOCTYPE html>
-<html>
- <meta charset="utp-8">
-  <!-- viewport 메타를 쓰면 화면 크기에 따라 1 스케일로 표현해줌, 마지막 구문은 확대방지-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
- <head>
-   
-     <title>연주단</title>
-     <!--구글 웹폰트 불러오기-->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <!--모든 태그에 폰트 적용-->
-    <style>*{font-family: 'Noto Sans KR', sans-serif;}</style>
-     <!-- 스타일시트를 불러오는 태그-->
-     <link href="style.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!--스타일시트 불러오기-->
+    <link href="style.css" rel="stylesheet">
+
+
      <!--지도 라이브러리 불러오기(함수 선언 오류 뜨는건 라이브러리를 안불러왔거나 두개 불러와서 그런거였음)-->
      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3&libraries=services,clusterer,drawing"></script>
-    
-     <!-- 페이지 자동으로 하단으로 이동시키는 스크립
-    <script>
-    window.onload = function () {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-    </script>
-    -->
 
-    
- </head>
 
- <body>
-     <div id = grid>
-         <div id = top1>
-           <h1><a href="./index.html" target="_self">연주단</a></h1>
-           
-           <!-- 이스터에그 <a href="" target="_self">.</a></h1>-->
+        <!--구글 웹폰트-->
+       
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Jua&family=Nanum+Gothic&display=swap');
+        </style>
 
-<!-- 메뉴 -->
-        </div>
+              <!--모든 태그에 폰트 적용-->
+              <style>*{font-family: 'Nanum Gothic', sans-serif;}</style>
 
-        <div id = bottom1>
-<ol>
-    <li><a href="./index.html" target="_self" style="font-weight: bold;">지도</a></li>
-    <li><a href="./infomation.html" target="_self">정보</a></li>
-    <li><a href="./schedule.html" target="_self">캘린더</a></li>
-    <li><a href="./history.html" target="_self">기록</a></li>
-
-</ol>
-    </div>
-            <!--메뉴에 속한 하단메뉴-->
-            <div id = bottom2>
-              <p id="bottom2_1">- 어린이 보호 구역을 표시한 지도입니다.<br>- 송도초등학교는 역전시장으로 검색해주세요.<br>- 지도를 한번 클릭하면 클릭한 부분의 법정동 주소가 나옵니다. <br>- 지도를 크게 보려면 '아래로' 버튼을 누르세요.</p>
-                
-              
-     <!--       <ul id = searchplacesUL>
-                    <li id = boob><a href="#map" role="button">보기</a></li>
-                    <li>어린이 보호 구역을 표시한 지도입니다.</li>
-                    <li>송도 초등학교는 역전 시장으로 검색해주세요.</li>
-                </ul>   -->
+    <title>연주단</title>
+</head>
+<body>
+        <div class="top_menu" style="width: 100%; height: 40px; background: #3e4bac;">
+            <div class="top_menu_1">
+                <div id = "main_menu">
+                    <a href="./menu.html" style="font-family: 'Gugi', cursive;">메뉴</a>
                     
-                
+                </div>
+            </div>    
 
-                    <div id = seachplaces>
-                    <form onsubmit="searchPlaces(); return false;">
-                        <input type="text" value="" id="keyword" width="50%" style="width: 50vw;border-color: gray;">
-                        <button type="submit">검색</button> <button type="button"><a href = "#first">아래로</a></button>
-                    </form>
-                    </div>
+            <div class="top_menu_2">
+                <a href="./index.html" style="font-family: 'Gugi', cursive;">연주단</a>
             </div>
 
+            <div class="top_menu_3">
+        
+            </div>
+        </div>
 
-    </div>
+    
+    
+<section>
+    <div id="search" style="position: fixed;z-index: 1;;">
+        <form onsubmit="searchPlaces(); return false;" style="padding-top: 1px;text-align: right;">
+            <input type="text" value="" id="keyword" width="50%" style="width: 99vw;border-color: gray;height: 23px;margin-bottom: 3px;">
+             <button id="new_button" type="button";><a href="./index.html">새로고침</a></button>
+             <button id="tip_button" type="button";><a href="#">지도팁</a>
+             </button> <button id="seach_button" type="submit";>검색</button>
+        </form>
+        </div>
 
-<section id = first>
-<!-- 지도 생성하기 -->
-<div id="map" style="width:100%;height:100vh;"></div>
-
+        
+<div style="padding-top: 30px;">
+<div id="map" style="width:100%;height:91vh;z-index: 0;"></div>
 <!--지도 관련 스크립트 호출-->
 <script src="mapdata.js"></script>
+</div>
 
-<!-- 상단 이동 버튼-->
-<button id=TOPscroll><a href="./index.html">위로</a></button>
 </section>
- </body>
 
-
-
+   
+</body>
 </html>
