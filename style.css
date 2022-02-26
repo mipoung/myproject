@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+section {
+    padding-top: 40px;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+
+
+.top_menu {
+    display: flex;
+    position: fixed;
+}
+
+.top_menu_1 {
+    flex: 1;
+}
+
+.top_menu_1 a {
+    margin-top: 4px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.top_menu_2 {
+    flex: 5;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.top_menu_2 a {
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.top_menu_3 {
+    flex: 1;
+}
+
+
+#main_menu {
+    height: 35px;
+    width: 55px;
+    display: block;
+}
+
+#main_menu a {
+    height: 30px;
+    width: 55px;
+    padding-top: 5px;
+    text-align: center;
+    display: block;
+    
+}
+
+
+.menu_all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.menu_bottom {
+    border: 1px solid;
+    width: 95%;
+    border-radius: 10px;
+    margin-top: 15px;
+    background-color: white;
+
+}
+
+.menu_bottom ul {
+    padding-left: 25px;
+}
+.menu_bottom ul li {
+    margin: 15px;
+}
+.menu_bottom ul li a{
+    text-decoration: none;
+    color: rgb(19, 19, 19);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#new_button {
+    height: 27px;
+    width: 65px;
+    border-radius: 7px;
+    background-color: whitesmoke;
+}
+#new_button a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+#tip_button {
+    height: 27px;
+    width: 55px;
+    border-radius: 7px;
+    background-color: whitesmoke;
+}
+#tip_button a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+#seach_button {
+    height: 27px;
+    width: 50px;
+    border-radius: 7px;
+    background-color: whitesmoke;
+    color: blue;
+    margin-right: 3px;
+    font-weight: bold;
+}
+
+
+
+.rule {
+    margin: 10px;
+}
+.rule h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+.rule h4 {
+    margin-bottom: 10px;
+    text-align: center;
+    border: 1px solid;
+}
