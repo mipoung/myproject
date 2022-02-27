@@ -1,74 +1,54 @@
 <!DOCTYPE html>
-<html>
- <meta charset="utp-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
- <!-- viewport 메타를 쓰면 화면 크기에 따라 1 스케일로 표현해줌-->
-
- <head>
-     <title>연주단</title>
-          <!--구글 웹폰트 불러오기-->
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-          <!--모든 태그에 폰트 적용-->
-          <style>*{font-family: 'Noto Sans KR', sans-serif;}</style>
-     <!-- 스타일시트를 불러오는 태그-->
-     <link href="style.css" rel="stylesheet">
-
- </head>
-
- <body>
-
-    <!-- prompt, 조건문 이용해 간단한 로그인 기능 구현-->
-    <script type="text/javascript" src="security.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!--스타일시트 불러오기-->
+    <link href="style.css" rel="stylesheet">
 
 
-     <div id = grid>
-         <div id = top1>
-            <h1><a href="./index.html" target="_self">연주단</a></h1>
+     <!--지도 라이브러리 불러오기(함수 선언 오류 뜨는건 라이브러리를 안불러왔거나 두개 불러와서 그런거였음)-->
+     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3&libraries=services,clusterer,drawing"></script>
 
-<!-- 메뉴 -->
+    <script src="security.js"></script>
+
+    <title>연주단</title>
+</head>
+<body>
+    <div class="top_menu" style="width: 100%; height: 40px; background: #3e4bac;">
+        <div class="top_menu_1">
+            <div id = "main_menu">
+                <a href="./menu.html" style="font-family: 'Gugi', cursive;">메뉴</a>
+                
+            </div>
+        </div>    
+
+        <div class="top_menu_2">
+            <a href="./index.html" style="font-family: 'Gugi', cursive;">연주단</a>
         </div>
 
-        <div id = bottom1>
-<ol>
-    <li><a href="./index.html" target="_self">지도</a></li>
-    <li><a href="./infomation.html" target="_self">정보</a></li>
-    <li><a href="./schedule.html" target="_self">캘린더</a></li>
-    <li><a href="./history.html" target="_self" style="font-weight: bold;">기록</a></li>
-
-</ol>
-    </div>
-     <!--메뉴에 속한 하단메뉴-->
-     <div id = bottom2>
-        <p id="bottom2_1">기록 탭 입니다.</p>
-        <ul>
-            <li id = boob><a href="./ver.html" target="_self">업데이트 내역</a></li>
-        </ul>
-        <!--
-        <ul>
-            <li id = boob><a>보기</a></li>
-        </ul>
-        -->
+        <div class="top_menu_3">
+    
+        </div>
     </div>
 
-</div>
-
-<section id = first>
-<!-- 본문 -->
-<div id = indexSection>
-<h3>업데이트 내역</h3>
-<p>2022.2.14. <br>- prompt, 조건문으로 ver 페이지에 간단한 로그인 기능 구현 <br> 초기화면 지도 확대레벨 4->5로 수정</p><br>
-<p>2022.2.8. <br>- 구글 웹 폰트 Noto Sans Korean을 전체 웹페이지에 적용</p><br>
-<p>2022.2.7 <br>- 벚꽃로, 용담로 149번길 어린이 보호구역 삭제<br>- 커넬워크 겨울동 앞 어린이 보호구역 회색 변경<br>- 마란츠 타워 인근 '표' 자 어린이 보호구역 회색 변경 <br>- 업데이트 정보 기록하는 ver 페이지 추가 <br>- 사이트 이름 Project에서 연주단으로 변경<br>- div bottom2에 하단 border 추가 <br>- 지도를 한번 클릭하면 클릭한 부분의 법정동 주소가 나오는 라이브러리 추가(위도를 주소로 변환)</p><br>
-</div>
-<!-- 상단 이동 버튼-->
-<button id=TOPscroll><a href="#">위로</a></button>
+    
+    
+<section>
+    <div class="history_div">
+        <h1>업데이트 내역</h1>
+        <h3>2002.2.27</h3><p>- 회의기록 탭에 프롬프트기능 적용</p>
+        <h3>2022.2.26</h3><p>- 웹 디자인 변경</p>
+        <h3>2022.2.20</h3><p>- 정보 탭에 메뉴4 메뉴 추가 <br>- prompt 조건문을 이전 페이지로 돌리는 구문으로 수정</p>
+        <h3>2022.2.14</h3><p>- prompt, 조건문으로 ver 페이지에 간단한 로그인 기능 구현 <br>- 초기화면 지도 확대레벨 4->5로 수정</p>
+        <h3>2022.2.8</h3><p>- 구글 웹 폰트 Noto Sans Korean을 전체 웹페이지에 적용</p>
+        <h3>2022.2.7</h3><p>- 벚꽃로, 용담로 149번길 어린이 보호구역 삭제<br>- 커넬워크 겨울동 앞 어린이 보호구역 회색 변경<br>- 마란츠 타워 인근 '표' 자 어린이 보호구역 회색 변경 <br>- 업데이트 정보 기록하는 ver 페이지 추가 <br>- 사이트 이름 Project에서 연주단으로 변경<br>- div bottom2에 하단 border 추가 <br>- 지도를 한번 클릭하면 클릭한 부분의 법정동 주소가 나오는 라이브러리 추가(위도를 주소로 변환)</p>
+        
+        
+    </div>
 
 </section>
 
- </body>
-
-
-
+   
+</body>
 </html>
