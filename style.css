@@ -141,3 +141,19 @@ section {
     text-align: center;
     border: 1px solid;
 }
+
+.history_div {
+    margin: 15px;
+}
+.history_div h1{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.history_div h3{
+    border-bottom: 1px solid;
+}
+.history_div p{
+    padding-top: 5px;
+    padding-bottom: 40px;
+}
