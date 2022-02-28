@@ -203,6 +203,7 @@ section {
 
 .history_div h3{
     border-bottom: 1px solid;
+    text-align: center;
 }
 .history_div p{
     padding-top: 5px;
