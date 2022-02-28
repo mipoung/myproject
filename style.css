@@ -7,21 +7,21 @@
 
 
 section {
-    padding-top: 40px;
-    background-color: whitesmoke;
+    padding-top: 63px;
     height: 100%;
+ 
 }
 
 .section_schedule {
-    padding-top: 40px;
-    background-color: whitesmoke;
-    height: 93vh;
+    padding-top: 63px;
+    height: 90vh;
 }
 
 
 .top_menu {
     display: flex;
     position: fixed;
+    z-index: 1;
 }
 
 .top_menu_1 {
@@ -52,6 +52,22 @@ section {
     flex: 1;
 }
 
+.top_menu_bottom {
+    padding-top: 40px;
+    position: fixed;
+}
+
+.top_menu_bottom p {
+    background-color: #6a6ab5;
+    display: block;
+    width: 100vw;
+    padding-left: 13px;
+    height: 23px;
+    font-family: 'Gugi', cursive;
+    color: white;
+    font-size: 15px;
+}
+
 
 #main_menu {
     height: 35px;
@@ -73,7 +89,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 93vh;
+    height: 90vh;
 }
 
 
