@@ -1,4 +1,24 @@
 
+ src="//code.jquery.com/jquery.min.js"
+ type="text/javascript" 
+
+     $(function() {
+          $("#keyword").keydown(function (event) {
+           //엔터키를 클릭시
+          if (event.which === 13) {
+            //비밀번호로 포커스를 이동시킴
+           $('#map').focus();
+                 }
+              });
+
+        /* $("#text2").keydown(function (event) {
+             //엔터키를 클릭시
+             if (event.which === 13) {
+                 //버튼 자동 클릭
+                 $("#btn").trigger('click');
+             }
+         }); */
+       
 
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places(); 
