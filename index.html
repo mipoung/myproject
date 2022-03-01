@@ -47,6 +47,28 @@
         <form id="form_map" onsubmit="searchPlaces(); onkeydown=blur(); return false;" style="padding-top: 1px;text-align: right;">
             <input type="text" value="" id="keyword" width="50%" style="width: 100vw;border-color: gray;height: 23px;margin-bottom: 3px;">
              <button id="new_button" type="button";><a href="./index.html">새로고침</a></button>
+             
+             <script src="//code.jquery.com/jquery.min.js"></script>
+                <script type="text/javascript"> 
+                    $(function() {
+                         $("#form_map").keydown(function (event) {
+                          //엔터키를 클릭시
+                         if (event.which === 13) {
+                           //비밀번호로 포커스를 이동시킴
+                          $('#map').focus();
+                                }
+                             });
+    
+                       /* $("#text2").keydown(function (event) {
+                            //엔터키를 클릭시
+                            if (event.which === 13) {
+                                //버튼 자동 클릭
+                                $("#btn").trigger('click');
+                            }
+                        }); */
+                        </script>
+
+             
              <!-- 
                  <button id="tip_button" type="button";><a href="#">지도팁</a>
                 
