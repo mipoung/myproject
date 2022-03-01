@@ -49,7 +49,7 @@ function searchPlaces() {
    
     function MoveFocus(next) {
         if(event.keycode == 13){
-            document.getElementById(seach_button).focus();
+            document.getElementById(map).focus();
         }
     }
 }
