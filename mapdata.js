@@ -47,11 +47,11 @@ function searchPlaces() {
 }); 
    
    
-    function MoveFocus(next) {
-        if(event.keycode == 13){
-            document.getElementById(map).focus();
-        }
-    }
+   // function MoveFocus(next) {
+       // if(keycode == 13){
+         //   document.getElementById(map).focus();
+      //  }
+   // }
 }
 
 
