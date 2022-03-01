@@ -41,9 +41,20 @@ function searchPlaces() {
     ps.keywordSearch( keyword, placesSearchCB,{
     radius : 10000,
     location: new kakao.maps.LatLng(37.39787605239137, 126.6562262064169)
+
+    
+    
 }); 
    
+   
+    function MoveFocus(next) {
+        if(event.keycode == 13){
+            document.getElementById(seach_button).focus();
+        }
+    }
 }
+
+
 
 
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
