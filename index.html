@@ -44,12 +44,20 @@
 <section>
 
     <div id="search" style="position: fixed;z-index: 1;;">
-        <form id="form_map" onsubmit="searchPlaces(); return false;" style="padding-top: 1px;text-align: right;">
-            <input type="text" value="" id="keyword" width="50%" style="width: 99vw;border-color: gray;height: 23px;margin-bottom: 3px;">
+        <form id="form_map" onsubmit="searchPlaces(); return false; MoveFocus(next)" style="padding-top: 1px;text-align: right;">
+            <input type="text" value="" id="keyword" width="50%" style="width: 100vw;border-color: gray;height: 23px;margin-bottom: 3px;">
              <button id="new_button" type="button";><a href="./index.html">새로고침</a></button>
              <!-- 
                  <button id="tip_button" type="button";><a href="#">지도팁</a>
                  -->
+                 <script>
+                     function MoveFocus(next) {
+                         if(event.keycode == 13){
+                             document.getElementById(seach_button).focus();
+                         }
+                     }
+                 </script>
+
              </button> <button id="seach_button" type="submit";>검색</button>
         </form>
         </div>
