@@ -1,4 +1,4 @@
-pwd = prompt ('비밀번호는 PDA 로그인 비밀번호 입니다.');
+pwd = prompt ('PDA 로그인 비밀번호를 입력하세요.');
 if(pwd == "a121212!") {
    
 } else {
