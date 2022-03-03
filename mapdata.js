@@ -1175,6 +1175,114 @@ function searchDetailAddrFromCoords(coords, callback) {
     
 ]; 
 
+//////////////////////// 구분 ////////////////////////////
+
+
+// 구역 라인 폴리라인
+//2조
+var area_line = [
+    {
+        //선학동
+        path: [new kakao.maps.LatLng(37.40662516553547, 126.68543993056815), new kakao.maps.LatLng(37.41015999120238, 126.686509509194), new kakao.maps.LatLng(37.414397988446964, 126.69115710985051), new kakao.maps.LatLng(37.41711182957152, 126.69531717827107), new kakao.maps.LatLng(37.419485490347206, 126.69863164586914), new kakao.maps.LatLng(37.42484649664839, 126.70396805061084), new kakao.maps.LatLng(37.426101379791454, 126.70495731604952), new kakao.maps.LatLng(37.427399743376284, 126.70531940570478), new kakao.maps.LatLng(37.4283928692123, 126.70522230336925), new kakao.maps.LatLng(37.42841166368011, 126.70553292867355), new kakao.maps.LatLng(37.42942757502894, 126.70554024773827), new kakao.maps.LatLng(37.43128933119184, 126.70600749543942), new kakao.maps.LatLng(37.43418312777416, 126.70662892198906), new kakao.maps.LatLng(37.434291234272855, 126.70662285052816), new kakao.maps.LatLng(37.43716161307988, 126.70507491956664), new kakao.maps.LatLng(37.438968083053446, 126.70505088079383), new kakao.maps.LatLng(37.43902725456546, 126.70259577989853), new kakao.maps.LatLng(37.439117298027114, 126.70257282405164), new kakao.maps.LatLng(37.439380813040295, 126.70256048133211), new kakao.maps.LatLng(37.439346186116566, 126.7022272746293), new kakao.maps.LatLng(37.439057644438016, 126.70214084490287),new kakao.maps.LatLng(37.43902836145077, 126.70124828148313)],
+
+        color: '#dd43d0'
+
+    },
+
+
+        
+    {
+        path: [new kakao.maps.LatLng(37.43902836145077, 126.70124828148313), new kakao.maps.LatLng(37.43877286353579, 126.70086793223457), new kakao.maps.LatLng(37.43878616969948, 126.6981277012306), new kakao.maps.LatLng(37.438648523494194, 126.695399380971), new kakao.maps.LatLng(37.438373739491674, 126.6954089694229), new kakao.maps.LatLng(37.43827647393472, 126.69525116887677), new kakao.maps.LatLng(37.438213556673084, 126.69531074699152), new kakao.maps.LatLng(37.43830860603386, 126.69548268100172), new kakao.maps.LatLng(37.43727185046582, 126.69612812695699), new kakao.maps.LatLng(37.43686107304101, 126.69581057938638), new kakao.maps.LatLng(37.43363363647668, 126.69773880925986), new kakao.maps.LatLng(37.433745061975365, 126.69726945497915), new kakao.maps.LatLng(37.43373079418955, 126.69697573993595), new kakao.maps.LatLng(37.433565738027895, 126.69673347861263), new kakao.maps.LatLng(37.43334521808236, 126.68731109973851), new kakao.maps.LatLng(37.430227682287665, 126.68560105949723)],
+
+        color: '#dd43d0'
+    },
+        
+     
+     
+
+     //연수동, 청학동
+     {
+        path: [new kakao.maps.LatLng(37.430227682287665, 126.68560105949723), new kakao.maps.LatLng(37.431520736374885, 126.67727987752805), new kakao.maps.LatLng(37.430677544885484, 126.67536275615299), new kakao.maps.LatLng(37.43475414523766, 126.657628180385), new kakao.maps.LatLng(37.43133217515177, 126.6582764863325), new kakao.maps.LatLng(37.42756310226852, 126.66041764334085), new kakao.maps.LatLng(37.42733347673559, 126.66046387238435), new kakao.maps.LatLng(37.42654891742645, 126.66101253687035), new kakao.maps.LatLng(37.42578433807753, 126.6606742275001), new kakao.maps.LatLng(37.42475757406273, 126.65924406818948), new kakao.maps.LatLng(37.42389268885197, 126.65849388272719), new kakao.maps.LatLng(37.41639819332414, 126.6623065361662), new kakao.maps.LatLng(37.41566531095731, 126.66758516079355), new kakao.maps.LatLng(37.41678818749689, 126.66798121984743), new kakao.maps.LatLng(37.41685154662748, 126.66969234446582), new kakao.maps.LatLng(37.41759640421829, 126.67023695395979), new kakao.maps.LatLng(37.41699944985998, 126.67265700543646), new kakao.maps.LatLng(37.41531033456711, 126.67439267039624), new kakao.maps.LatLng(37.411992814911656, 126.67702762620749), new kakao.maps.LatLng(37.407864601489045, 126.68311079142532), new kakao.maps.LatLng(37.406492905337906, 126.68568049902727)], 
+
+        color: '#dd43d0'
+    },
+
+
+    // 1조
+    {
+        path: [new kakao.maps.LatLng(37.43464354362518, 126.65754959070443), new kakao.maps.LatLng(37.43495360753637, 126.64807952104952), new kakao.maps.LatLng(37.43466911459872, 126.64709783408433), new kakao.maps.LatLng(37.43337687216319, 126.64658132823564), new kakao.maps.LatLng(37.4330167342774, 126.64667058737788), new kakao.maps.LatLng(37.432933003390396, 126.64654104467208), new kakao.maps.LatLng(37.433056223300426, 126.64631731344191), new kakao.maps.LatLng(37.4317299869318, 126.644233307665), new kakao.maps.LatLng(37.431454957976584, 126.64341263727997), new kakao.maps.LatLng(37.43146862354895, 126.64197200271275), new kakao.maps.LatLng(37.43098089360512, 126.64009877259461), new kakao.maps.LatLng(37.4311672444436, 126.63916010159618), new kakao.maps.LatLng(37.43050626861597, 126.63810122095164), new kakao.maps.LatLng(37.43060671392445, 126.63706692876119), new kakao.maps.LatLng(37.4308664761293, 126.63656854091823), new kakao.maps.LatLng(37.43107730724174, 126.63627375997314), new kakao.maps.LatLng(37.43125133194399, 126.63573058747801), new kakao.maps.LatLng(37.4317378188187, 126.63571128209533), new kakao.maps.LatLng(37.43151576774362, 126.63528866101983), new kakao.maps.LatLng(37.430989820166324, 126.63492966036296), new kakao.maps.LatLng(37.430584719780256, 126.63504461218425), new kakao.maps.LatLng(37.43061594073786, 126.63494277451262), new kakao.maps.LatLng(37.43104125239884, 126.63480795150302), new kakao.maps.LatLng(37.431020892669686, 126.63477980412046), 
+        
+        
+   ],
+
+        color: '#dd43d0'
+    },
+
+    
+    {
+        path: [   
+        new kakao.maps.LatLng(37.431020892669686, 126.63477980412046), 
+        
+        new kakao.maps.LatLng(37.43060864229025, 126.6347676839121), new kakao.maps.LatLng(37.43044881979753, 126.63480235569692), new kakao.maps.LatLng(37.42990265809886, 126.63519197734794), new kakao.maps.LatLng(37.42448223810841, 126.6363847480195), new kakao.maps.LatLng(37.41616034142108, 126.63898641616076), new kakao.maps.LatLng(37.412700726864976, 126.64129888477574), new kakao.maps.LatLng(37.41158717938041, 126.64252411929454), new kakao.maps.LatLng(37.406739108092275, 126.64833012934061), new kakao.maps.LatLng(37.40323794671245, 126.65266093352058), new kakao.maps.LatLng(37.39570447971727, 126.66165122399356), new kakao.maps.LatLng(37.392332905812104, 126.66738049300982), new kakao.maps.LatLng(37.40112755280944, 126.67739331940598), new kakao.maps.LatLng(37.40272498065882, 126.68001803840882), new kakao.maps.LatLng(37.40323306759414, 126.68132037608889), new kakao.maps.LatLng(37.4040313400228, 126.68332176502174), new kakao.maps.LatLng(37.40512105216437, 126.68481371876888), new kakao.maps.LatLng(37.40658241278607, 126.68545705159903)], 
+
+        color: '#dd43d0'
+
+    },
+    
+
+    
+
+    //송도
+    // 5조 경계
+    {
+        path: [new kakao.maps.LatLng(37.40090791919882, 126.65543307097002), new kakao.maps.LatLng(37.39667630470903, 126.65113555543893), new kakao.maps.LatLng(37.37347505146426, 126.62606942166894)], 
+
+        color: '#dd43d0'
+    },
+
+    //남동구쪽 해안도로
+    {
+        path: [new kakao.maps.LatLng(37.38719802224086, 126.68499321321544), new kakao.maps.LatLng(37.3888946722131, 126.67436014950754), new kakao.maps.LatLng(37.389734157336584, 126.67165765179371), new kakao.maps.LatLng(37.39264900881093, 126.66684551316774)], 
+
+        color: '#dd43d0'
+       
+    },
+
+    //3동 신항가는쪽 경계
+    {
+        path: [new kakao.maps.LatLng(37.387184567250756, 126.68501585340827), new kakao.maps.LatLng(37.35590675017203, 126.65476130200295)], 
+
+        color: '#dd43d0'
+       
+    },
+
+     // 인천대입구역 시작 - 달빛축제공원역
+     {
+        path: [new kakao.maps.LatLng(37.385697642404764, 126.63920591857276), new kakao.maps.LatLng(37.393286736758384, 126.63416116829389), new kakao.maps.LatLng(37.40656000507932, 126.62593611712651), new kakao.maps.LatLng(37.40852940317842, 126.62472904126012), new kakao.maps.LatLng(37.409303689990864, 126.62454445500467), new kakao.maps.LatLng(37.4102299096638, 126.6296792350801), new kakao.maps.LatLng(37.410729204359775, 126.63087409668537), new kakao.maps.LatLng(37.411407632195626, 126.63172923096629), new kakao.maps.LatLng(37.41270718270164, 126.63240061464637), new kakao.maps.LatLng(37.41638494990641, 126.63292486365371), new kakao.maps.LatLng(37.41757784233725, 126.63407128417202) //new kakao.maps.LatLng(), new kakao.maps.LatLng()
+    ], 
+
+    color: '#dd43d0'
+    },
+
+    // 송도 4동 경계
+    {
+        path: [new kakao.maps.LatLng(37.409308248795824, 126.62456137512997), new kakao.maps.LatLng(37.406696211026706, 126.60954095565009)
+    ], 
+
+    color: '#dd43d0'
+    },
+
+    // 송도 5동 경계
+    {
+        path: [new kakao.maps.LatLng(37.42789512011015, 126.6089563668078), new kakao.maps.LatLng(37.428203445706444, 126.63202545882575)
+    ], 
+
+    color: '#dd43d0'
+    },
+];
+
+
+
 
 
 
@@ -1213,6 +1321,26 @@ for(var i=0; i<data.length; i++) {
 	});
 
 }
+
+
+//배열 이용해서 폴리라인 여러개 표시하기
+for(var i=0; i<area_line.length; i++) {
+
+    //i번째 정보를 가져옵니다.
+    var item = area_line[i];
+    
+    // 지도에 표시할 선을 생성합니다
+    var polyline = new kakao.maps.Polyline({
+    
+        map: map, //지도에 선을 표시합니다.
+        path: item.path, // 선을 구성하는 좌표배열 입니다
+        strokeWeight: 2, // 선의 두께 입니다
+        strokeColor: item.color, // 선의 색깔입니다
+        strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'solid' // 선의 스타일입니다
+    });
+    
+    }
 
 // 지도에 선을 표시합니다 
 polyline.setMap(map);  
