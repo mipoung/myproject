@@ -1,5 +1,7 @@
 
 
+       
+
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places(); 
 
@@ -9,7 +11,7 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(37.40960506201756, 126.67865875458125), // 지도의 중심좌표
-        level: 4 // 지도의 확대 레벨
+        level: 5 // 지도의 확대 레벨
     };  
 
 // 지도를 생성합니다    
@@ -17,15 +19,15 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 
 //
 // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
-var mapTypeControl = new kakao.maps.MapTypeControl();
+// var mapTypeControl = new kakao.maps.MapTypeControl();
 
 // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
 // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
-map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+// map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPLEFT);
 
 // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-var zoomControl = new kakao.maps.ZoomControl();
-map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+// var zoomControl = new kakao.maps.ZoomControl();
+// map.addControl(zoomControl, kakao.maps.ControlPosition.LEFT);
 //
 
 // 키워드로 장소를 검색합니다
@@ -41,9 +43,20 @@ function searchPlaces() {
     ps.keywordSearch( keyword, placesSearchCB,{
     radius : 10000,
     location: new kakao.maps.LatLng(37.39787605239137, 126.6562262064169)
+
+    
+    
 }); 
    
+   
+   // function MoveFocus(next) {
+       // if(keycode == 13){
+         //   document.getElementById(map).focus();
+      //  }
+   // }
 }
+
+
 
 
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
@@ -98,9 +111,9 @@ var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입
 kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
     searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
         if (status === kakao.maps.services.Status.OK) {
-            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
-            
+            var detailAddr = !!result[0].road_address ? '<div style="width:100%; padding:2px;">도로명: ' + result[0].road_address.address_name + '</div>' : '';
+            detailAddr += '<div style="width:100%; padding:2px;">지번: ' + result[0].address.address_name + '</div>';
+ 
             var content = '<div class="bAddr">' +
                             '<span class="title">법정동 주소정보</span>' + 
                             detailAddr + 
@@ -1164,19 +1177,31 @@ function searchDetailAddrFromCoords(coords, callback) {
 
 
 
-//소화전, 탄력구간 배열
-//var fireplug = []
-//var elasticity = []
 
+var area_line = [
+    {
+        path: [new kakao.maps.LatLng(37.40662516553547, 126.68543993056815), new kakao.maps.LatLng(37.41015999120238, 126.686509509194), new kakao.maps.LatLng(37.414397988446964, 126.69115710985051), new kakao.maps.LatLng(37.41711182957152, 126.69531717827107), new kakao.maps.LatLng(37.419485490347206, 126.69863164586914), new kakao.maps.LatLng(37.42484649664839, 126.70396805061084), new kakao.maps.LatLng(37.426101379791454, 126.70495731604952), new kakao.maps.LatLng(37.427399743376284, 126.70531940570478), new kakao.maps.LatLng(37.4283928692123, 126.70522230336925), new kakao.maps.LatLng(37.42841166368011, 126.70553292867355), new kakao.maps.LatLng(37.42942757502894, 126.70554024773827), new kakao.maps.LatLng(37.43128933119184, 126.70600749543942), new kakao.maps.LatLng(37.43418312777416, 126.70662892198906), new kakao.maps.LatLng(37.434291234272855, 126.70662285052816), new kakao.maps.LatLng(37.43716161307988, 126.70507491956664), new kakao.maps.LatLng(37.438968083053446, 126.70505088079383), new kakao.maps.LatLng(37.43902725456546, 126.70259577989853), new kakao.maps.LatLng(37.439117298027114, 126.70257282405164), new kakao.maps.LatLng(37.439380813040295, 126.70256048133211), new kakao.maps.LatLng(37.439346186116566, 126.7022272746293), new kakao.maps.LatLng(37.439057644438016, 126.70214084490287), new kakao.maps.LatLng(37.43902836145077, 126.70124828148313), new kakao.maps.LatLng(37.43877286353579, 126.70086793223457), new kakao.maps.LatLng(37.43878616969948, 126.6981277012306), new kakao.maps.LatLng(37.438648523494194, 126.695399380971), new kakao.maps.LatLng(37.438373739491674, 126.6954089694229), new kakao.maps.LatLng(37.43827647393472, 126.69525116887677), new kakao.maps.LatLng(37.438213556673084, 126.69531074699152), new kakao.maps.LatLng(37.43830860603386, 126.69548268100172), new kakao.maps.LatLng(37.43721576287114, 126.69621592459383), new kakao.maps.LatLng(37.4368543954804, 126.69584167979542), new kakao.maps.LatLng(), new kakao.maps.LatLng(37.4368543954804, 126.69584167979542), new kakao.maps.LatLng(37.4337470467694, 126.69716493174376), new kakao.maps.LatLng(37.433735552612184, 126.69707458650628), new kakao.maps.LatLng(37.433570895009204, 126.69698768347158)], 
 
+        color: 'red'
 
-
+    },
+];
 
 
 // 여러개 배열 만들고 data라는 배열 값으로 합쳐 하나의 배열로 만들기
 var data = [
     ...child,
 ]
+
+
+//소화전, 탄력구간 배열
+//var fireplug = []
+//var elasticity = []
+//var area_line = []
+
+
+
+
 
 
 
