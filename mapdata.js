@@ -1380,16 +1380,19 @@ var positions = [
 
 
 
-//
-for (var i = 0; i < positions.length; i ++) {
-// 커스텀 오버레이를 생성합니다
-var customOverlay = new kakao.maps.CustomOverlay({
-    position: positions[i].latlng,
-    map: map,
-    content: positions[i].content  
-});
+function infowindow() {
 
-// 커스텀 오버레이를 지도에 표시합니다
-customOverlay.setMap(map);
-//
+    //
+    for (var i = 0; i < positions.length; i ++) {
+    // 커스텀 오버레이를 생성합니다
+    var customOverlay = new kakao.maps.CustomOverlay({
+        position: positions[i].latlng,
+        map: map,
+        content: positions[i].content  
+    });
+
+    // 커스텀 오버레이를 지도에 표시합니다
+    customOverlay.setMap(map);
+    //
+    }
 }
