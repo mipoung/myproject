@@ -1344,3 +1344,52 @@ for(var i=0; i<area_line.length; i++) {
 
 // 지도에 선을 표시합니다 
 polyline.setMap(map);  
+
+
+///////////////////////////
+
+// 를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
+var positions = [
+    {
+        content: '<div class ="label"><span class="left"></span><span class="center">동춘,옥련</span><span class="right"></span></div>',
+
+        latlng: new kakao.maps.LatLng(37.40587812589829, 126.65426671828475)
+    },
+    {
+        content: '<div class ="label"><span class="left"></span><span class="center">연청선</span><span class="right"></span></div>',
+        latlng: new kakao.maps.LatLng(37.41428443503985, 126.6831458753808)
+    },
+    {
+        content: '<div class ="label"><span class="left"></span><span class="center">송도1,3동</span><span class="right"></span></div>', 
+        latlng: new kakao.maps.LatLng(37.36663630805605, 126.65652400878024)
+    },
+    {
+        content: '<div class ="label"><span class="left"></span><span class="center">송도2동</span><span class="right"></span></div>',
+        latlng: new kakao.maps.LatLng(37.39145824410713, 126.64096253912815)
+    },
+    {
+        content: '<div class ="label"><span class="left"></span><span class="center">송도4동</span><span class="right"></span></div>',
+        latlng: new kakao.maps.LatLng(37.3788640529298, 126.62422204485341)
+    }
+    ,
+    {
+        content: '<div class ="label"><span class="left"></span><span class="center">송도5동</span><span class="right"></span></div>',
+        latlng: new kakao.maps.LatLng(37.41054821143762, 126.61439494277028)
+    }
+];
+
+
+
+//
+for (var i = 0; i < positions.length; i ++) {
+// 커스텀 오버레이를 생성합니다
+var customOverlay = new kakao.maps.CustomOverlay({
+    position: positions[i].latlng,
+    map: map,
+    content: positions[i].content  
+});
+
+// 커스텀 오버레이를 지도에 표시합니다
+customOverlay.setMap(map);
+//
+}
