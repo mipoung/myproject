@@ -1380,7 +1380,7 @@ var positions = [
 
 
 
-function infowindow() {
+////function infowindow() {
 
     //
     for (var i = 0; i < positions.length; i ++) {
@@ -1395,4 +1395,4 @@ function infowindow() {
     customOverlay.setMap(map);
     //
     }
-}
+//}
