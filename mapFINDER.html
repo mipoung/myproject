@@ -10,16 +10,15 @@
 </head>
 <body>
     <div id="map" style="width:100%;height:350px;"></div>
-<p><em>지도를 클릭해주세요!</em></p> 
 
 <div id="clickLatlng"></div>
-<button id="button">복사</button>
+<button id="button" style="width: 100%; height: 45px;">복사</button>
     
 
 <script>
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
         mapOption = { 
-            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            center: new kakao.maps.LatLng(37.40960506201756, 126.67865875458125), // 지도의 중심좌표
             level: 3 // 지도의 확대 레벨
         };
     
