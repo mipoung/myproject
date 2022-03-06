@@ -92,7 +92,7 @@ function displayMarker(place) {
     // 마커에 클릭이벤트를 등록합니다
     kakao.maps.event.addListener(marker, 'click', function() {
         // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+        infowindow.setContent('<div style="width:100%; padding:5px;font-size:12px;">' + place.place_name + '</div>');
         infowindow.open(map, marker);
     });
 }
@@ -1282,8 +1282,20 @@ var area_line = [
 ];
 
 
+/////////////////////////////////
+///////      탄력구간       ////////
+/* 
+var elasticity = [
+      
+    {
+        path: [new kakao.maps.LatLng(), new kakao.maps.LatLng()], 
 
+        color: 'orange'
 
+    },
+    
+];
+*/
 
 
 // 여러개 배열 만들고 data라는 배열 값으로 합쳐 하나의 배열로 만들기
@@ -1348,51 +1360,86 @@ polyline.setMap(map);
 
 ///////////////////////////
 
-// 를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
-var positions = [
-    {
-        content: '<div class ="label"><span class="left"></span><span class="center">동춘,옥련</span><span class="right"></span></div>',
 
-        latlng: new kakao.maps.LatLng(37.40587812589829, 126.65426671828475)
+
+
+
+
+///// 인포 윈도우
+
+var infow = [
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">연수,청학,선학</div>',
+
+        latlng: new kakao.maps.LatLng(37.42974988093744, 126.68805197322187),
+        
+        
+    },
+
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">동춘,옥련</div>',
+
+        latlng: new kakao.maps.LatLng(37.40357462479828, 126.65843364169507),
+     
+        
+    },
+
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 1,3동</div>',
+
+        latlng: new kakao.maps.LatLng(37.362331910561835, 126.65428598496308),
+ 
+        
     },
     {
-        content: '<div class ="label"><span class="left"></span><span class="center">연청선</span><span class="right"></span></div>',
-        latlng: new kakao.maps.LatLng(37.41428443503985, 126.6831458753808)
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 2동</div>',
+
+        latlng: new kakao.maps.LatLng(37.40685643432192, 126.6350157309054),
+     
+        
     },
     {
-        content: '<div class ="label"><span class="left"></span><span class="center">송도1,3동</span><span class="right"></span></div>', 
-        latlng: new kakao.maps.LatLng(37.36663630805605, 126.65652400878024)
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 4동</div>',
+
+        latlng: new kakao.maps.LatLng(37.37943605498299, 126.62559666472526),
+     
+        
     },
     {
-        content: '<div class ="label"><span class="left"></span><span class="center">송도2동</span><span class="right"></span></div>',
-        latlng: new kakao.maps.LatLng(37.39145824410713, 126.64096253912815)
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도5동</div>',
+
+        latlng: new kakao.maps.LatLng(37.42218605770103, 126.6161654160096),
+     
+        
     },
-    {
-        content: '<div class ="label"><span class="left"></span><span class="center">송도4동</span><span class="right"></span></div>',
-        latlng: new kakao.maps.LatLng(37.3788640529298, 126.62422204485341)
-    }
-    ,
-    {
-        content: '<div class ="label"><span class="left"></span><span class="center">송도5동</span><span class="right"></span></div>',
-        latlng: new kakao.maps.LatLng(37.41054821143762, 126.61439494277028)
-    }
-];
 
 
+    ];
+    
+    
 
-////function infowindow() {
 
-    //
-    for (var i = 0; i < positions.length; i ++) {
+function infowindowON () {
+
+for (var i = 0; i < infow.length; i ++) {
     // 커스텀 오버레이를 생성합니다
-    var customOverlay = new kakao.maps.CustomOverlay({
-        position: positions[i].latlng,
+    var infowindow = new kakao.maps.InfoWindow({
+        position: infow[i].latlng,
         map: map,
-        content: positions[i].content  
+        content: infow[i].Content ,
+        removable : true
+    
+        
     });
-
-    // 커스텀 오버레이를 지도에 표시합니다
-    customOverlay.setMap(map);
+    
+     infowindow.open(map); 
     //
     }
-//}
+
+}
+   
+
+
+
+
+
