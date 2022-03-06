@@ -1379,7 +1379,7 @@ var infow = [
     {
         Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">동춘,옥련</div>',
 
-        latlng: new kakao.maps.LatLng(37.40357462479828, 126.65843364169507),
+        latlng: new kakao.maps.LatLng(37.413002704796696, 126.65651573003171),
      
         
     },
@@ -1387,21 +1387,21 @@ var infow = [
     {
         Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 1,3동</div>',
 
-        latlng: new kakao.maps.LatLng(37.362331910561835, 126.65428598496308),
+        latlng: new kakao.maps.LatLng(37.3774530380526, 126.6518907521165),
  
         
     },
     {
         Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 2동</div>',
 
-        latlng: new kakao.maps.LatLng(37.40685643432192, 126.6350157309054),
+        latlng: new kakao.maps.LatLng(37.40308318444747, 126.64156215092412),
      
         
     },
     {
         Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 4동</div>',
 
-        latlng: new kakao.maps.LatLng(37.37943605498299, 126.62559666472526),
+        latlng: new kakao.maps.LatLng(37.38916732495429, 126.61723719700473),
      
         
     },
