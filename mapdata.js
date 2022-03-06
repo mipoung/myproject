@@ -1319,7 +1319,7 @@ var data = [
 
 
 
-
+function childON() {
     
 //배열 이용해서 폴리라인 여러개 표시하기
 for(var i=0; i<data.length; i++) {
@@ -1338,6 +1338,7 @@ for(var i=0; i<data.length; i++) {
     	strokeStyle: 'solid' // 선의 스타일입니다
 	});
 
+}
 }
 
 
