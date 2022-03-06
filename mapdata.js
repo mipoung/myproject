@@ -1288,8 +1288,322 @@ var area_line = [
 ];
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /////////////////////////////////
 ///////      탄력구간       ////////
+
+
+
+
+
+var elasticity = [
+
+    // 금지시간 7:00~9:00, 18:00~20:00
+
+      //    한나루로 86번길
+    {
+        path: [new kakao.maps.LatLng(37.42223581281587, 126.64732282615483), new kakao.maps.LatLng(37.422100026650384, 126.64786572763389), new kakao.maps.LatLng(37.42187641557464, 126.64841751064877), new kakao.maps.LatLng(37.42176318292374, 126.64897159941343), new kakao.maps.LatLng(37.42182547542373, 126.64946838275397), new kakao.maps.LatLng(37.42196830387688, 126.64977838888593), new kakao.maps.LatLng(37.42246821336817, 126.6504877864753), new kakao.maps.LatLng(37.42252315816924, 126.65078690807017), new kakao.maps.LatLng(37.422496342183976, 126.6516230284111)], 
+
+        color: 'blue'
+
+    },
+
+    // 한나루로 86번길
+    {
+       path: [
+       new kakao.maps.LatLng(37.42228431112672, 126.64772364956482), new kakao.maps.LatLng(37.42197583642398, 126.64852154455652), new kakao.maps.LatLng(37.421887514951905, 126.64912070624139), new kakao.maps.LatLng(37.42209648734761, 126.64970718451308), new kakao.maps.LatLng(37.422531007859526, 126.6503942923298), new kakao.maps.LatLng(37.42258172324617, 126.65078663609167), new kakao.maps.LatLng(37.42256494557425, 126.6512075366029)
+       ] ,
+
+       color: 'blue'
+    },
+
+
+
+
+    // 송도시장 금지시간 
+    {
+       path: [
+       new kakao.maps.LatLng(37.42551514341654, 126.65637949328936), new kakao.maps.LatLng(37.42752541855157, 126.65750575437596)
+       ],
+
+       color: 'blue' 
+    },
+
+
+
+    //능허대로(동춘동952), (민방위 교육장~동막역사거리)
+    //허용시간: 6:00~22:00(휴일)
+    {
+       path: [
+       new kakao.maps.LatLng(37.40068059558239, 126.66569750493778), new kakao.maps.LatLng(37.39737656182786, 126.67148314634696)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.40084792008666, 126.66592264153132), new kakao.maps.LatLng(37.39749432004113, 126.6717085022109)
+       ],
+
+       color: 'blue' 
+    },
+
+
+    // 앵고개로264번길(동춘동959-1), 굿모닝이비인후과~인천수협 200m
+    // 금지시간: 6:00~9:00, 18:00~20:00 (평일)
+    {
+       path: [
+       new kakao.maps.LatLng(37.407164075044165, 126.67237224823661), new kakao.maps.LatLng(37.4069471527245, 126.67212752849628), new kakao.maps.LatLng(37.40668486611903, 126.67177005927287), new kakao.maps.LatLng(37.406571150177164, 126.67137805913525), new kakao.maps.LatLng(37.40657046713047, 126.67113239902183), new kakao.maps.LatLng(37.40661989207236, 126.67027659717108)
+       ],
+
+       color: 'blue' 
+    },
+
+    {
+       path: [
+       new kakao.maps.LatLng(37.407092401383984, 126.67251939448073), new kakao.maps.LatLng(37.40662472213226, 126.67201316121117), new kakao.maps.LatLng(37.40653853893575, 126.67180175845746), new kakao.maps.LatLng(37.40644730900095, 126.67139554228521), new kakao.maps.LatLng(37.406489269905386, 126.67028564072828)
+       ],
+
+       color: 'blue' 
+    },
+
+
+    // 비류대로 232번길, 청학도서관~세븐일레븐
+    // 금지시간 : 7:00~16:00 (평일)
+    {
+       path: [
+       new kakao.maps.LatLng(37.42579370475117, 126.66079846035719), new kakao.maps.LatLng(37.425406484722394, 126.6608736421804), new kakao.maps.LatLng(37.42473983254575, 126.66090771732024)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.42579112801851, 126.66068549459523), new kakao.maps.LatLng(37.42539488994211, 126.66075789326575), new kakao.maps.LatLng(37.424791291719295, 126.66078603617342)
+       ],
+
+       color: 'blue' 
+    },
+
+    // 청능대로 23번길 (청학동511-3), LF스퀘어~LF스퀘어 단측
+    // 금지시간: 07:00~09:00, 18:00~20:00
+    {
+       path: [
+       new kakao.maps.LatLng(37.41877297641793, 126.66969802656469), new kakao.maps.LatLng(37.418033395700675, 126.66943015687752)
+       ],
+
+       color: 'blue' 
+    },
+
+    // 용담로 현대성모의원~kb증권 양측
+    // 금지시간 7:00~9:00, 18:00~20:00
+    {
+       path: [
+       new kakao.maps.LatLng(37.41995329454835, 126.67212166842911), new kakao.maps.LatLng(37.41874354432476, 126.67370000583912), new kakao.maps.LatLng(37.41839317333188, 126.67407149065858), new kakao.maps.LatLng(37.41823124951059, 126.67416538939617), new kakao.maps.LatLng(37.41797250657836, 126.67427382777682), new kakao.maps.LatLng(37.41709475087107, 126.6745402713701), new kakao.maps.LatLng(37.416872109875044, 126.67467114342999), new kakao.maps.LatLng(37.41672384818554, 126.67481863768447), new kakao.maps.LatLng(37.415839886131245, 126.67610740766183), new kakao.maps.LatLng(37.415662626037744, 126.67635951191942), new kakao.maps.LatLng(37.415469582364665, 126.67660603475224)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.41568128755457, 126.67659382828215), new kakao.maps.LatLng(37.41676944198194, 126.67501612734115), new kakao.maps.LatLng(37.41697379919258, 126.67478931596199), new kakao.maps.LatLng(37.41811252784249, 126.67440595626977), new kakao.maps.LatLng(37.418499422730285, 126.67420941413019), new kakao.maps.LatLng(37.41884750268225, 126.67382381848518), new kakao.maps.LatLng(37.420086435358506, 126.67220863880587)
+       ],
+
+       color: 'blue' 
+    },
+
+    // 벚꽃로(청학동512), 연수역~용담공원입구 양측
+    // 금지시간 7:00~9:00, 18:00~20:00
+    {
+       path: [
+       new kakao.maps.LatLng(37.41767989717115, 126.67764145939732), new kakao.maps.LatLng(37.418448989846844, 126.6763503458769), new kakao.maps.LatLng(37.4188152130187, 126.6760070448147), new kakao.maps.LatLng(37.41916346156207, 126.67568076303853), new kakao.maps.LatLng(37.41936757180625, 126.67536357303447)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.41951881562828, 126.67548153656598), new kakao.maps.LatLng(37.4193371759586, 126.67577886066962), new kakao.maps.LatLng(37.418815932526066, 126.67626968988199), new kakao.maps.LatLng(37.418553092279424, 126.67652782020942), new kakao.maps.LatLng(37.41781982233169, 126.67773970443493)
+       ],
+
+       color: 'blue' 
+    },
+
+    //용담로 117번길 (연수동650-12), 연수장례식장~원피스모텔 양측
+    // 금지시간 7:00~9:00, 18:00~20:00
+
+    /*
+    {
+       path: [
+       new kakao.maps.LatLng(37.41681420823123, 126.67903462641075), new kakao.maps.LatLng(37.416369128340946, 126.67854513546746), new kakao.maps.LatLng(37.416028392238786, 126.67832349025855), new kakao.maps.LatLng(37.415500797174296, 126.67813935939037)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.415397565950194, 126.6782810034163), new kakao.maps.LatLng(37.41594541037163, 126.67845657626832), new kakao.maps.LatLng(37.416268064730104, 126.67865570646013), new kakao.maps.LatLng(37.41675379667687, 126.6791845613367)
+       ],
+
+       color: 'blue' 
+    },
+
+    */
+
+    // 연수2동, 연수동650, 힘찬병원~모든치과, 양면    (불명확)
+    // 금지시간: 7:00~9:00, 18:00~20:00
+    
+  {
+       path: [
+       new kakao.maps.LatLng(37.415317862648884, 126.67713760707622), new kakao.maps.LatLng(37.413087818913354, 126.68044273905454)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.41523846928627, 126.67693461702058), new kakao.maps.LatLng(37.4129186055825, 126.68034179560398)
+       ],
+
+       color: 'blue' 
+    },
+    
+
+    // 용담로 117번길(연수650-12, 연수동 650-14) 연수장례식장~스타벅스, 양면
+    // 금지시간: 7:00~9:00, 18:00~20:00
+    {
+       path: [
+       new kakao.maps.LatLng(37.41681872858862, 126.67904025531828), new kakao.maps.LatLng(37.41638707164411, 126.67851681795102), new kakao.maps.LatLng(37.41595847216031, 126.67828990049323), new kakao.maps.LatLng(37.414882908967556, 126.67788501701565)
+       ],
+
+       color: 'blue' 
+    },
+
+    {
+       path: [
+       new kakao.maps.LatLng(37.416760561875506, 126.67918735657672), new kakao.maps.LatLng(37.416256786818906, 126.67865010648845), new kakao.maps.LatLng(37.41606270226933, 126.67851538032275), new kakao.maps.LatLng(37.41483832794613, 126.6780574734339)
+       ],
+
+       color: 'blue' 
+    },
+
+
+    // 용담로 118번길 (연수동 651-16), 힘찬병원~선우빌딩, 양면
+     // 금지시간: 7:00~9:00, 18:00~20:00
+     {
+       path: [
+       new kakao.maps.LatLng(37.41431614236596, 126.67737912324601), new kakao.maps.LatLng(37.413823567549336, 126.67682208660979)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.4142534726536, 126.67752624017898), new kakao.maps.LatLng(37.41372022983676, 126.67692419396474)
+       ],
+
+       color: 'blue' 
+    },
+
+
+    //새말로(연수동645-10), 문화공원입구~세경아파트 입구 ,평일허용, 양면
+    // 금지시간: 7:00~9:00, 18:00~20:00
+    {
+       path: [
+       new kakao.maps.LatLng(37.418349038698196, 126.68018033217004), new kakao.maps.LatLng(37.4184874987996, 126.6814054296086), new kakao.maps.LatLng(37.41846628173582, 126.68189127519966), new kakao.maps.LatLng(37.418368037083596, 126.68221364469899), new kakao.maps.LatLng(37.41809450503751, 126.68268925721952), new kakao.maps.LatLng(37.41739931324068, 126.68384443167909)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.417516655328306, 126.68392301393278), new kakao.maps.LatLng(37.41840031588553, 126.68249027585725), new kakao.maps.LatLng(37.418597109771675, 126.68195850181205), new kakao.maps.LatLng(37.418632450695014, 126.68169852896185), new kakao.maps.LatLng(37.41861767246879, 126.68122977982257), new kakao.maps.LatLng(37.41851138757635, 126.68024177335978)
+       ],
+
+       color: 'blue' 
+    },
+    
+    
+    // 함박뫼로 152번길(연수동645-8), 영남아파트 측면~연수도서관, 단면, 평일허용
+    // 허용시간 9:00~22:00 (승용차만)
+    {
+       path: [
+       new kakao.maps.LatLng(37.42002152364439, 126.68309911106824), new kakao.maps.LatLng(37.41982829204136, 126.6832806749214), new kakao.maps.LatLng(37.419114561898816, 126.68424390384281), new kakao.maps.LatLng(37.4188701763168, 126.68467138055594), new kakao.maps.LatLng(37.41833325629011, 126.68605746837952)
+       ],
+
+       color: 'blue' 
+    },
+  
+    //함박뫼로(연수동646), 버스정류장~대학공원약수터, 양측, 주말 공휴일 허용
+    // 주말 허용시간 : 6:00~22:00
+    // 양측 맞는지 모르겠음... 로드뷰상에는 반대편 표지판 없음
+
+  {
+       path: [
+       new kakao.maps.LatLng(37.421430330278824, 126.68262152073197), new kakao.maps.LatLng(37.42139130017764, 126.68318653966867), new kakao.maps.LatLng(37.421528325799905, 126.68388638288862), new kakao.maps.LatLng(37.42192739176227, 126.68486755868982), new kakao.maps.LatLng(37.42203197038373, 126.68522863022449)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.42161060695033, 126.68264900266334), new kakao.maps.LatLng(37.42158491013617, 126.68314618409279), new kakao.maps.LatLng(37.4216491151362, 126.68356955567658), new kakao.maps.LatLng(37.42190787968169, 126.68430843092548), new kakao.maps.LatLng(37.422189270065196, 126.68508675671842)
+       ],
+
+       color: 'blue' 
+    },
+
+    // 선학로(선학동343), 선학행정복지센터~은행나무어린이공원, 양면, 평일 허용
+    // 금지시간 7:00~9:00, 18:00~20:00
+    // ??? 탄력 확인필요
+    /*
+    {
+       path: [
+       new kakao.maps.LatLng(), new kakao.maps.LatLng(), new kakao.maps.LatLng(), new kakao.maps.LatLng(), new kakao.maps.LatLng(), new kakao.maps.LatLng(), new kakao.maps.LatLng(), new kakao.maps.LatLng(), new kakao.maps.LatLng(), new kakao.maps.LatLng(), new kakao.maps.LatLng()
+       ],
+
+       color: 'blue' 
+    },
+    */
+
+
+
+    // 선학로(선학동351), 선학스파24시~뉴서울아파트입구, 양면, 평일허용
+    // 금지시간 7:00~9:00, 18:00~20:00
+    {
+       path: [
+       new kakao.maps.LatLng(37.425901922642566, 126.69910585529871), new kakao.maps.LatLng(37.425834671298915, 126.70012009808032)
+       ],
+
+       color: 'blue' 
+    },
+    {
+       path: [
+       new kakao.maps.LatLng(37.42594283489681, 126.70013661333473), new kakao.maps.LatLng(37.42601684391195, 126.69912234206532)
+       ],
+
+       color: 'blue' 
+    },
+
+
+
+];
+
+
 /* 
 var elasticity = [
       
@@ -1353,11 +1667,36 @@ for(var i=0; i<area_line.length; i++) {
     
         map: map, //지도에 선을 표시합니다.
         path: item.path, // 선을 구성하는 좌표배열 입니다
-        strokeWeight: 3, // 선의 두께 입니다
+        strokeWeight: 2, // 선의 두께 입니다
         strokeColor: item.color, // 선의 색깔입니다
-        strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: 'solid' // 선의 스타일입니다
     });
+    
+    }
+
+
+
+
+function elasticityON() {
+    //배열 이용해서 폴리라인 여러개 표시하기
+    for(var i=0; i<elasticity.length; i++) {
+    
+    //i번째 정보를 가져옵니다.
+    var item = elasticity[i];
+    
+    // 지도에 표시할 선을 생성합니다
+    var polyline = new kakao.maps.Polyline({
+    
+        map: map, //지도에 선을 표시합니다.
+        path: item.path, // 선을 구성하는 좌표배열 입니다
+        strokeWeight: 4, // 선의 두께 입니다
+        strokeColor: item.color, // 선의 색깔입니다
+        strokeOpacity: 0.6, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'dashed' // 선의 스타일입니다
+    });
+    
+    }
     
     }
 
