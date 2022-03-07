@@ -1654,7 +1654,14 @@ var data = [
 //var area_line = []
 
 
-
+function elasticityWindow() {
+    if (!confirm("탄력구간 허용, 금지시간을 지도에 함께 표시할까요?\n\n확인 : 탄력구간 허용, 금지시간 함께 표시\n취소 : 탄력구간 선만 표시")) {
+        elasticityON();
+    } else {
+        // 확인 누르면
+        elasticityWindowON(); elasticityON();
+    }
+}
 
 
 function childON() {
@@ -1730,7 +1737,58 @@ polyline.setMap(map);
 
 ///////////////////////////
 
+///////////////////////////
 
+
+
+var elastin_inforwindow = [
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">연수,청학,선학</div>',
+
+        latlng: new kakao.maps.LatLng(37.42974988093744, 126.68805197322187),
+        
+        
+    },
+
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">동춘,옥련</div>',
+
+        latlng: new kakao.maps.LatLng(37.413002704796696, 126.65651573003171),
+     
+        
+    },
+
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 1,3동</div>',
+
+        latlng: new kakao.maps.LatLng(37.3774530380526, 126.6518907521165),
+ 
+        
+    },
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 2동</div>',
+
+        latlng: new kakao.maps.LatLng(37.40308318444747, 126.64156215092412),
+     
+        
+    },
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 4동</div>',
+
+        latlng: new kakao.maps.LatLng(37.38916732495429, 126.61723719700473),
+     
+        
+    },
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도5동</div>',
+
+        latlng: new kakao.maps.LatLng(37.42218605770103, 126.6161654160096),
+     
+        
+    },
+
+
+    ];
 
 
 
@@ -1819,6 +1877,32 @@ for (var i = 0; i < infow.length; i ++) {
    
 
 
+function elasticityWindowON () {
 
+    for (var i = 0; i < infow.length; i ++) {
+        // 커스텀 오버레이를 생성합니다
+        var infowindow = new kakao.maps.elastin_inforwindow({
+            position: elastin_inforwindow[i].latlng,
+            map: map,
+            content: elastin_inforwindow[i].Content ,
+            removable : true
+        
+            
+        });
+        
+         infowindow.open(map); 
+    
+    
+          // 이동할 위도 경도 위치를 생성합니다 
+          var moveLatLon = new kakao.maps.LatLng(37.400090833261295, 126.65332203353034);
+        
+        // 지도 중심을 이동 시킵니다
+        map.setCenter(moveLatLon);
+        //
+        map.setLevel(7);
+        //
+        }
+    
+    }
 
 
