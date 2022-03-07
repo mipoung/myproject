@@ -1741,7 +1741,7 @@ polyline.setMap(map);
 
 
 //// 탄력구간 인포윈도우 배열
-var elastin_inforwindow = [
+var elastin = [
     {
         Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">한나루로, 금지시간 7:00~9:00, 18:00~20:00</div>',
 
@@ -1874,7 +1874,14 @@ for (var i = 0; i < infow.length; i ++) {
 
 
 
-
+   function elasticityONON() {
+    if (!confirm("탄력구간 허용, 금지시간을 지도에 함께 표시할까요?\n\n확인 : 탄력구간 허용, 금지시간 함께 표시\n취소 : 탄력구간 선만 표시")) {
+        elasticityON();
+    } else {
+        // 확인 누르면
+        elasticityON(); elasticityinfo(); 
+    }
+}
 
    //// 탄력구간 인포윈도우 생성
 
@@ -1883,9 +1890,9 @@ function elasticityinfo () {
     for (var i = 0; i < infow.length; i ++) {
         // 커스텀 오버레이를 생성합니다
         var infowindow = new kakao.maps.InfoWindow({
-            position: elastin_inforwindow[i].latlng,
+            position: elastin[i].latlng,
             map: map,
-            content: elastin_inforwindow[i].Content ,
+            content: elastin[i].Content ,
             removable : true
         
             
