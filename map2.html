@@ -20,12 +20,12 @@
 
 
      <script>
-        function elasticityWindow() {
+        function elasticityONON() {
             if (!confirm("탄력구간 허용, 금지시간을 지도에 함께 표시할까요?\n\n확인 : 탄력구간 허용, 금지시간 함께 표시\n취소 : 탄력구간 선만 표시")) {
                 elasticityON();
             } else {
                 // 확인 누르면
-                infowindowON(); elasticityON();
+                elasticityinfo(); elasticityON();
             }
         }
     </script>
@@ -71,7 +71,7 @@
              <div style="display: inline-grid; float: left;">
                 <button id="new_button" type="button" style="width: 100px; background-color: #ffc900; margin-bottom: 3px;" onclick="childON()">어린이보호구역</button>
                
-                <button id="new_button" type="button" style="width: 70px; background-color: #ffc900; margin-bottom: 3px;" onclick="elon()">탄력구간</button>
+                <button id="new_button" type="button" style="width: 70px; background-color: #ffc900; margin-bottom: 3px;" onclick="elasticityONON()">탄력구간</button>
            
                 
                 <button id="new_button" type="button" style="width: 70px;" onclick="infowindowON()">구역이름</button>

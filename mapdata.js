@@ -1877,7 +1877,7 @@ for (var i = 0; i < infow.length; i ++) {
    //////////
 
 
-function elon () {
+function elasticityinfo () {
 
     for (var i = 0; i < infow.length; i ++) {
         // 커스텀 오버레이를 생성합니다
