@@ -1881,7 +1881,7 @@ function elasticityWindowON () {
 
     for (var i = 0; i < infow.length; i ++) {
         // 커스텀 오버레이를 생성합니다
-        var infowindow = new kakao.maps.elastin_inforwindow({
+        var infowindow = new kakao.maps.infowindow({
             position: elastin_inforwindow[i].latlng,
             map: map,
             content: elastin_inforwindow[i].Content ,
