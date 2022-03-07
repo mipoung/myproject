@@ -1743,7 +1743,7 @@ polyline.setMap(map);
 //// 탄력구간 인포윈도우 배열
 var elastin = [
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">한나루로, 금지시간 7:00~9:00, 18:00~20:00</div>',
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">한나루로<br>금지시간 7:00~9:00, 18:00~20:00</div>',
 
         latlng: new kakao.maps.LatLng(37.42223581281587, 126.64732282615483),
         
@@ -1759,7 +1759,7 @@ var elastin = [
     },
 
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">능허대로, 허용시간: 6:00~22:00(휴일)</div>',
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">능허대로<br> 허용시간: 6:00~22:00(휴일)</div>',
 
         latlng: new kakao.maps.LatLng(37.40068059558239, 126.66569750493778),
         
@@ -1767,7 +1767,7 @@ var elastin = [
     },
 
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">앵고개로 264번길, 금지시간: 6:00~9:00, 18:00~20:00 (평일)</div>',
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">앵고개로 264번길<br> 금지시간: 6:00~9:00, 18:00~20:00 (평일)</div>',
 
         latlng: new kakao.maps.LatLng(37.407164075044165, 126.67237224823661),
         
