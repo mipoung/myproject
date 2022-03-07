@@ -1600,7 +1600,31 @@ var elasticity = [
     },
 
 
+    // 청학근린공원 옆
+      
+        {
+            path: [new kakao.maps.LatLng(37.41570703437768, 126.67612492409596), new kakao.maps.LatLng(37.41523772252748, 126.67583889290418)], 
+    
+            color: 'blue'
+    
+        },
+        {
+            path: [new kakao.maps.LatLng(37.415621887539544, 126.67628908586406), new kakao.maps.LatLng(37.41528351579264, 126.67610980350095), new kakao.maps.LatLng(37.41452047866529, 126.67549745445031)], 
+    
+            color: 'blue'
+    
+        },
 
+
+        //롯데마트 앞
+        //금지시간: 7:00~12:00, 14:00~20:00
+        {
+            path: [new kakao.maps.LatLng(37.41754950771325, 126.67119171412823), new kakao.maps.LatLng(37.41723760580317, 126.6724356879856), new kakao.maps.LatLng(37.41703150094169, 126.67284325697425), new kakao.maps.LatLng(37.415414214486205, 126.67448823826531)], 
+    
+            color: 'blue'
+    
+        },
+        
 ];
 
 
