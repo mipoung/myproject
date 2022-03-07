@@ -1740,52 +1740,48 @@ polyline.setMap(map);
 ///////////////////////////
 
 
-
+//// 탄력구간 인포윈도우 배열
 var elastin_inforwindow = [
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">연수,청학,선학</div>',
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">한나루로, 금지시간 7:00~9:00, 18:00~20:00</div>',
 
-        latlng: new kakao.maps.LatLng(37.42974988093744, 126.68805197322187),
+        latlng: new kakao.maps.LatLng(37.42223581281587, 126.64732282615483),
         
         
     },
 
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">동춘,옥련</div>',
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도시장</div>',
 
-        latlng: new kakao.maps.LatLng(37.413002704796696, 126.65651573003171),
-     
+        latlng: new kakao.maps.LatLng(37.42551514341654, 126.65637949328936),
+        
         
     },
 
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 1,3동</div>',
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">능허대로, 허용시간: 6:00~22:00(휴일)</div>',
 
-        latlng: new kakao.maps.LatLng(37.3774530380526, 126.6518907521165),
- 
+        latlng: new kakao.maps.LatLng(37.40068059558239, 126.66569750493778),
+        
         
     },
+
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 2동</div>',
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">앵고개로 264번길, 금지시간: 6:00~9:00, 18:00~20:00 (평일)</div>',
 
-        latlng: new kakao.maps.LatLng(37.40308318444747, 126.64156215092412),
-     
+        latlng: new kakao.maps.LatLng(37.407164075044165, 126.67237224823661),
+        
         
     },
+/*
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도 4동</div>',
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">내용</div>',
 
-        latlng: new kakao.maps.LatLng(37.38916732495429, 126.61723719700473),
-     
+        latlng: new kakao.maps.LatLng(),
+        
         
     },
-    {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px;">송도5동</div>',
-
-        latlng: new kakao.maps.LatLng(37.42218605770103, 126.6161654160096),
-     
-        
-    },
+*/
 
 
     ];
@@ -1876,6 +1872,11 @@ for (var i = 0; i < infow.length; i ++) {
 }
    //////////
 
+
+
+
+
+   //// 탄력구간 인포윈도우 생성
 
 function elasticityinfo () {
 
