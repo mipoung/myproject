@@ -1767,10 +1767,111 @@ var elastin = [
     {
         Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">허용시간(공휴일)<br>6:00~22:00</div>',
 
-        latlng: new kakao.maps.LatLng(),
+        latlng: new kakao.maps.LatLng(37.40074072429954, 126.66625064277306),
         
         
     },
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~16:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.425777945326836, 126.66080135588876),
+        
+        
+    },
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00, 18:00~20:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.41878427841361, 126.66971209778787),
+        
+        
+    },
+//3
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00, 18:00~20:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.42011576495727, 126.67222545629922),
+        
+        
+    },
+
+
+    //4
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00, 18:00~20:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.419494224059235, 126.67554942346463),
+        
+        
+    },
+
+
+    //5-1
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00, 18:00~20:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.41526411079681, 126.67725079942623),
+        
+        
+    },
+
+    //5-2
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00, 18:00~20:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.41682770796683, 126.67902892060202),
+        
+        
+    },
+
+    //5-3
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00, 18:00~20:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.41434536337322, 126.67735640586535),
+        
+        
+    },
+
+    //6-1
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00, 18:00~20:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.418645539846494, 126.68154032016498),
+        
+        
+    },
+
+    //6-2
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">승용차에 한하여 허용(평일)<br>9:00~22:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.42006931076084, 126.68327965986722),
+        
+        
+    },
+
+    //6-3
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">허용시간(주말,공휴일)<br>6:00~22:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.4222000886187, 126.68492007761894),
+        
+        
+    },
+
+
+    // 7-2
+    {
+        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00~18:00~20:00</div>',
+
+        latlng: new kakao.maps.LatLng(37.42602167954837, 126.69925224723602),
+        
+        
+    },
+
+
+   
+
 
 /*
     {
