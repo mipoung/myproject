@@ -1350,7 +1350,7 @@ var infow = [
     
 
 
-function infowindowON () {
+function infowindowON2 () {
 
 for (var i = 0; i < infow.length; i ++) {
     // 커스텀 오버레이를 생성합니다
@@ -1390,7 +1390,7 @@ var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerS
  
 
 
-function elasticityinfo () {
+function elasticityON() {
 
   
 for (var i = 0; i < positions.length; i ++) {
@@ -1426,11 +1426,3 @@ for (var i = 0; i < positions.length; i ++) {
 
 
 
-    function elasticityONON() {
-        if (!confirm("탄력구간 허용, 금지시간을 지도에 함께 표시할까요?\n취소를 클릭하면 탄력구간 선만 표시합니다.\n\n확인 : 탄력구간 허용, 금지시간 함께 표시\n취소 : 탄력구간 선만 표시")) {
-            elasticityON();
-        } else {
-            // 확인 누르면
-            elasticityON(); elasticityinfo(); 
-        }
-    }
