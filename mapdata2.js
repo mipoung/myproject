@@ -1144,151 +1144,150 @@ polyline.setMap(map);
 ///////////////////////////
 
 
-
-var positions2 = [
+// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
+var positions = [
 
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.42751182169871, 126.65747757132587),
         
         
     },
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.422244001708286, 126.64780291881473),
         
         
     },
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>6:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>6:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.4068340335853, 126.6719501268478),
         
         
     },
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">허용시간(공휴일)<br>6:00~22:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">허용시간(공휴일)<br>6:00~22:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.40074072429954, 126.66625064277306),
         
         
     },
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~16:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~16:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.425777945326836, 126.66080135588876),
         
         
     },
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.41878427841361, 126.66971209778787),
         
         
     },
-//3
+    //3
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.42011576495727, 126.67222545629922),
         
         
     },
-
-
+    
+    
     //4
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.419494224059235, 126.67554942346463),
         
         
     },
-
-
+    
+    
     //5-1
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.41526411079681, 126.67725079942623),
         
         
     },
-
+    
     //5-2
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.41682770796683, 126.67902892060202),
         
         
     },
-
+    
     //5-3
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.41434536337322, 126.67735640586535),
         
         
     },
-
+    
     //6-1
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.418645539846494, 126.68154032016498),
         
         
     },
-
+    
     //6-2
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">승용차에 한하여 허용(평일)<br>9:00~22:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">승용차에 한하여 허용(평일)<br>9:00~22:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.42006931076084, 126.68327965986722),
         
         
     },
-
+    
     //6-3
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">허용시간(주말,공휴일)<br>6:00~22:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">허용시간(주말,공휴일)<br>6:00~22:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.4222000886187, 126.68492007761894),
         
         
     },
-
-
+    
+    
     // 7-2
     {
-        Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
-
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
+    
         latlng: new kakao.maps.LatLng(37.42602167954837, 126.69925224723602),
         
         
     },
-
-   /// 원도심 끝, 송도동 시작
-
-
-/*
+    
+    /// 원도심 끝, 송도동 시작
+    
+    
+    /*
     {
         Content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">내용</div>',
-
+    
         latlng: new kakao.maps.LatLng(),
         
         
     },
-*/
-
-
+    */
+    
+    
     ];
-
 
 
 
@@ -1394,44 +1393,34 @@ var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerS
 function elasticityinfo () {
 
   
-
 for (var i = 0; i < positions.length; i ++) {
-
-    // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(24, 35); 
-    
-    // 마커 이미지를 생성합니다    
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-    
-
-
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
-        position: positions2[i].latlng, // 마커의 위치
-        image : markerImage // 마커 이미지 
+        position: positions[i].latlng // 마커의 위치
     });
 
     // 마커에 표시할 인포윈도우를 생성합니다 
     var infowindow = new kakao.maps.InfoWindow({
-        content: positions2[i].Content, // 인포윈도우에 표시할 내용
+        content: positions[i].content, // 인포윈도우에 표시할 내용
         removable : true
     });
 
-    
-infowindow.open(map, marker);
+    // 마커에 이벤트를 등록하는 함수 만들고 즉시 호출하여 클로저를 만듭니다
+    // 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+    (function(marker, infowindow) {
+        // 마커에 mouseover 이벤트를 등록하고 마우스 오버 시 인포윈도우를 표시합니다 
+        kakao.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map, marker);
+        });
 
-          // 이동할 위도 경도 위치를 생성합니다 
-          var moveLatLon = new kakao.maps.LatLng(37.400090833261295, 126.65332203353034);
-        
-        // 지도 중심을 이동 시킵니다
-        map.setCenter(moveLatLon);
-        //
-        map.setLevel(7);
-        //
-        }
-    
-    }
+        // 마커에 mouseout 이벤트를 등록하고 마우스 아웃 시 인포윈도우를 닫습니다
+        kakao.maps.event.addListener(map, 'click', function() {
+            infowindow.close();
+        });
+    })(marker, infowindow);
+}
+}
 
 
 
