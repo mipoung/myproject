@@ -1062,14 +1062,6 @@ var data = [
 //var area_line = []
 
 
-function elasticityWindow() {
-    if (!confirm("탄력구간 허용, 금지시간을 지도에 함께 표시할까요?\n\n확인 : 탄력구간 허용, 금지시간 함께 표시\n취소 : 탄력구간 선만 표시")) {
-        elasticityON();
-    } else {
-        // 확인 누르면
-        elasticityWindowON(); elasticityON();
-    }
-}
 
 
 function childON() {
@@ -1112,6 +1104,18 @@ for(var i=0; i<area_line.length; i++) {
         strokeStyle: 'solid' // 선의 스타일입니다
     });
     
+    }
+
+
+
+
+    function elasticityONON() {
+        if (!confirm("탄력구간 허용, 금지시간을 지도에 함께 표시할까요?\n취소를 클릭하면 탄력구간 선만 표시합니다.\n\n확인 : 탄력구간 허용, 금지시간 함께 표시\n취소 : 탄력구간 선만 표시")) {
+            elasticityON();
+        } else {
+            // 확인 누르면
+            elasticityON(); elasticityinfo(); 
+        }
     }
 
 
@@ -1386,14 +1390,6 @@ for (var i = 0; i < infow.length; i ++) {
 
 
 
-   function elasticityONON() {
-    if (!confirm("탄력구간 허용, 금지시간을 지도에 함께 표시할까요?\n취소를 클릭하면 탄력구간 선만 표시합니다.\n\n확인 : 탄력구간 허용, 금지시간 함께 표시\n취소 : 탄력구간 선만 표시")) {
-        elasticityON();
-    } else {
-        // 확인 누르면
-        elasticityON(); elasticityinfo(); 
-    }
-}
 
    //// 탄력구간 인포윈도우 생성
 
