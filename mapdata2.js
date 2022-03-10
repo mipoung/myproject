@@ -1390,7 +1390,7 @@ var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerS
  
 
 
-function elasticityON() {
+function elasticityON2() {
 
   
 for (var i = 0; i < positions.length; i ++) {
