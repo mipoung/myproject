@@ -1938,7 +1938,7 @@ var infow = [
     
     
 
-function infowindowON2 () {
+function infowindowON () {
 
     for (var i = 0; i < infow.length; i ++) {
         // 커스텀 오버레이를 생성합니다
