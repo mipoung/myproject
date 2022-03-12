@@ -267,6 +267,11 @@ section {
 .label .right {background: url("https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
 
 
+#map {
+    position: fixed;
+    right: 3px;
+}
+
 .button_pc {
     display: inline-grid;
      float: left;
@@ -277,8 +282,10 @@ section {
 @media (min-width: 800px) {
     .button_pc {
        display: inline;
-        float: right;
         padding-right: 50px;
+        position: fixed;
+        z-index: 1;
+        right: 200px;
 
     }
 
