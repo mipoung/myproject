@@ -5,10 +5,10 @@
 
     <!--제이쿼리-->
     <script src="jquery-3.5.1.min.js"></script>
-    <script type="text/javascript"> 
-       
-       
-    </script> 
+    
+
+
+   
 
 
     <!--스타일시트 불러오기-->
@@ -103,8 +103,27 @@
         
 <div>
 <div id="map" style="width:100%;height:90vh;z-index: 0;"></div>
-<!--지도 관련 스크립트 호출-->
+<script type="text/javascript">
+//window.outerWidth
+//screen.width
+    if(window.outerWidth>=800){
+    
+        document.write('<scr' + 'ipt type=\"text/javascript\" src=\"mapdataPC.js\"></scr' + 'ipt>');
+    
+    }else{
+
+        document.write('<scr' + 'ipt type=\"text/javascript\" src=\"mapdata.js\"></scr' + 'ipt>');
+    }
+
+           
+    
+    
+    
+    
+    </script> 
+<!--지도 관련 스크립트 호출
 <script src="mapdata.js"></script>
+-->
 </div>
 
 </section>
