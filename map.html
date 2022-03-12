@@ -51,6 +51,7 @@
     
 <section>
         
+
     <div id="search" style="z-index: 1;">
         <form id="form_map" onsubmit="searchPlaces(); return false;" style="padding-top: 1px;text-align: right;">
             <input type="text" value="" id="keyword" width="50%" style="width: 100vw;border-color: gray;height: 23px;margin-bottom: 3px;">
@@ -62,9 +63,33 @@
              </button> <button id="seach_button" type="submit">검색</button>
              </div>
 
-             <div>
+            
+<!--
+             <div id="search" style="position: fixed;z-index: 1;;">
+                <form id="form_map" onsubmit="searchPlaces(); return false;" style="padding-top: 1px;text-align: right;">
+                    <input type="text" value="" id="keyword" width="50%" style="width: 100vw;border-color: gray;height: 23px;margin-bottom: 3px;">
+                    <button id="new_button" type="button";><a href="./map.html">새로고침</a></button>
+                    
+                     </button> <button id="seach_button" type="submit">검색</button>
 
-             <div style="display: inline-grid; float: left;">
+
+
+-->
+
+
+                <div style="position: fixed;z-index: 1;">
+
+             <div class="button_pc">
+                <button id="new_button" type="button" style="width: 100px; background-color: #ffc900; margin-bottom: 3px;" onclick="childON()">어린이보호구역</button>
+               
+                <button id="new_button" type="button" style="width: 70px; background-color: #a4cfff; margin-bottom: 3px;" onclick="elasticityON(); elasticityON2(); alert('탄력구간은 현재 원도심만 표시되고 있습니다.\n탄력구간 금지 및 허용 시간은 노란색 별표를 클릭하면 표시됩니다.');">탄력구간</button>
+                        
+                <button id="new_button" type="button" style="width: 70px;" onclick="infowindowON()">구역이름</button>
+   
+               </div>
+        
+        </div>
+             <div class="button_pc">
                 <button id="new_button" type="button" style="width: 100px; background-color: #ffc900; margin-bottom: 3px;" onclick="childON()">어린이보호구역</button>
                
                 <button id="new_button" type="button" style="width: 70px; background-color: #a4cfff; margin-bottom: 3px;" onclick="elasticityON(); elasticityON2(); alert('탄력구간은 현재 원도심만 표시되고 있습니다.\n탄력구간 금지 및 허용 시간은 노란색 별표를 클릭하면 표시됩니다.');">탄력구간</button>
