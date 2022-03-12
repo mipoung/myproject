@@ -10,15 +10,18 @@
 
             <script type="text/javascript">
 
-            if(screen.width>=800){
-            
-            document.write("<script src='mapdataPC.js'></script>");
-            
-            } else {
-            
-            document.write("<script src='mapdata.js'></script>");
-            
-            }
+                $(window).resize(function(){ 
+                //리사이즈시 실행할 코드 
+                var width_size = window.outerWidth;
+
+                    // 800 이상인지 if문으로 확인
+                    if (width_size >= 800) {
+                        document.write('<script type=\"text/javascript\" src=\"mapdataPC.js\"><\/script>');
+                    }
+                    else{
+                        document.write('<script type=\"text/javascript\" src=\"mapdata.js\"><\/script>');
+                    }
+                });
             
             </script> 
 
