@@ -3,6 +3,10 @@ if(pwd == 5521) {
    
 } 
 
+else if(pwd === '') {
+    window.location.href="music.html";
+}
+
 
 else {
     alert('비밀번호를 확인해주세요')
