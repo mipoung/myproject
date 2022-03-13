@@ -1754,8 +1754,9 @@ var positions = [
         
         
     },
+    //나사렛
     {
-        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>6:00~9:00<br>18:00~20:00</div>',
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
     
         latlng: new kakao.maps.LatLng(37.4068340335853, 126.6719501268478),
         
@@ -1938,35 +1939,33 @@ var infow = [
     
     
 
-function infowindowON () {
+    function infowindowON () {
 
-    for (var i = 0; i < infow.length; i ++) {
-        // 커스텀 오버레이를 생성합니다
-        var infowindow = new kakao.maps.InfoWindow({
-            position: infow[i].latlng,
-            map: map,
-            content: infow[i].Content ,
-            removable : true
-        
+        for (var i = 0; i < infow.length; i ++) {
+            // 커스텀 오버레이를 생성합니다
+            var infowindow = new kakao.maps.InfoWindow({
+                position: infow[i].latlng,
+                map: map,
+                content: infow[i].Content ,
+                removable : true
             
-        });
+                
+            });
+            
+             infowindow.open(map); 
         
-         infowindow.open(map); 
-    
-    
-          // 이동할 위도 경도 위치를 생성합니다 
-          var moveLatLon = new kakao.maps.LatLng(37.400090833261295, 126.65332203353034);
         
-        // 지도 중심을 이동 시킵니다
-        map.setCenter(moveLatLon);
-        //
-        map.setLevel(7);
-        //
+              // 이동할 위도 경도 위치를 생성합니다 
+              var moveLatLon = new kakao.maps.LatLng(37.400090833261295, 126.65332203353034);
+            
+            // 지도 중심을 이동 시킵니다
+            map.setCenter(moveLatLon);
+            //
+            map.setLevel(7);
+            //
+            }
+        
         }
-    
-    }
-       //////////
-    
     
     
     

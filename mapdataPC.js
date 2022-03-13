@@ -1755,8 +1755,9 @@ var positions = [
         
         
     },
+    //나사렛
     {
-        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>6:00~9:00<br>18:00~20:00</div>',
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
     
         latlng: new kakao.maps.LatLng(37.4068340335853, 126.6719501268478),
         
