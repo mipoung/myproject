@@ -8,10 +8,11 @@
     
 
 <script>
-    function moveto(){
-    $("#map").attr("tabindex", -1).focus();}
+    function moveFocus(next) { if (event.keyCode == 13) {
+        document.getElementById(seach_button).focus();
+    }
+}
 </script>
-   
 
 
     <!--스타일시트 불러오기-->
@@ -56,7 +57,7 @@
         <!--$('#from_map').blur();-->
 
     <div id="search" style="z-index: 1;">
-        <form id="form_map" onsubmit="searchPlaces(); moveto(); return false;" style="padding-top: 1px;text-align: right;">
+        <form id="form_map" onsubmit="searchPlaces(); onkeydown=moveFocus(next); return false;" style="padding-top: 1px;text-align: right;">
             <input type="text" value="" id="keyword" width="50%" style="width: 100vw;border-color: gray;height: 23px;margin-bottom: 3px;">
           
  
@@ -115,7 +116,7 @@
     
     }else{
 
-        document.write('<scr' + 'ipt type=\"text/javascript\" src=\"mapdata.js\"></scr' + 'ipt>');
+        document.write('<scr' + 'ipt type=\"text/javascript\" src=\"mapdata2.js\"></scr' + 'ipt>');
     }
 
            
