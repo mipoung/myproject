@@ -16,7 +16,15 @@
         window.location.href="music2.html";
       }, 355000);
 
+     
+    function sks() {
+     document.getElementById('quf').style.color = "gray";
+     document.getElementById('quff').style.color = "black";
+    }
+
     </script>
+
+   
 
     <title>연주단</title>
 </head>
@@ -45,7 +53,10 @@
 <section style="height: 100vh; background-color: black;">
     <iframe width="100%" height="300" src="https://www.youtube.com/embed/WlcsLKRqy1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    <P style="font-family:'Gugi', cursive; color: gray; padding: 10px;">네덜란드산 초록맥주병
+  <div style="text-align: center;">
+    <a id="quff" style="color: aliceblue;" onClick=sks()>가사</a>
+</div>
+    <P id="quf" style="color: black; font-family:'Gugi', cursive; padding: 10px;">네덜란드산 초록맥주병
         오늘 밤도 난 또 길을 잃었지
         넌 언제나 말했었지
         유모차를 끌고 싶어
