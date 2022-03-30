@@ -1624,6 +1624,20 @@ var elasticity = [
             color: 'blue'
     
         },
+
+        //연수cgv옆, 푸르지오 4단지 입구
+        {
+            path: [new kakao.maps.LatLng(37.41737136601588, 126.67684073180912), new kakao.maps.LatLng(37.416960744880214, 126.6765996231621),new kakao.maps.LatLng(37.41665846021373, 126.6764371255563),new kakao.maps.LatLng(37.4164284180509, 126.67633362407616), new kakao.maps.LatLng(37.41623009654573, 126.67629776451878), new kakao.maps.LatLng(37.41604731831205, 126.67617994021826)], 
+    
+            color: 'blue'
+    
+        },
+        {
+            path: [new kakao.maps.LatLng(37.417272672291595, 126.67699365813057), new kakao.maps.LatLng(37.41699734882471, 126.67680562547721), new kakao.maps.LatLng(37.41660706973069, 126.6765898475475), new kakao.maps.LatLng(37.41593521084708, 126.67636963527593)], 
+    
+            color: 'blue'
+    
+        },
         
 ];
 
@@ -1634,7 +1648,7 @@ var elasticity = [
     {
         path: [new kakao.maps.LatLng(), new kakao.maps.LatLng()], 
 
-        color: 'orange'
+        color: 'blue'
 
     },
     
@@ -1863,6 +1877,15 @@ var positions = [
         content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~9:00<br>18:00~20:00</div>',
     
         latlng: new kakao.maps.LatLng(37.42602167954837, 126.69925224723602),
+        
+        
+    },
+
+    //연수푸르지오4단지 입구
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간<br>7:00~9:00<br>18:00~20:00</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41698329316645, 126.67660799852219),
         
         
     },
