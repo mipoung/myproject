@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!--스타일시트 불러오기-->
+    <link href="style.css" rel="stylesheet">
+
+
+     <!--지도 라이브러리 불러오기(함수 선언 오류 뜨는건 라이브러리를 안불러왔거나 두개 불러와서 그런거였음)-->
+     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3&libraries=services,clusterer,drawing"></script>
+
+    <script src="security_debate.js"> </script>
+    <script>
+        
+        var outside = document.referrer;
+                console.log(outside);
+
+                if(outside == "https://mipoung.github.io/myproject/") {
+                    alert("정상 접근입니다.");
+                    
+                }
+                else if (outside == "https://mipoung.github.io/myproject/index_test.html") {
+                    alert("정상 접근입니다.");
+                    
+  
+                } else {
+                    alert("잘못된 접근입니다.")
+                    window.location.href="index_test.html"
+                }
+
+
+
+    </script>
+  
+
+    <title>연주단</title>
+</head>
+<body>
+    <div class="top_menu" style="width: 100%; height: 40px; background: #3e4bac;">
+        <div class="top_menu_1">
+            <div id = "main_menu">
+                <a href="./index.html" style="font-family: 'Gugi', cursive;">메뉴</a>
+                
+            </div>
+        </div>    
+
+        <div class="top_menu_2">
+            <a href="./index.html" style="font-family: 'Gugi', cursive;">연주단</a>
+        </div>
+
+        <div class="top_menu_3">
+    
+        </div>
+    </div>
+
+
+    <div class="top_menu_bottom">
+        <P>회의 기록</P>
+    </div>
+    
+    
+<section>
+    <div class="history_div">
+        <p>회의 기록을 보시려면 아래 "회의기록 폴더 접속" 버튼을 클릭해 접속한 다음, PDF파일을 열람하시면 됩니다.</p>
+        <a href="https://drive.google.com/drive/folders/1ML7fzdcI2p86AnRJtuxCQ8DrhGu10PSO" target="_blank">회의기록 폴더 접속</a>   
+        
+
+    </div>
+   
+
+</section>
+
+   
+</body>
+</html>

@@ -8,24 +8,7 @@
 
     <!-- 보안 스크립트 불러오기 -->
     <script src="security_test.js"> </script>
-    <script>
-        var outside = document.referrer;
-                console.log(outside);
-
-                if(outside == "https://mipoung.github.io/myproject/") {
-                    alert("정상 접근입니다.");
-                    window.location.href="index_test.html";
-                }
-                else if (outside == "https://mipoung.github.io/myproject/index_test.html") {
-                    alert("정상 접근입니다.");
-                    window.location.href="index_test.html";
-  
-                } else {
-                    alert("잘못된 접근입니다.")
-                    window.location.href="map.html"
-                }
-
-</script>
+   
 
     <title>연주단</title>
 </head>
