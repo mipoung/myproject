@@ -143,9 +143,6 @@
 
 // 비밀번호 입력
 
-var outside = document.referrer;
-console(outside);
-
 
     var pwd = SHA256(prompt('인증하세요'));
 
