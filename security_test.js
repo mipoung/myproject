@@ -141,24 +141,46 @@
  
  
 
+ ////// 패스워드 적용 //////
+ 
+
+function pass_debate() {
+var key = document.getElementById('pw').value;
+var encrypt = SHA256(key);
 
 
-    var ad = SHA256(prompt('인증하세요'));
-
-
-if( ad === "13b667faa591063701bea7f63cc1c601c7a693eb6c9bff6ea8b9a98aa17def3b" ) {
+if( encrypt === "13b667faa591063701bea7f63cc1c601c7a693eb6c9bff6ea8b9a98aa17def3b" ) {
     alert("연주단 회원님 환영합니다.");
-    window.location.href="security_debate_test.html";
+    window.location.href="information_debate.html";
    
   } else{
     alert("비밀번호가 틀렸습니다.");
-    window.location.href="https://daum.net";
+    var pwremove = document.getElementById('pw');
+    pwremove.value = null;    
   }
 
 
+}
 
 
 
+function pass_ver() {
+    var key = document.getElementById('pw').value;
+    var encrypt = SHA256(key);
+
+    
+    if( encrypt === "7a2f9771b7d035fdd992cc8b4eec8fcc273235e187a6de2980fa2ae52dbc6d33" ) {
+        alert("개발자님 환영합니다.");
+        window.location.href="ver.html";
+       
+      } else{
+        alert("비밀번호가 틀렸습니다.");
+        var pwremove = document.getElementById('pw');
+        pwremove.value = null;    
+      }
+    
+    
+    }
 
 
 
