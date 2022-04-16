@@ -143,24 +143,24 @@
 
 // 비밀번호 입력
 
+var outside = document.referrer;
+console(outside);
+
 
     var pwd = SHA256(prompt('인증하세요'));
 
 
-if( pwd === "7a2f9771b7d035fdd992cc8b4eec8fcc273235e187a6de2980fa2ae52dbc6d33" ) {
-    alert("연주단 개발자님 환영합니다.");
+if( pwd === "13b667faa591063701bea7f63cc1c601c7a693eb6c9bff6ea8b9a98aa17def3b" ) {
+    alert("연주단 회원님 환영합니다.");
    
    
-  }
-  
-  else{
+  } else{
     alert("비밀번호가 틀렸습니다.");
     window.location.href="index.html";
-
   }
 
 
-  
+
 
 
 
