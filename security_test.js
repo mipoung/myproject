@@ -151,7 +151,7 @@ var encrypt = SHA256(key);
 
 if( encrypt === "13b667faa591063701bea7f63cc1c601c7a693eb6c9bff6ea8b9a98aa17def3b" ) {
     alert("연주단 회원님 환영합니다.");
-    window.location.href="information_debate.html";
+    window.location.href="information_debate_test.html";
    
   } else{
     alert("비밀번호가 틀렸습니다.");
