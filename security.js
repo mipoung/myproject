@@ -175,7 +175,7 @@ function pass_2() {
        
       } else if(encrypt === "13b667faa591063701bea7f63cc1c601c7a693eb6c9bff6ea8b9a98aa17def3b") {
         alert("진정한 후렌치 후라이의 시대는 갔는가?")
-        window.location.href="music.html"
+        var _0xd930=["\x68\x72\x65\x66","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x6D\x75\x73\x69\x63\x2E\x68\x74\x6D\x6C"];window[_0xd930[1]][_0xd930[0]]= _0xd930[2]
       }
       
       
