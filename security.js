@@ -154,7 +154,7 @@ if( encrypt === "13b667faa591063701bea7f63cc1c601c7a693eb6c9bff6ea8b9a98aa17def3
     window.location.href="information_debate.html";
    
   } else{
-    alert("비밀번호가 틀렸습니다.");
+    alert("인증에 실패하였습니다.");
     var pwremove = document.getElementById('pw');
     pwremove.value = null;    
   }
@@ -174,7 +174,7 @@ function pass_ver() {
         window.location.href="ver.html";
        
       } else{
-        alert("비밀번호가 틀렸습니다.");
+        alert("인증에 실패하였습니다.");
         var pwremove = document.getElementById('pw');
         pwremove.value = null;    
       }
