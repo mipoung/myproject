@@ -173,11 +173,17 @@ function pass_ver() {
         alert("개발자님 환영합니다.");
         window.location.href="ver.html";
        
-      } else{
+      } else if(encrypt === "13b667faa591063701bea7f63cc1c601c7a693eb6c9bff6ea8b9a98aa17def3b") {
+        alert("진정한 후렌치 후라이의 시대는 갔는가?")
+        window.location.href="music.html"
+      }
+      
+      
+      else{
         alert("인증에 실패하였습니다.");
         var pwremove = document.getElementById('pw');
         pwremove.value = null;    
-      }
+      } 
     
     
     }
