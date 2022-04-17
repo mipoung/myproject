@@ -5,12 +5,32 @@
     
     <!--스타일시트 불러오기-->
     <link href="style.css" rel="stylesheet">
-
+   
 
      <!--지도 라이브러리 불러오기(함수 선언 오류 뜨는건 라이브러리를 안불러왔거나 두개 불러와서 그런거였음)-->
      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3&libraries=services,clusterer,drawing"></script>
 
-    <script src="security_ver.js"></script>
+     <script>
+        
+        var outside = document.referrer;
+                console.log(outside);
+
+                if(outside == "https://mipoung.github.io/myproject/security_ver.html") {
+                    
+                    
+                }
+                else if (outside == "https://mipoung.github.io/myproject/") {
+                    
+                    
+  
+                } else {
+                    alert("잘못된 접근입니다.")
+                    window.location.href="index.html"
+                }
+
+
+
+    </script>
 
     <title>연주단</title>
 </head>
@@ -52,6 +72,8 @@
             <h3>2022.</h3> 
             <p>- </p>
         -->
+        <h3>2022.4.16</h3> 
+            <p>- SHA256 암호화 함수를 이용해 소스코드에 암호가 노출되지 않도록 개선</p>
 
         <h3>2022.3.13</h3> 
         <p>- 업데이트 기록 메뉴에서 프롬포트창에 아무것도 입력 안하면 이스터에그 실행, 실행된 페이지에서 3:55초가 지나면 두번째 이스터에그 실행되도록 설정</p>
