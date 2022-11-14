@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style_test.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>연주단 2.0</title>
-
+    
   </head>
 
 
@@ -14,59 +14,35 @@
     <nav>
       <div class="container-nav">
         <div class="item-nav"><a href="">메뉴</a></div>
-        <div class="item-nav-main"><a href="">연주단 2.0</a></div>
-        <div class="item-nav"><a href="signin_test.html">로그인</a></div>
-        <div class="item-nav-line">main</div>
+        <div class="item-nav-main"><a href="index_test.html">연주단 2.0</a></div>
+        <div class="item-nav"><a href="">로그인</a></div>
+        <div class="item-nav-line">Sign in</div>
       </div>
     </nav>
  
+    
+
+    <div class="div-login">
+      
+        <h2>로그인 하세요</h2>
+       <form>
+        <input type="email" id="signInEmail" placeholder="이메일" required>
+        <input type="password" id="singInPassword" placeholder="비밀번호">
+        <button class="login-button" type="submit" id="signInButton" style="margin-top: 20px; border-radius: 10px;">로그인</button>
 
 
-
-
-    <div class="main-menu">
-      <h3>메뉴</h3>
-      <ul>
-        <li>공지사항</li>
-        <li>지도</li>
-        <li>단속 팁</li>
-        <li>일정</li>
-        <li>잘못된 정보 제보</li>
-      </ul>
+        
+        <label for="remember-check">
+            <input type="checkbox" id="remember-check">아이디 저장하기
+        </label>
+        
+       </form>
     </div>
-
-    <div class="main-menu">
-      <h3>2002.2.13. 근무</h3>
-      <ul>
-        <li>1조 - 미샤, 미하일</li>
-        <li>2조 - 샤샤, 알렉산드라</li>
-        <li>3조 - 다니엘, 레드클리프</li>
-        <li>4조 - 코난, 명탐정</li>
-        <li>5조 - 김도일, 전도일</li>
-        <li>6조 - 슈리웬, 허상관</li>
-        <li>7조 - 마샤, 마리아</li>
-      </ul>
-    </div>
-
-    <div class="main-menu">
-      <h3>오늘 일정</h3>
-      <p>asfasfd</p>
-      <p>asfasfd</p>
-      <p>asfasfd</p>
-      <p>asfasfd</p>
-      <p>asfasfd</p>
-
-    </div>
-
-
 
 
   </body>
 
-
-  <!-- 파이어 베이스 -->
   <script type="module">
-    
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
@@ -89,13 +65,51 @@
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
 
+
   
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
         
         const auth = getAuth();
 
 
-    window.onload=function(){
+        //로그인
+        document.getElementById('signInButton').addEventListener('click', (event) => {
+            event.preventDefault() 
+
+            const signInEmail = document.getElementById('signInEmail').value
+            const singInPassword = document.getElementById('singInPassword').value
+         
+            
+
+            signInWithEmailAndPassword(auth, signInEmail, singInPassword)
+            
+            .then((userCredential) => {
+                // Signed in 
+                console.log(userCredential)
+                const user = userCredential.user;
+                // ...
+              
+                
+                console.log('성공')
+          
+
+
+            })
+            .catch((error) => {
+                console.log('로그인 실패')
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+
+            
+        })
+
+
+    
+
+
+        
+        window.onload=function(){
               const user = auth.currentUser;
 
 if (user !== null) {
@@ -111,11 +125,14 @@ if (user !== null) {
     // 일부 메뉴 접속제한
 
     console.log('로그아웃 상태입니다.')
-    alert('dd')
     }
 
 }
+             
+
   </script>
 
-
+  
+ 
+  
 </html>
