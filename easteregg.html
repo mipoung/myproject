@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <title>연주단 2.0</title>
 
   </head>
@@ -22,27 +21,23 @@
     </nav>
  
 
-  <!-- 
-        <div class="main-menu-div1">asfsafas</div>
-        <div class="main-menu-div2"> 내용 </div>
-         </div>
-      -->
-    <div class="noti">
-       
+
+    <div class="main-menu">
+      <p style="text-align: center;">관리자만 접근 가능한 페이지 입니다.</p>
     </div>
 
+  
+
+    <div class="main-menu">
+     
+
+     <iframe width="90%" height="315" src="https://www.youtube.com/embed/UAHP1VgljnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin: 20px; margin-left: 5%;"></iframe>
+     <p style="text-align: center;">- 1 -</p>
 
 
 
-
-
-
-
-
-
-
-
-    
+    </div>
+   
   </body>
 
   <script type="module">
@@ -71,7 +66,6 @@
 
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
     const auth = getAuth();
-    import { getFirestore, collection, getDocs, addDoc, setDoc, doc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
     
       
@@ -79,7 +73,7 @@
     
     
     //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
-    function longinOk() {
+       function longinOk() {
                 window.onload = onAuthStateChanged(auth, (user) => {
                 if (user) {
                     // User is signed in, see docs for a list of available properties
@@ -92,14 +86,7 @@
                  
                     document.getElementById('buttonchange').innerHTML = '로그아웃';
 
-                  
-                if (uid !== 'NWmrEdzBedXCwJk3IJGBDR0fqBG2') {
-                 
-                  window.location.replace('/easteregg.html');
-                  
-              
-                  
-                }
+         
 
                     // ...
                 } else {
@@ -116,55 +103,8 @@
 
             longinOk();
 
-
             
             
-
-
-
-
-
-
-
-
-
-
-
-            // 쿼리 읽어오고 시간 역순으로 정렬 표시
-            const db = getFirestore(app);
-            const citiesRef = collection(db, "업데이트");
-            const q = query(citiesRef, orderBy("시간", "desc"));
-
-            const querySnapshot = await getDocs(q);
-                  querySnapshot.forEach((doc) => {
-
-               
-
-                      
-                
-  // 결과값만큼 div 생성
-  
-  var 템플릿 = `
-  
-  <div class="main-menu">
- 
-        <div class="main-menu-div1">${doc.data().제목}</div>
-        <div class="main-menu-div2">${doc.data().내용}</div>
-        <div class="main-menu-div3">${doc.data().시간}</div>
-    </div>`
-
-  ;
- 
-  $('.noti').append(템플릿)
-
-
-
-});
-
-
-
-
-
 
 
   </script>

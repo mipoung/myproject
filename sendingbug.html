@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <title>연주단 2.0</title>
 
   </head>
@@ -17,35 +16,50 @@
         <div class="item-nav"><a href="menu.html">메뉴</a></div>
         <div class="item-nav-main"><a href="index.html">연주단 2.0</a></div>
         <div class="item-nav"><a href="signin.html" id="buttonchange">로그인</a></div>
-        <div class="item-nav-line">History</div>
+        <div class="item-nav-line">Sending bug</div>
       </div>
     </nav>
  
 
-  <!-- 
-        <div class="main-menu-div1">asfsafas</div>
-        <div class="main-menu-div2"> 내용 </div>
-         </div>
-      -->
-    <div class="noti">
-       
+
+   
+      <div id="mail">
+
+        <section class="email-me">
+            <h3 class="title-section"></h3>
+            <form class="gform" action="https://script.google.com/macros/s/AKfycbxv3R_voM9rrO0gnTPKIAMBo0eZB6yEgN0KILAoln4l3p8zn1q20CALl65UEwDG4ExacQ/exec" method="POST" data-email="mipoung4035@gmail.com">
+              <fieldset>
+                <div class="box-input" style="margin: 5px;padding-top: 10px;">
+                  <label for="userName">이름</label>
+                  <input type="text" id="userName" name="name" placeholder="이름을 입력해주세요" required="">
+                </div>
+                <div class="box-input" style="margin: 5px;">
+                  <label for="userEmail">메일</label>
+                  <input type="email" id="userEmail" name="email" placeholder="보내는 사람 메일주소" required="">
+                </div>
+                <div class="box-input" style="margin: 5px;">
+                  <label for="userMessage"></label>
+                  <textarea name="message" id="userMessage" placeholder="내용을 입력해주세요" required="" style="width: 99%;height: 200px;"></textarea>
+                </div>
+                <div class="box-input" style="text-align: center;padding-bottom: 10px;">
+                  <button type="submit" class="btn-send" style="width: 95%;height: 30px;">제보 전송하기</button>
+                </div>
+              </fieldset>
+              <div style="display:none; padding-top: 10px; text-align: center;" class="thankyou_message">
+                <!-- You can customize the thankyou message by editing the code below -->
+                <h2><em>관리자에게 전송이 완료되었습니다.</em> 
+                </h2>
+               </div>
+            </form>
+            
+           
     </div>
+    <script data-cfasync="false" type="text/javascript"
+    src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+    </body>
 
 
-
-
-
-
-
-
-
-
-
-
-    
-  </body>
-
-  <script type="module">
+     <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
@@ -71,42 +85,27 @@
 
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
     const auth = getAuth();
-    import { getFirestore, collection, getDocs, addDoc, setDoc, doc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
     
       
     
     
     
-    //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
-    function longinOk() {
+    //로그인 검증
+       function longinOk() {
                 window.onload = onAuthStateChanged(auth, (user) => {
                 if (user) {
                     // User is signed in, see docs for a list of available properties
                     // https://firebase.google.com/docs/reference/js/firebase.User
                    
                     const uid = user.uid;
-
                     console.log(uid);
-                
-                 
                     document.getElementById('buttonchange').innerHTML = '로그아웃';
-
-                  
-                if (uid !== 'NWmrEdzBedXCwJk3IJGBDR0fqBG2') {
-                 
-                  window.location.replace('/easteregg.html');
-                  
-              
-                  
-                }
-
                     // ...
                 } else {
                     // User is signed out
                     // ...
                     
-                    window.location.replace('/signin.html');
                  
                 }
                 });
@@ -117,56 +116,9 @@
             longinOk();
 
 
-            
-            
-
-
-
-
-
-
-
-
-
-
-
-            // 쿼리 읽어오고 시간 역순으로 정렬 표시
-            const db = getFirestore(app);
-            const citiesRef = collection(db, "업데이트");
-            const q = query(citiesRef, orderBy("시간", "desc"));
-
-            const querySnapshot = await getDocs(q);
-                  querySnapshot.forEach((doc) => {
-
-               
-
-                      
-                
-  // 결과값만큼 div 생성
-  
-  var 템플릿 = `
-  
-  <div class="main-menu">
+           
  
-        <div class="main-menu-div1">${doc.data().제목}</div>
-        <div class="main-menu-div2">${doc.data().내용}</div>
-        <div class="main-menu-div3">${doc.data().시간}</div>
-    </div>`
-
-  ;
- 
-  $('.noti').append(템플릿)
-
-
-
-});
-
-
-
-
-
 
 
   </script>
-  
 </html>

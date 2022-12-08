@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>연주단 2.0</title>
+    
+  </head>
+
+
+  <body>
+    
+    <nav>
+      <div class="container-nav">
+        <div class="item-nav"><a href="menu.html">메뉴</a></div>
+        <div class="item-nav-main"><a href="index.html">연주단 2.0</a></div>
+        <div class="item-nav"><a href="signin.html" id="buttonchange">로그인</a></div>
+        <div class="item-nav-line">Sign up</div>
+      </div>
+    </nav>
+ 
+    
+
+    <div class="div-signup">
+      
+        <h2>연주단 회원이 되세요</h2>
+       <form>
+        <input type="email" id="signUpEmail" placeholder="이메일" required>
+        <br>
+        <input type="password" id="singUpPassword" placeholder="비밀번호(6자리 이상 입력)">
+        <input type="password" id="singUpPassword1" placeholder="비밀번호 확인">
+        <button class="login-button" type="submit" id="signUpButton" style="margin-top: 20px; border-radius: 10px;">회원가입</button>
+
+
+        
+   
+        
+       </form>
+    </div>
+
+
+  </body>
+
+  <script type="module">
+
+
+ 
+    
+
+
+
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyA2yycZZFNY4tiDVUbu4v6SHZWQ0rs8e_c",
+      authDomain: "yeonjudan-3b7a0.firebaseapp.com",
+      projectId: "yeonjudan-3b7a0",
+      storageBucket: "yeonjudan-3b7a0.appspot.com",
+      messagingSenderId: "375505226009",
+      appId: "1:375505226009:web:4c172fba0a0c5d81289d88",
+      measurementId: "G-GPXECMNRK1"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+
+        // 회원가입
+          import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+        
+        const auth = getAuth();
+
+        document.getElementById('signUpButton').addEventListener('click', (event) => {
+
+         
+
+
+            event.preventDefault() // 폼 태그는 전송 순간 새로고침 되기때문에 일단 이벤트를 막아주는 함수임 즉, 새로고침되지 않고 콘솔 로그 1을 찍어줌
+            
+           
+
+
+            const signUpEmail = document.getElementById('signUpEmail').value
+            const singUpPassword = document.getElementById('singUpPassword').value
+            const password1 = document.getElementById('singUpPassword1').value
+
+
+
+           if(singUpPassword !== password1) {
+            alert('패스워드가 불일치 합니다.')
+
+           }
+           else {
+
+           
+
+                createUserWithEmailAndPassword(auth, signUpEmail, singUpPassword)
+                // email, password 는 위에서 정의되어 있음
+
+                .then((userCredential) => {
+                    // Signed in 회원가입 성공
+                    console.log('회원가입 성공')
+                    alert('연주단 회원이 되신 것을 환영합니다!\n메인 화면으로 이동합니다.\n비밀번호 변경이 필요할 경우 관리자에게 문의 바랍니다.')
+                    location.href = "index.html"
+                    const user = userCredential.user;
+                    // ...
+                })
+                
+
+                .catch((error) => {
+                    console.log(error)
+                    alert('회원가입에 실패했습니다. 메일주소 형식 또는 비밀번호가 너무 짧습니다.')
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                });
+
+              }
+        })
+
+
+       
+           
+         
+
+        
+         
+      
+         
+
+        /*
+        setPersistence(auth, browserSessionPersistence)
+            .then(() => {
+                console.log('성공')
+                // Existing and future Auth states are now persisted in the current
+                // session only. Closing the window would clear any existing state even
+                // if a user forgets to sign out.
+                // ...
+                // New sign-in will be persisted with session persistence.
+                return signInWithEmailAndPassword(auth, signInEmail, singInPassword);
+            })
+            .catch((error) => {
+                console.log('실패')
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+       */
+
+
+
+   
+
+  //로그인 검증
+  function longinOk() {
+                window.onload = onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    // User is signed in, see docs for a list of available properties
+                    // https://firebase.google.com/docs/reference/js/firebase.User
+                    const uid = user.uid;
+                    console.log(uid);
+                    //window.location.href = '/menu.html';
+                    signOut(auth);
+                    alert('로그아웃 되었습니다.');
+                   
+
+                    // ...
+                } else {
+                    // User is signed out
+                    // ...
+                    
+            
+                 
+                }
+                });
+
+            }
+           
+            
+    
+
+          document.getElementById('signupPage').addEventListener('click', event => {
+            window.location.href = "/signup.html"
+          })
+
+          longinOk();
+
+
+
+
+          window.onload()
+  </script>
+
+  
+ 
+  
+</html>

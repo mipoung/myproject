@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <title>연주단 2.0</title>
 
   </head>
@@ -17,33 +16,25 @@
         <div class="item-nav"><a href="menu.html">메뉴</a></div>
         <div class="item-nav-main"><a href="index.html">연주단 2.0</a></div>
         <div class="item-nav"><a href="signin.html" id="buttonchange">로그인</a></div>
-        <div class="item-nav-line">History</div>
+        <div class="item-nav-line">Calendar</div>
       </div>
     </nav>
  
 
-  <!-- 
-        <div class="main-menu-div1">asfsafas</div>
-        <div class="main-menu-div2"> 내용 </div>
-         </div>
-      -->
-    <div class="noti">
-       
+
+    <div id="calendarPC">
+      <div></div>
+      <div>  <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237986CB&ctz=Asia%2FSeoul&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&src=OGQyMzJ1bW5qaTd1bmlpMXFkZTNicGswMTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=a28uc291dGhfa29yZWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23E67C73&color=%23D50000" style="border-width:0" width="100%" height="90%" frameborder="0" scrolling="no"></iframe></div>
+      <div></div>
+    
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-    
+    <div id="calendarMOBILE">
+      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237986CB&ctz=Asia%2FSeoul&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&mode=AGENDA&src=OGQyMzJ1bW5qaTd1bmlpMXFkZTNicGswMTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=a28uc291dGhfa29yZWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23E67C73&color=%23D50000" style="border-width:0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+    </div>
+   
   </body>
+
 
   <script type="module">
     // Import the functions you need from the SDKs you need
@@ -71,7 +62,6 @@
 
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
     const auth = getAuth();
-    import { getFirestore, collection, getDocs, addDoc, setDoc, doc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
     
       
@@ -79,28 +69,18 @@
     
     
     //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
-    function longinOk() {
+       function longinOk() {
                 window.onload = onAuthStateChanged(auth, (user) => {
                 if (user) {
                     // User is signed in, see docs for a list of available properties
                     // https://firebase.google.com/docs/reference/js/firebase.User
                    
                     const uid = user.uid;
-
                     console.log(uid);
-                
-                 
                     document.getElementById('buttonchange').innerHTML = '로그아웃';
+                   
 
-                  
-                if (uid !== 'NWmrEdzBedXCwJk3IJGBDR0fqBG2') {
-                 
-                  window.location.replace('/easteregg.html');
-                  
-              
-                  
-                }
-
+                   
                     // ...
                 } else {
                     // User is signed out
@@ -117,56 +97,18 @@
             longinOk();
 
 
-            
-            
 
+            // 모바일 데스크탑 구분
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // 모바일인 경우
+                document.getElementById("calendarPC").style.display = "none";
+            } else {
+              document.getElementById("calendarMOBILE").style.display = "none";
 
-
-
-
-
-
-
-
-
-
-            // 쿼리 읽어오고 시간 역순으로 정렬 표시
-            const db = getFirestore(app);
-            const citiesRef = collection(db, "업데이트");
-            const q = query(citiesRef, orderBy("시간", "desc"));
-
-            const querySnapshot = await getDocs(q);
-                  querySnapshot.forEach((doc) => {
-
-               
-
+            }
                       
-                
-  // 결과값만큼 div 생성
-  
-  var 템플릿 = `
-  
-  <div class="main-menu">
  
-        <div class="main-menu-div1">${doc.data().제목}</div>
-        <div class="main-menu-div2">${doc.data().내용}</div>
-        <div class="main-menu-div3">${doc.data().시간}</div>
-    </div>`
-
-  ;
- 
-  $('.noti').append(템플릿)
-
-
-
-});
-
-
-
-
-
 
 
   </script>
-  
 </html>

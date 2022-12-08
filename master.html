@@ -19,26 +19,24 @@
         <div class="item-nav"><a href="menu.html">메뉴</a></div>
         <div class="item-nav-main"><a href="index.html">연주단 2.0</a></div>
         <div class="item-nav"><a href="signin.html" id="buttonchange">로그인</a></div>
-        <div class="item-nav-line">Menu</div>
+        <div class="item-nav-line">Master Menu</div>
       </div>
     </nav>
  
 
-<!--
-<a href="/tip.html">단속 팁</a>
--->
+
 
 
     <div class="main-menu-real">
      
-      <div class="menu-button">
-        <a href="/notice.html">공지사항</a>
-        <a href="/map.html">지도</a>
-        <a href="/calendar.html">일정</a>
-        <a href="/sendingbug.html">오류 제보</a>
-        
+      <div class="menu-button" id="mastermenu">
+        <a href="/noticeedit.html">공지사항 쓰기</a>
+        <a href="/historyedit.html">업데이트 기록 쓰기</a>
+        <a href="/tipedit.html">팁 쓰기</a>
         <br>
-        <a href="/master.html">관리메뉴</a>
+        <a href="/history.html">업데이트 기록</a>
+        
+       
         <button type="button" id="logOut">로그아웃</button>
      </div>
     </div>
@@ -78,28 +76,41 @@
 
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
     const auth = getAuth();
-  
+
+
 
 
     
-       /* 로그인 검증 캘린더메뉴
-       function longinOkCalendar() {
+      
+    //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
+    function longinOk() {
                 window.onload = onAuthStateChanged(auth, (user) => {
                 if (user) {
                     // User is signed in, see docs for a list of available properties
                     // https://firebase.google.com/docs/reference/js/firebase.User
+                   
                     const uid = user.uid;
+
                     console.log(uid);
-                    window.location.href = '/calendar.html';
+                
+                 
+                    document.getElementById('buttonchange').innerHTML = '로그아웃';
+
+                  
+                if (uid !== 'NWmrEdzBedXCwJk3IJGBDR0fqBG2') {
+                 
+                  window.location.replace('/easteregg.html');
+                  
+              
+                  
+                }
+
                     // ...
                 } else {
                     // User is signed out
                     // ...
-                    
-                    alert('로그인 해주세요');
-                   
-                    
-                    
+              
+                    window.location.replace('/signin.html');
                  
                 }
                 });
@@ -107,44 +118,8 @@
             }
 
 
-             //로그인 검증 단속 팁 메뉴
-       function longinOkTip() {
-                window.onload = onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    // User is signed in, see docs for a list of available properties
-                    // https://firebase.google.com/docs/reference/js/firebase.User
-                    const uid = user.uid;
-                    console.log(uid);
-                    window.location.href = '/tip.html';
-                    // ...
-                } else {
-                    // User is signed out
-                    // ...
-                    
-                    alert('로그인 해주세요');
-                   
-                    
-                    
-                 
-                }
-                });
+            longinOk();
 
-            }
-
-
-
-
-
-            // 캘린더 메뉴 클릭 함수
-            document.getElementById('calendar').addEventListener('click', (event) => {
-              longinOkCalendar();
-            })
-            // 단속 팁 메뉴 클릭 함수
-            document.getElementById('tip').addEventListener('click', (event) => {
-              longinOkTip();
-            })
-
-*/
 
 
 
@@ -159,36 +134,6 @@
             })
  
 
- //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
- function longinOk() {
-                window.onload = onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    // User is signed in, see docs for a list of available properties
-                    // https://firebase.google.com/docs/reference/js/firebase.User
-                   
-                    const uid = user.uid;
-
-                    console.log(uid);
-                
-                 
-                    document.getElementById('buttonchange').innerHTML = '로그아웃';
-
-                  
-
-                    // ...
-                } else {
-                    // User is signed out
-                    // ...
-                    
-                    window.location.replace('/signin.html');
-                 
-                }
-                });
-
-            }
-
-
-            longinOk();
 
   </script>
 

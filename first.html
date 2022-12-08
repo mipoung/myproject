@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>연주단 2.0</title>
+    
+  </head>
+
+
+  <body>
+    
+
+  </body>
+
+
+
+
+
+
+
+
+  <script type="module">
+   window.onload = function() {
+  const first = prompt("외부인의 가입을 금지합니다!\n외부인의 가입을 막기 위한 간단한 질문 입니다.\n\n연주단2.0을 만든 사람의 이름을 입력해주세요.")
+  if(first == "이영훈") {
+    alert('가입하세요!');
+    window.location.href = "/signup.html"
+  } else {
+    alert('가입 불가합니다.');
+    window.location.href = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%99%B8%EB%B6%80%EC%9D%B8"
+  }
+}
+
+  </script>
+
+  
+ 
+  
+</html>

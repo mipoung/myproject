@@ -17,7 +17,7 @@
         <div class="item-nav"><a href="menu.html">메뉴</a></div>
         <div class="item-nav-main"><a href="index.html">연주단 2.0</a></div>
         <div class="item-nav"><a href="signin.html" id="buttonchange">로그인</a></div>
-        <div class="item-nav-line">History</div>
+        <div class="item-nav-line">Tip</div>
       </div>
     </nav>
  
@@ -79,7 +79,7 @@
     
     
     //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
-    function longinOk() {
+       function longinOk() {
                 window.onload = onAuthStateChanged(auth, (user) => {
                 if (user) {
                     // User is signed in, see docs for a list of available properties
@@ -93,20 +93,13 @@
                     document.getElementById('buttonchange').innerHTML = '로그아웃';
 
                   
-                if (uid !== 'NWmrEdzBedXCwJk3IJGBDR0fqBG2') {
-                 
-                  window.location.replace('/easteregg.html');
-                  
-              
-                  
-                }
 
                     // ...
                 } else {
                     // User is signed out
                     // ...
                     
-                    window.location.replace('/signin.html');
+                
                  
                 }
                 });
@@ -115,7 +108,6 @@
 
 
             longinOk();
-
 
             
             
@@ -132,7 +124,7 @@
 
             // 쿼리 읽어오고 시간 역순으로 정렬 표시
             const db = getFirestore(app);
-            const citiesRef = collection(db, "업데이트");
+            const citiesRef = collection(db, "팁");
             const q = query(citiesRef, orderBy("시간", "desc"));
 
             const querySnapshot = await getDocs(q);

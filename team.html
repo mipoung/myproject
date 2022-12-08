@@ -24,26 +24,27 @@
 
 
     <div class="main-menu">
-      
-          <h3>알림</h3>
-          <ul>
-            <li>연주단이 2.0으로 업데이트 되었습니다!</li>
-            <li>송도동 탄력 구간이 업데이트 되었습니다. (계속 보완중)</li>
-            <li>하단에 있는 오늘의 근무일정은 로그인한 사람 누구나 수정 가능합니다.</li>
-            <li>지도 및 다른 기능은 왼쪽 상단 메뉴를 통해 이용 가능합니다.</li>
-          </ul>
+      <div>
+
+      </div>
+          <h3>오늘 일정</h3>
           
-        
-    </div>
+
+        </div>
 
      
+
+
     <div class="main-menu">
-      <h3 id="jojo1"></h3> 
+      <h3 id="jojo1">2002.2.13. 근무</h3> 
      
-     <div class="jo" id="jojo"></div>
+     <div class="jo" id="jojo">
+
+      
+      
+     </div>
  
-     <div id="jojo2"> <a href="/teamedit.html">수정</a></div>
-   
+     <div id="jojo2"> <a href="/teamedit.html">수정</a> </div>
     </div>
 
    
@@ -180,8 +181,7 @@ querySnapshot.forEach((doc) => {
 
   // 결과값만큼 div 생성
   
-  var 템플릿 = `<h3>${doc.data().날짜} - 근무일정</h3>
-  <table class="table1">
+  var 템플릿 = `<table class="table1">
       <colgroup>
       <col style="width: 36.005682px">
       <col style="width: 231.005682px">
@@ -194,36 +194,32 @@ querySnapshot.forEach((doc) => {
       </thead>
       <tbody>
         <tr class="tr1">
-          <td>1조</td>
+          <td>1</td>
           <td>${doc.data().일조}</td>
         </tr>
         <tr class="tr1">
-          <td>2조</td>
+          <td>2</td>
           <td>${doc.data().이조}</td>
         </tr>
         <tr class="tr1">
-          <td>3조</td>
+          <td>3</td>
           <td>${doc.data().삼조}</td>
         </tr>
         <tr class="tr1">
-          <td>7조</td>
+          <td>7</td>
           <td>${doc.data().칠조}</td>
         </tr>
         <tr class="tr2">
-          <td>4조</td>
+          <td>4</td>
           <td>${doc.data().사조}</td>
         </tr>
         <tr class="tr2">
-          <td>5조</td>
+          <td>5</td>
           <td>${doc.data().오조}</td>
         </tr>
         <tr class="tr2">
-          <td>6조</td>
+          <td>6</td>
           <td>${doc.data().육조}</td>
-        </tr>
-        <tr class="tr2">
-          <td></td>
-          <td>${doc.data().특이사항}</td>
         </tr>
         <tr>
           <td></td>

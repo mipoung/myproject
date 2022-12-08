@@ -1,12 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <title>연주단 2.0</title>
-
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
   </head>
 
 
@@ -17,35 +16,36 @@
         <div class="item-nav"><a href="menu.html">메뉴</a></div>
         <div class="item-nav-main"><a href="index.html">연주단 2.0</a></div>
         <div class="item-nav"><a href="signin.html" id="buttonchange">로그인</a></div>
-        <div class="item-nav-line">History</div>
+        <div class="item-nav-line">Notice Writing</div>
       </div>
     </nav>
  
 
-  <!-- 
-        <div class="main-menu-div1">asfsafas</div>
-        <div class="main-menu-div2"> 내용 </div>
-         </div>
-      -->
-    <div class="noti">
-       
-    </div>
+<div>
+  
+  <div class="team-form">
+            <input type="text" id="noti0Sumit" placeholder="제목">
+            <textarea id="noti1Sumit" placeholder="내용" style="height: 250px;"></textarea>
+
+     
+            <button type="button" id="notiSubmit">전송</button>
+  
+  </div>
+
+
+   
+
+</div>
 
 
 
-
-
-
-
-
-
-
-
-
-    
+   
   </body>
 
+ 
+
   <script type="module">
+
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
@@ -64,21 +64,21 @@
       measurementId: "G-GPXECMNRK1"
     };
   
-    // Initialize Firebase
+    
+
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+
+    import { getFirestore, collection, getDocs, addDoc, setDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+// Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
 
-
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
     const auth = getAuth();
-    import { getFirestore, collection, getDocs, addDoc, setDoc, doc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-
     
       
     
     
     
-    //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
     function longinOk() {
                 window.onload = onAuthStateChanged(auth, (user) => {
                 if (user) {
@@ -105,7 +105,7 @@
                 } else {
                     // User is signed out
                     // ...
-                    
+              
                     window.location.replace('/signin.html');
                  
                 }
@@ -117,56 +117,74 @@
             longinOk();
 
 
-            
-            
+           
+
+
+
+
+            // 텍스트에어리어에 줄바꿈 기능 넣기
+            document.getElementById('notiSubmit').addEventListener('click', (event) => {
+
+            var str = document.getElementById("noti1Sumit").value;
+            str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+            document.getElementById("noti1Sumit").value = str;
+
+            });
 
 
 
 
 
+    const db = getFirestore(app);
+
+
+  // json 전송 버튼
+document.getElementById('notiSubmit').addEventListener('click', (event)=>{
+
+ setbutton();
+ console.log('전송 성공');
+ alert('작성이 완료 되었습니다.');
+
+  setTimeout(() => {
+    window.location.href = "/index.html"
+  }, 800);
+})
 
 
 
+const today = new Date
+const year = today.getFullYear();
+const month = today.getMonth() + 1;
+const date = today.getDate();
+const hours = today.getHours(); // 시
+const minutes = today.getMinutes();  // 분
 
 
-
-            // 쿼리 읽어오고 시간 역순으로 정렬 표시
-            const db = getFirestore(app);
-            const citiesRef = collection(db, "업데이트");
-            const q = query(citiesRef, orderBy("시간", "desc"));
-
-            const querySnapshot = await getDocs(q);
-                  querySnapshot.forEach((doc) => {
-
-               
-
-                      
-                
-  // 결과값만큼 div 생성
-  
-  var 템플릿 = `
-  
-  <div class="main-menu">
- 
-        <div class="main-menu-div1">${doc.data().제목}</div>
-        <div class="main-menu-div2">${doc.data().내용}</div>
-        <div class="main-menu-div3">${doc.data().시간}</div>
-    </div>`
-
-  ;
- 
-  $('.noti').append(템플릿)
-
-
-
+// 폼 입력 양식
+async function setbutton() { 
+  await setDoc(doc(db, "공지사항", `${new Date}`), {
+    제목: `${document.getElementById('noti0Sumit').value}`,
+    내용: `${document.getElementById('noti1Sumit').value}`,
+    시간: `작성시간: ${year}년 ${month}월 ${date}일 ${hours}시 ${minutes}분`
 });
 
+}
+// 공지사항 다음 항목이 문서 제목인데 넘버링해주고 싶음
 
 
 
 
 
 
+
+/*
+await setDoc(doc(db, "공지사항", "야야"), {
+    제목: `${document.getElementById('noti0Sumit').value}`,
+    내용: `${document.getElementById('noti1Sumit').value}`,
+     country: "USA"
+});
+//정렬을 어떻게 순서대로 시키느냐가 관건인데
+
+*/
   </script>
-  
 </html>
