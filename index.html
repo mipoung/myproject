@@ -1,101 +1,263 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>연주단 2.0</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
+  </head>
+
+
+  <body>
     
-    <!--스타일시트 불러오기-->
-    <link href="style.css" rel="stylesheet">
-    
-
-     <!--지도 라이브러리 불러오기(함수 선언 오류 뜨는건 라이브러리를 안불러왔거나 두개 불러와서 그런거였음)-->
-     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3&libraries=services,clusterer,drawing"></script>
-
-
-    <title>연주단</title>
-
-
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-22MYV21TL1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-22MYV21TL1');
-</script>
+    <nav>
+      <div class="container-nav">
+        <div class="item-nav"><a href="./menu.html">메뉴</a></div>
+        <div class="item-nav-main"><a href="./index.html">연주단 2.0</a></div>
+        <div class="item-nav"><a href="./signin.html" id="buttonchange">로그인</a></div>
+        <div class="item-nav-line">Main</div>
+      </div>
+    </nav>
+ 
 
 
-</head>
-<body>
-    <div class="top_menu" style="width: 100%; height: 40px; background: #3e4bac;">
-        <div class="top_menu_1">
-            <div id = "main_menu">
-                <a href="./index.html" style="font-family: 'Gugi', cursive;">메뉴</a>
-                
-            </div>
-        </div>    
 
-        <div class="top_menu_2">
-            <a href="./index.html" style="font-family: 'Gugi', cursive;">연주단</a>
-        </div>
-
-        <div class="top_menu_3">
-    
-        </div>
+    <div class="main-menu">
+      
+          <h3>알림</h3>
+          <ul>
+            <li>연주단이 2.0으로 업데이트 되었습니다!</li>
+            <li>송도동 탄력 구간이 업데이트 되었습니다. (계속 보완중)</li>
+            <li>하단에 있는 오늘의 근무일정은 로그인한 사람 누구나 수정 가능합니다.</li>
+            <li>지도 및 다른 기능은 왼쪽 상단 메뉴를 통해 이용 가능합니다.</li>
+          </ul>
+          
+        
     </div>
 
-    <div class="top_menu_bottom">
-        <P>메뉴 및 알림</P>
+     
+    <div class="main-menu">
+      <h3 id="jojo1"></h3> 
+     
+     <div class="jo" id="jojo"></div>
+ 
+     <div id="jojo2"> <a href="./teamedit.html">수정</a></div>
+   
     </div>
-    
-<section style="background-color: whitesmoke;">
 
-    <div class="menu_all">
-    
-<div class="menu_bottom">
-
-    <ul>
-        <li><a href="./map.html">지도</a></li>
-        <li><a href="./schedule.html">일정</a></li>
-        <li><a href="./security1.html">회의 기록</a></li>
-        <li><a href="./information_Rule.html">주정차 단속 규정 및 법규</a></li>
-       
-       
-       
-    </ul>
-</div>
-
-<div class="menu_bottom2">
-    <ul>
-        <li><a href="./security2.html">업데이트 기록</a></li>
-        <li><a href="./mail.html">잘못된 정보 제보하기</a></li>
-    </ul>
-</div>
-
-<div>
-<h4 style="padding-top: 50px;">알림</h4>
-</div>
+   
 
 
-<div class="notice">
-   <p>- 지도 검색에서 결과값이 나오지 않으면 지도를 축소하면 결과값이 보입니다.</p>
-   <P>- 어린이 보호 구역 및 탄력 구간 표시는 실제와 다를수있습니다. 참고용으로만 사용해주세요.</P>
-   <p>- 모바일 화면에 최적화되어 있습니다.</p>
-   <p>- 크롬 및 엣지 브라우저에서 최적화 되어있습니다.</p>
-   <p>- 연주단 회원 외 사용을 금지 합니다.</p>
+
+  </body>
+
+ 
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
   
-   
-   
-   <!-- <p><br><a href="test.html">test</a></p> -->
-</div>
-
-
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyA2yycZZFNY4tiDVUbu4v6SHZWQ0rs8e_c",
+      authDomain: "yeonjudan-3b7a0.firebaseapp.com",
+      projectId: "yeonjudan-3b7a0",
+      storageBucket: "yeonjudan-3b7a0.appspot.com",
+      messagingSenderId: "375505226009",
+      appId: "1:375505226009:web:4c172fba0a0c5d81289d88",
+      measurementId: "G-GPXECMNRK1"
+    };
+  
     
 
-</div>
-</section>
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
-   
-</body>
+    import { getFirestore, collection, getDocs, addDoc, setDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+// Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    const auth = getAuth();
+    
+      
+    
+    
+    
+    //로그인 검증
+       function longinOk() {
+                window.onload = onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    // User is signed in, see docs for a list of available properties
+                    // https://firebase.google.com/docs/reference/js/firebase.User
+                   
+                    const uid = user.uid;
+                    console.log(uid);
+                    document.getElementById('buttonchange').innerHTML = '로그아웃';
+                    // ...
+                  
+                } else {
+                    // User is signed out
+                    // ...
+                    
+                    document.getElementById("jojo").style.display = "none";
+                    document.getElementById("jojo2").style.display = "none";
+                    document.getElementById('jojo1').innerHTML = '근무일정은 로그인한 유저에게만 표시됩니다.';
+                 
+                }
+                });
+
+            }
+
+
+            longinOk();
+
+
+           
+ 
+
+
+
+
+
+
+    const db = getFirestore(app);
+
+    // 데이터 추가
+    // 유저 라는 컬렉션 생성
+            /*
+    try {
+  const docRef = await addDoc(collection(db, "users"), {
+    first: "Alanqwe",
+    middle: "Mathison",
+    last: "Turing",
+    born: 1912
+  });
+
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+  */
+
+
+
+
+  // Add a new document in collection "cities"
+  //문서 작성하는 매서드
+  /* 시티라는 컬렉션 생성, 중간 문서는 LA, 그다음 문서는 아래
+
+await setDoc(doc(db, "오늘근무", "조"), {
+  일조: "동춘, 옥련",
+  이조: "연수, 청학",
+  삼조: "송도동, 조출구역",
+  사조: "송도4동, 원도심",
+  오조: "송도 1,3동",
+  육조: "송도 5동",
+  칠조: "특별구역"
+});
+await
+*/
+
+
+  // Add a new document in collection "cities"
+  //문서 작성하는 매서드
+
+
+ 
+
+
+
+
+
+// 전체 데이터 조회
+const querySnapshot = await getDocs(collection(db, "오늘근무"));
+querySnapshot.forEach((doc) => {
+
+  // 결과값만큼 div 생성
+  
+  var 템플릿 = `<h3>${doc.data().날짜} - 근무일정</h3>
+  <table class="table1">
+      <colgroup>
+      <col style="width: 36.005682px">
+      <col style="width: 231.005682px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>조</th>
+          <th>해당 구역</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tr1">
+          <td>1조</td>
+          <td>${doc.data().일조}</td>
+        </tr>
+        <tr class="tr1">
+          <td>2조</td>
+          <td>${doc.data().이조}</td>
+        </tr>
+        <tr class="tr1">
+          <td>3조</td>
+          <td>${doc.data().삼조}</td>
+        </tr>
+        <tr class="tr1">
+          <td>7조</td>
+          <td>${doc.data().칠조}</td>
+        </tr>
+        <tr class="tr2">
+          <td>4조</td>
+          <td>${doc.data().사조}</td>
+        </tr>
+        <tr class="tr2">
+          <td>5조</td>
+          <td>${doc.data().오조}</td>
+        </tr>
+        <tr class="tr2">
+          <td>6조</td>
+          <td>${doc.data().육조}</td>
+        </tr>
+        <tr class="tr2">
+          <td></td>
+          <td>${doc.data().특이사항}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+      </table>`;
+ 
+  $('.jo').append(템플릿)
+
+
+
+});
+
+
+
+
+
+
+
+
+//조회한 데이터 표시하기
+
+
+/*
+/// 업데이트 매서드
+const washingtonRef = doc(db, "cities", "LA");
+
+// Set the "capital" field of the city 'DC'
+await updateDoc(washingtonRef, {
+  capital: true,
+  country: "USA33"
+
+});
+*/
+  </script>
 </html>

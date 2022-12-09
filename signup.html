@@ -13,9 +13,9 @@
     
     <nav>
       <div class="container-nav">
-        <div class="item-nav"><a href="menu.html">메뉴</a></div>
-        <div class="item-nav-main"><a href="index.html">연주단 2.0</a></div>
-        <div class="item-nav"><a href="signin.html" id="buttonchange">로그인</a></div>
+        <div class="item-nav"><a href="./menu.html">메뉴</a></div>
+        <div class="item-nav-main"><a href="./index.html">연주단 2.0</a></div>
+        <div class="item-nav"><a href="./signin.html" id="buttonchange">로그인</a></div>
         <div class="item-nav-line">Sign up</div>
       </div>
     </nav>
@@ -110,7 +110,7 @@
                     // Signed in 회원가입 성공
                     console.log('회원가입 성공')
                     alert('연주단 회원이 되신 것을 환영합니다!\n메인 화면으로 이동합니다.\n비밀번호 변경이 필요할 경우 관리자에게 문의 바랍니다.')
-                    location.href = "index.html"
+                    location.href = "./index.html"
                     const user = userCredential.user;
                     // ...
                 })
@@ -189,7 +189,7 @@
     
 
           document.getElementById('signupPage').addEventListener('click', event => {
-            window.location.href = "/signup.html"
+            window.location.href = "./signup.html"
           })
 
           longinOk();
