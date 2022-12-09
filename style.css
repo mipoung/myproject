@@ -362,7 +362,7 @@ padding: 15px;
 }
 
 .main-menu-div1 {
-    background-color: #b6b6f7;
+    
     border-radius: 10px;
     padding: 3px;
     padding-left: 10px;
@@ -370,11 +370,20 @@ padding: 15px;
     height: 25px;
     font-size: 20px;
     font-weight: bolder;
+    display: inline;
+}
+
+.main-menu h4 {
+    background-color: #b6b6f7;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1px;
 }
 
 .main-menu-div2 {
     padding: 15px;
-    padding-top: 0px;
+    padding-top: 5px;
 }
 
 .main-menu-div3 {
@@ -434,6 +443,9 @@ padding: 15px;
         margin-top: 100px;
         }
     }
+
+
+   
 
 
     
