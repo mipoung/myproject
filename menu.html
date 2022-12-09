@@ -156,6 +156,7 @@
                 const logout = signOut(auth);
                 console.log('로그아웃');
                 alert('로그아웃 되었습니다.');
+                window.location.replace('./index.html');
             })
  
 
@@ -180,7 +181,7 @@
                     // User is signed out
                     // ...
                     
-                    window.location = "./signin.html";
+                    window.location.replace('./signin.html');
                  
                 }
                 });
