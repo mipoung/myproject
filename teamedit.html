@@ -25,8 +25,10 @@
 <div>
   
   <div class="team-form">
+            <!--
             날짜를 입력하세요.
             <input type="text" id="jo0Sumit" placeholder="날짜">
+            -->
             <br>
             주간조
             <input type="text" id="jo1Sumit" placeholder="1조">
@@ -140,11 +142,23 @@ document.getElementById('joSumit').addEventListener('click', (event)=>{
 })
 
 
+
+
+
+const today = new Date
+const year = today.getFullYear();
+const month = today.getMonth() + 1;
+const date = today.getDate();
+const hours = today.getHours(); // 시
+const minutes = today.getMinutes();  // 분
+
+
+
 // 폼 입력 양식
 function setbutton() { 
  setDoc(doc(db, "오늘근무", "조"), {
-  날짜: `${document.getElementById('jo0Sumit').value}`,
-  일조: `${document.getElementById('jo1Sumit').value}` ,
+  날짜: `${year}년 ${month}월 ${date}일`,
+  일조: `${document.getElementById('jo1Sumit').value}`,
   이조: `${document.getElementById('jo2Sumit').value}`,
   삼조: `${document.getElementById('jo3Sumit').value}`,
   사조: `${document.getElementById('jo4Sumit').value}`,
@@ -154,7 +168,6 @@ function setbutton() {
   특이사항: `${document.getElementById('jo8Sumit').value}`
 });
 }
-
 
 
 
