@@ -2400,7 +2400,7 @@ var positions = [
         
     },
     {
-        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%"><송도동 전역><br>주말,공휴일 24시간 허용<br>조업주차 15분이내 허용(10시~17시)</div>',
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%"><송도동 전역><br>주말,공휴일 24시간 허용<br>조업주차 1.5톤 이하 차량 15분이내 허용(10시~17시)</div>',
     
         latlng: new kakao.maps.LatLng(37.395774250663365, 126.62503827190547),
         
