@@ -1672,6 +1672,14 @@ var elasticity = [
     
         },
 
+        // 안스베이커리~청학중삼거리
+        {
+            path: [new kakao.maps.LatLng(37.41756299135212, 126.67118035867364), new kakao.maps.LatLng(37.417340344458516, 126.67211893929571), new kakao.maps.LatLng(37.417098763591056, 126.67273000002761), new kakao.maps.LatLng(37.41686534644798, 126.67303601854101), new kakao.maps.LatLng(37.41619146582586, 126.67371672604085)], 
+    
+            color: 'blue'
+    
+        },
+
 
 
 
@@ -2403,6 +2411,13 @@ var positions = [
         content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%"><송도동 전역><br>주말,공휴일 24시간 허용<br>조업주차 1.5톤 이하 차량 15분이내 허용(10시~17시)</div>',
     
         latlng: new kakao.maps.LatLng(37.395774250663365, 126.62503827190547),
+        
+        
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">금지시간(평일)<br>7:00~12:00<br>14:00~20:00</div>',
+    
+        latlng: new kakao.maps.LatLng(37.417215331062025, 126.67252615662933),
         
         
     },
