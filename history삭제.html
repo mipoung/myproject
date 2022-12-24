@@ -3,12 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!--지도 라이브러리 불러오기-->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ceeda2c7aca65080f7eb77c61b54a4e3&libraries=services,clusterer,drawing"></script>
-
-
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <title>연주단 2.0</title>
     <link rel="shortcut icon" href="./favicon2.png">
   </head>
@@ -17,52 +13,36 @@
   <body>
     
     <nav>
-        <div class="container-nav">
-            <div class="item-nav"><a href="./menu.html">메뉴</a></div>
-            <div class="item-nav-main"><a href="./index.html">연주단 2.0</a></div>
-            <div class="item-nav"><a href="./signin.html" id="buttonchange">로그인</a></div>
-            <div class="item-nav-line">Map</div>
-          </div>
+      <div class="container-nav">
+        <div class="item-nav"><a href="./menu.html">메뉴</a></div>
+        <div class="item-nav-main"><a href="./index.html">연주단 2.0</a></div>
+        <div class="item-nav"><a href="./signin.html" id="buttonchange">로그인</a></div>
+        <div class="item-nav-line">History</div>
+      </div>
     </nav>
  
- 
-  <!--검색창
- <div class="input-group" style="position: fixed;">
-  <input type="text" id="keyword" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
-  <button class="btn btn-outline-secondary" type="button" >검색</button>
-  <button class="btn btn-outline-secondary" type="button">주소검색</button>
- -->
 
-
-
-  <form class="map-button" onsubmit="searchPlaces(); return false;">
-    <input type="text" value="" id="keyword" size="15"> 
-    <button type="submit">검색</button> 
-    
-
-    <div class="button_group2" style="position: fixed; padding-top: 26px; z-index: 1;">
-    <button onclick="childON()" style="background-color: rgba(255, 213, 0, 0.717);">어린이</button>
-    <button onclick="elasticityON(); elasticityON2(); alert('탄력구간 금지 및 허용 시간은 노란색 별표를 클릭하면 표시됩니다.');" style="background-color: rgba(168, 213, 249, 0.905);">탄력</button>
-    <button><a href="map.html" style="color: black; text-decoration-line: none;">새로고침</a></button> 
+  <!-- 
+        <div class="main-menu-div1">asfsafas</div>
+        <div class="main-menu-div2"> 내용 </div>
+         </div>
+      -->
+    <div class="noti">
+       
     </div>
 
 
-<!-- 지도를 담을 영역-->
-  <div id="map" style="width:100%;height:100vh; background-color: rgb(210, 210, 210); position: fixed; margin-top: 25px;">
-  </div>
-
-
- 
 
 
 
-  
-  <script src="mapdata.js"></script>
 
 
-  
-  
-  </div>
+
+
+
+
+
+    
   </body>
 
   <script type="module">
@@ -91,14 +71,15 @@
 
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
     const auth = getAuth();
+    import { getFirestore, collection, getDocs, addDoc, setDoc, doc, updateDoc, orderBy, query, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
-    
+
       
     
     
     
- //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
- function longinOk() {
+    //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
+    function longinOk() {
                 window.onload = onAuthStateChanged(auth, (user) => {
                 if (user) {
                     // User is signed in, see docs for a list of available properties
@@ -112,6 +93,13 @@
                     document.getElementById('buttonchange').innerHTML = '로그아웃';
 
                   
+                if (uid !== 'NWmrEdzBedXCwJk3IJGBDR0fqBG2') {
+                 
+                  window.location.replace('./easteregg.html');
+                  
+              
+                  
+                }
 
                     // ...
                 } else {
@@ -129,10 +117,71 @@
             longinOk();
 
 
+            
+            
 
-           
+
+
+
+
+
+
+
+
+
+
+            // 쿼리 읽어오고 시간 역순으로 정렬 표시
+            const db = getFirestore(app);
+            const citiesRef = collection(db, "업데이트");
+            const q = query(citiesRef, orderBy("시간", "desc"));
+
+            const querySnapshot = await getDocs(q);
+                  querySnapshot.forEach((doc) => {
+
+               
+
+                      
+                
+  // 결과값만큼 div 생성
+  
+  var 템플릿 = `
+  
+  <div class="main-menu">
  
+        <h4>${doc.data().제목}</h4>
+        <div class="main-menu-div2">${doc.data().내용}</div>
+        <div class="main-menu-div3">${doc.data().시간}</div>
+        <button id="deletebutton">삭제</button>
+    </div>`
+
+  ;
+ 
+  $('.noti').append(템플릿)
+
+
+
+});
+
+
+
+
+ // await deleteDoc(doc(db, "cities", "DC"));
+
+
+
+ document.getElementById('deletebutton').addEventListener('click', (event) => {
+  deleteDoc(doc(db, "업데이트", id));
+ })
+
+
+
+function delete1() {
+
+  deleteDoc(doc(db, "업데이트", id));
+
+}
 
 
   </script>
+ 
 </html>
