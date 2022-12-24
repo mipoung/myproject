@@ -2528,8 +2528,8 @@ var infow = [
        //// 탄력구간 인포윈도우 생성
     
     
-    // 마커 이미지의 이미지 주소입니다
-    var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+    // 탄력구간 마커 이미지의 이미지 주소입니다
+    var imageSrc = "https://raw.githubusercontent.com/mipoung/myproject/main/ela.png"; 
      
     
     
