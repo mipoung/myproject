@@ -216,18 +216,21 @@ border-radius: 10px;
 
 /* 여기서부터 맵 스타일 시트 */
 .map-button {
-    display: grid;
-    grid-template-columns: 8fr 70px;
+    display: flex;
+ 
     height: 25px;
   
   }
   
   .map-button input {
-  border-radius: 5px;
+    flex-grow: 1;
+    border-radius: 5px;
+ 
   }
   
   .map-button button {
   border-radius: 5px;
+  width: 70px;
   
   }
 
