@@ -217,7 +217,7 @@ border-radius: 10px;
 /* 여기서부터 맵 스타일 시트 */
 .map-button {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 8fr 2fr;
     height: 25px;
   
   }
