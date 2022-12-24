@@ -428,6 +428,13 @@ padding: 15px;
     }
 
 
+    @media (min-width: 800px) {
+        #roadviewControl {
+            display: none;
+        }
+        }
+
+
    
 
 
