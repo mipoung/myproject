@@ -137,13 +137,10 @@ margin-top: 50px;
 
 
 
-/* 여기서부터 맵 스타일 시트 */
-.map-button {
-    display: grid;
+/* 여기서부터 맵 스타일 시트    display: grid;
     grid-template-columns: 8fr 70px;
-    height: 25px;
-  
-  }
+    height: 25px; */
+
   
   .map-button input {
   border-radius: 5px;
@@ -151,6 +148,7 @@ margin-top: 50px;
   
   .map-button button {
   border-radius: 5px;
+  width: 65px;
   
   }
   
@@ -214,22 +212,7 @@ border-radius: 10px;
 
 
 
-/* 여기서부터 맵 스타일 시트 */
-.map-button {
-    display: grid;
-    grid-template-columns: 8fr 2fr;
-    height: 25px;
-  
-  }
-  
-  .map-button input {
-  border-radius: 5px;
-  }
-  
-  .map-button button {
-  border-radius: 5px;
-  
-  }
+
 
 
 /* 버그제보 폼 양식 */
