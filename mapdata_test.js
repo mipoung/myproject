@@ -2329,89 +2329,6 @@ var elasticity = [
 */
 
 
-// 여러개 배열 만들고 data라는 배열 값으로 합쳐 하나의 배열로 만들기
-var data = [
-    ...child,
-]
-
-
-//소화전, 탄력구간 배열
-//var fireplug = []
-//var elasticity = []
-//var area_line = []
-
-
-
-
-function childON() {
-    
-//배열 이용해서 폴리라인 여러개 표시하기
-for(var i=0; i<data.length; i++) {
-
-    //i번째 정보를 가져옵니다.
-    var item = data[i];
-
-    // 지도에 표시할 선을 생성합니다
-	var polyline = new kakao.maps.Polyline({
-
-        map: map, //지도에 선을 표시합니다.
-    	path: item.path, // 선을 구성하는 좌표배열 입니다
-	    strokeWeight: 5, // 선의 두께 입니다
-    	strokeColor: item.color, // 선의 색깔입니다
-	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-    	strokeStyle: 'solid' // 선의 스타일입니다
-	});
-
-}
-}
-
-
-//배열 이용해서 폴리라인 여러개 표시하기
-for(var i=0; i<area_line.length; i++) {
-
-    //i번째 정보를 가져옵니다.
-    var item = area_line[i];
-    
-    // 지도에 표시할 선을 생성합니다
-    var polyline = new kakao.maps.Polyline({
-    
-        map: map, //지도에 선을 표시합니다.
-        path: item.path, // 선을 구성하는 좌표배열 입니다
-        strokeWeight: 2, // 선의 두께 입니다
-        strokeColor: item.color, // 선의 색깔입니다
-        strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-        strokeStyle: 'solid' // 선의 스타일입니다
-    });
-    
-    }
-
-
-
-
-function elasticityON() {
-    //배열 이용해서 폴리라인 여러개 표시하기
-    for(var i=0; i<elasticity.length; i++) {
-    
-    //i번째 정보를 가져옵니다.
-    var item = elasticity[i];
-    
-    // 지도에 표시할 선을 생성합니다
-    var polyline = new kakao.maps.Polyline({
-    
-        map: map, //지도에 선을 표시합니다.
-        path: item.path, // 선을 구성하는 좌표배열 입니다
-        strokeWeight: 4, // 선의 두께 입니다
-        strokeColor: item.color, // 선의 색깔입니다
-        strokeOpacity: 0.6, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-        strokeStyle: 'dashed' // 선의 스타일입니다
-    });
-    
-    }
-    
-    }
-
-// 지도에 선을 표시합니다 
-polyline.setMap(map);  
 
 
 ///////////////////////////
@@ -2658,6 +2575,101 @@ var infow = [
     ];
     
     
+// 여러개 배열 만들고 data라는 배열 값으로 합쳐 하나의 배열로 만들기
+var data = [
+    ...child,
+]
+
+
+//소화전, 탄력구간 배열
+//var fireplug = []
+//var elasticity = []
+//var area_line = []
+
+
+
+
+function childON() {
+    
+//배열 이용해서 폴리라인 여러개 표시하기
+for(var i=0; i<data.length; i++) {
+
+    //i번째 정보를 가져옵니다.
+    var item = data[i];
+
+    // 지도에 표시할 선을 생성합니다
+	var polyline = new kakao.maps.Polyline({
+
+        map: map, //지도에 선을 표시합니다.
+    	path: item.path, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 5, // 선의 두께 입니다
+    	strokeColor: item.color, // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    	strokeStyle: 'solid' // 선의 스타일입니다
+	});
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//배열 이용해서 폴리라인 여러개 표시하기
+for(var i=0; i<area_line.length; i++) {
+
+    //i번째 정보를 가져옵니다.
+    var item = area_line[i];
+    
+    // 지도에 표시할 선을 생성합니다
+    var polyline = new kakao.maps.Polyline({
+    
+        map: map, //지도에 선을 표시합니다.
+        path: item.path, // 선을 구성하는 좌표배열 입니다
+        strokeWeight: 2, // 선의 두께 입니다
+        strokeColor: item.color, // 선의 색깔입니다
+        strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'solid' // 선의 스타일입니다
+    });
+    
+    }
+
+
+
+
+function elasticityON() {
+    //배열 이용해서 폴리라인 여러개 표시하기
+    for(var i=0; i<elasticity.length; i++) {
+    
+    //i번째 정보를 가져옵니다.
+    var item = elasticity[i];
+    
+    // 지도에 표시할 선을 생성합니다
+    var polyline = new kakao.maps.Polyline({
+    
+        map: map, //지도에 선을 표시합니다.
+        path: item.path, // 선을 구성하는 좌표배열 입니다
+        strokeWeight: 4, // 선의 두께 입니다
+        strokeColor: item.color, // 선의 색깔입니다
+        strokeOpacity: 0.6, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'dashed' // 선의 스타일입니다
+    });
+    
+    }
+    
+    }
+
+
 
     function infowindowON () {
 
@@ -2800,4 +2812,9 @@ var infow = [
         },];
     
     
-    
+        
+
+
+
+        // 지도에 선을 표시합니다 
+polyline.setMap(map);  
