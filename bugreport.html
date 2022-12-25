@@ -1,14 +1,12 @@
 <!doctype html>
-
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <title>연주단 2.0</title>
-    
     <link rel="shortcut icon" href="./favicon2.png">
-
   </head>
 
 
@@ -19,40 +17,35 @@
         <div class="item-nav"><a href="./menu.html">메뉴</a></div>
         <div class="item-nav-main"><a href="./index.html">연주단 2.0</a></div>
         <div class="item-nav"><a href="./signin.html" id="buttonchange">로그인</a></div>
-        <div class="item-nav-line">Master Menu</div>
+        <div class="item-nav-line">Bug report</div>
       </div>
     </nav>
  
 
-
-
-
-    <div class="main-menu-real">
-     
-      <div class="menu-button" id="mastermenu">
-        <a href="./noticeedit.html">공지사항 쓰기</a>
-        <a href="./historyedit.html">업데이트 기록 쓰기</a>
-        <a href="./tipedit.html">팁 쓰기</a>
-        <a href="./map_test.html">테스트맵</a>
-        <br>
-        <a href="./history.html">업데이트 기록</a>
-        <a href="./bugreport.html">버그리포트</a>
-        
+  <!-- 
+        <div class="main-menu-div1">asfsafas</div>
+        <div class="main-menu-div2"> 내용 </div>
+         </div>
+      -->
+    <div class="noti">
        
-        <button type="button" id="logOut">로그아웃</button>
-     </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
     
-
-
-
   </body>
 
-
-  <!-- 파이어 베이스 -->
   <script type="module">
-    
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
@@ -78,12 +71,13 @@
 
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
     const auth = getAuth();
-
-
-
+    import { getFirestore, collection, getDocs, addDoc, setDoc, doc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
     
       
+    
+    
+    
     //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
     function longinOk() {
                 window.onload = onAuthStateChanged(auth, (user) => {
@@ -111,7 +105,7 @@
                 } else {
                     // User is signed out
                     // ...
-              
+                    
                     window.location.replace('./signin.html');
                  
                 }
@@ -123,22 +117,56 @@
             longinOk();
 
 
+            
+            
 
 
 
-    // 로그아웃
-                document.getElementById('logOut').addEventListener('click', (event) => {
-                event.preventDefault()
-              
-                const logout = signOut(auth);
-                console.log('로그아웃');
-                alert('로그아웃 되었습니다.');
-            })
+
+
+
+
+
+
+
+
+            // 쿼리 읽어오고 시간 역순으로 정렬 표시
+            const db = getFirestore(app);
+            const citiesRef = collection(db, "bugreport");
+            const q = query(citiesRef, orderBy("시간", "desc"));
+
+            const querySnapshot = await getDocs(q);
+                  querySnapshot.forEach((doc) => {
+
+               
+
+                      
+                
+  // 결과값만큼 div 생성
+  
+  var 템플릿 = `
+  
+  <div class="main-menu">
  
+        <h4>${doc.data().제목}</h4>
+        <div class="main-menu-div2">${doc.data().내용}</div>
+        <div class="main-menu-div3">${doc.data().시간}</div>
+    </div>`
+
+  ;
+ 
+  $('.noti').append(템플릿)
+
+
+
+});
+
+
+
+
+
 
 
   </script>
-
-
-
+  
 </html>

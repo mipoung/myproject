@@ -1,14 +1,12 @@
 <!doctype html>
-
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>연주단 2.0</title>
-    
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./favicon2.png">
-
   </head>
 
 
@@ -19,40 +17,36 @@
         <div class="item-nav"><a href="./menu.html">메뉴</a></div>
         <div class="item-nav-main"><a href="./index.html">연주단 2.0</a></div>
         <div class="item-nav"><a href="./signin.html" id="buttonchange">로그인</a></div>
-        <div class="item-nav-line">Master Menu</div>
+        <div class="item-nav-line">Bug report</div>
       </div>
     </nav>
  
 
+<div>
+  
+  <div class="team-form">
+            <input type="text" id="noti0Sumit" placeholder="제목">
+            <textarea id="noti1Sumit" placeholder="내용" style="height: 250px;"></textarea>
 
-
-
-    <div class="main-menu-real">
      
-      <div class="menu-button" id="mastermenu">
-        <a href="./noticeedit.html">공지사항 쓰기</a>
-        <a href="./historyedit.html">업데이트 기록 쓰기</a>
-        <a href="./tipedit.html">팁 쓰기</a>
-        <a href="./map_test.html">테스트맵</a>
-        <br>
-        <a href="./history.html">업데이트 기록</a>
-        <a href="./bugreport.html">버그리포트</a>
-        
-       
-        <button type="button" id="logOut">로그아웃</button>
-     </div>
-    </div>
+            <button type="button" id="notiSubmit">전송</button>
+  
+  </div>
 
-    
+
+   
+
+</div>
 
 
 
+   
   </body>
 
+ 
 
-  <!-- 파이어 베이스 -->
   <script type="module">
-    
+
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
@@ -71,20 +65,20 @@
       measurementId: "G-GPXECMNRK1"
     };
   
-    // Initialize Firebase
+    
+
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+
+    import { getFirestore, collection, getDocs, addDoc, setDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+// Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
 
-
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserSessionPersistence, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
     const auth = getAuth();
-
-
-
-
     
       
-    //로그인 검증, 로그인이 필요한 모든 페이지에 넣기, 로그인되지 않은 사용자는 리다이렉트시킴
+    
+    
     function longinOk() {
                 window.onload = onAuthStateChanged(auth, (user) => {
                 if (user) {
@@ -98,14 +92,7 @@
                  
                     document.getElementById('buttonchange').innerHTML = '로그아웃';
 
-                  
-                if (uid !== 'NWmrEdzBedXCwJk3IJGBDR0fqBG2') {
-                 
-                  window.location.replace('./easteregg.html');
-                  
-              
-                  
-                }
+               
 
                     // ...
                 } else {
@@ -123,22 +110,74 @@
             longinOk();
 
 
+           
 
 
 
-    // 로그아웃
-                document.getElementById('logOut').addEventListener('click', (event) => {
-                event.preventDefault()
-              
-                const logout = signOut(auth);
-                console.log('로그아웃');
-                alert('로그아웃 되었습니다.');
-            })
- 
+
+            // 텍스트에어리어에 줄바꿈 기능 넣기
+            document.getElementById('notiSubmit').addEventListener('click', (event) => {
+
+            var str = document.getElementById("noti1Sumit").value;
+            str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+            document.getElementById("noti1Sumit").value = str;
+
+            });
 
 
+
+
+
+    const db = getFirestore(app);
+
+
+  // json 전송 버튼
+document.getElementById('notiSubmit').addEventListener('click', (event)=>{
+
+ setbutton();
+ console.log('전송 성공');
+ alert('작성이 완료 되었습니다.');
+
+  setTimeout(() => {
+    window.location.href = "./history.html"
+  }, 800);
+})
+
+
+
+const today = new Date
+const year = today.getFullYear();
+const month = today.getMonth() + 1;
+const date = today.getDate();
+const hours = today.getHours(); // 시
+const minutes = today.getMinutes();  // 분
+
+
+// 폼 입력 양식
+async function setbutton() { 
+  await setDoc(doc(db, "bugreport", `${new Date}`), {
+    제목: `${document.getElementById('noti0Sumit').value}`,
+    내용: `${document.getElementById('noti1Sumit').value}`,
+    시간: `작성시간: ${year}년 ${month}월 ${date}일 ${hours}시 ${minutes}분`
+});
+
+}
+// 공지사항 다음 항목이 문서 제목인데 넘버링해주고 싶음
+
+
+
+
+
+
+
+/*
+await setDoc(doc(db, "공지사항", "야야"), {
+    제목: `${document.getElementById('noti0Sumit').value}`,
+    내용: `${document.getElementById('noti1Sumit').value}`,
+     country: "USA"
+});
+//정렬을 어떻게 순서대로 시키느냐가 관건인데
+
+*/
   </script>
-
-
-
 </html>
