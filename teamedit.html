@@ -44,8 +44,11 @@
             <br>
             <input type="text" id="jo8Sumit" placeholder="특이사항">
             <br>
-            <button type="button" id="joSumit">전송</button>
-  
+                <div style="text-align: center;">
+                <button type="button" id="cnlth" style="background-color: darkgray;">취소</button>
+                <button type="button" id="joSumit">전송</button>
+                
+                </div>
   </div>
 
 
@@ -170,6 +173,12 @@ function setbutton() {
 });
 }
 
+
+
+
+document.getElementById('cnlth').addEventListener('click', (event)=>{
+  window.location.href = "./index.html"
+})
 
 
   </script>
