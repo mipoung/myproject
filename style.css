@@ -141,18 +141,24 @@ margin-top: 50px;
     grid-template-columns: 8fr 70px;
     height: 25px; */
 
-  
+  .map-button {
+    padding-top: 1px;
+  }
+
+
   .map-button input {
   border-radius: 5px;
   }
   
   .map-button button {
   border-radius: 5px;
-  width: 65px;
+  
   
   }
   
-
+.button_group2 {
+    padding-top: 2px;
+}
   
 
 
