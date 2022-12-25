@@ -2740,6 +2740,64 @@ var infow = [
 
 
 
+    // 단속팁 아이콘
+    var imageSrc2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Cup_of_coffee.svg/256px-Cup_of_coffee.svg.png"; 
+
+
+
+    // 단속팁 마커, 인포윈도우 표시 함수
+    function elasticityON33() {
+    
+    for (var i = 0; i < positions2.length; i ++) {
+    
+    
+      // 마커 이미지의 이미지 크기 입니다
+      var imageSize = new kakao.maps.Size(24, 35); 
+        
+      // 마커 이미지를 생성합니다    
+      var markerImage = new kakao.maps.MarkerImage(imageSrc2, imageSize); 
+      
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: positions2[i].latlng // 마커의 위치
+            , image : markerImage // 마커 이미지 
+        });
+    
+        // 마커에 표시할 인포윈도우를 생성합니다 
+        var infowindow = new kakao.maps.InfoWindow({
+            content: positions2[i].content, // 인포윈도우에 표시할 내용
+            removable : true
+        });
+    
+        // 마커에 이벤트를 등록하는 함수 만들고 즉시 호출하여 클로저를 만듭니다
+        // 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+        (function(marker, infowindow) {
+            // 마커에 mouseover 이벤트를 등록하고 마우스 오버 시 인포윈도우를 표시합니다 
+            kakao.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map, marker);
+            });
+    
+            // 마커에 mouseout 이벤트를 등록하고 마우스 아웃 시 인포윈도우를 닫습니다
+            kakao.maps.event.addListener(map, 'click', function() {
+                infowindow.close();
+            });
+        })(marker, infowindow);
+    }
+    }
+
+
+    
+// 단속팁 배열
+    var positions2 = [
+
+        {
+            content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">단속팁</div>',
+        
+            latlng: new kakao.maps.LatLng(37.40579395999288, 126.67873150535965),
+            
+            
+        },];
     
     
     
