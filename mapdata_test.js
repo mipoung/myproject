@@ -1658,14 +1658,14 @@ var elasticity = [
     
   {
        path: [
-       new kakao.maps.LatLng(37.415317862648884, 126.67713760707622), new kakao.maps.LatLng(37.413087818913354, 126.68044273905454)
+       new kakao.maps.LatLng(37.414656066685154, 126.67812885398433), new kakao.maps.LatLng(37.413087818913354, 126.68044273905454)
        ],
 
        color: 'blue' 
     },
     {
        path: [
-       new kakao.maps.LatLng(37.41523846928627, 126.67693461702058), new kakao.maps.LatLng(37.4129186055825, 126.68034179560398)
+       new kakao.maps.LatLng(37.41523846928627, 126.67693461702058), new kakao.maps.LatLng(37.4145430104173, 126.67797119301486)
        ],
 
        color: 'blue' 
@@ -1695,14 +1695,14 @@ var elasticity = [
      // 금지시간: 7:00~9:00, 18:00~20:00
      {
        path: [
-       new kakao.maps.LatLng(37.41431614236596, 126.67737912324601), new kakao.maps.LatLng(37.413823567549336, 126.67682208660979)
+       new kakao.maps.LatLng(37.41453976506156, 126.67760690918156), new kakao.maps.LatLng(37.413823567549336, 126.67682208660979)
        ],
 
        color: 'blue' 
     },
     {
        path: [
-       new kakao.maps.LatLng(37.4142534726536, 126.67752624017898), new kakao.maps.LatLng(37.41372022983676, 126.67692419396474)
+       new kakao.maps.LatLng(37.41442289621267, 126.67770342639929), new kakao.maps.LatLng(37.41372022983676, 126.67692419396474)
        ],
 
        color: 'blue' 
