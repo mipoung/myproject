@@ -2522,6 +2522,51 @@ var positions = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+        // 단속팁 폴리라인
+        var tip = [
+      
+            //예술로 20번길
+    {
+        path: [new kakao.maps.LatLng(37.4358277580962, 126.69868194816998), new kakao.maps.LatLng(37.43540388924175, 126.70029943229744),new kakao.maps.LatLng(37.43408208650406, 126.70494859044543),new kakao.maps.LatLng(37.43403861398525, 126.70558150459077),new kakao.maps.LatLng(37.434175563564565, 126.70630410491871)], 
+
+        color: 'red'
+
+    },
+    
+];
+
+        // 단속팁 배열
+        var positions2 = [
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">예술로 20번길(CC)</div>',
+    
+        latlng: new kakao.maps.LatLng(37.43526158852669, 126.70103444599857),
+        
+        
+    },];
+
+
+
+
+
+
+
+
+
+
+
 ///// 인포 윈도우
 
 var infow = [
@@ -2671,6 +2716,33 @@ function elasticityON() {
 
 
 
+
+
+function tipON() {
+    //배열 이용해서 폴리라인 여러개 표시하기
+    for(var i=0; i<tip.length; i++) {
+    
+    //i번째 정보를 가져옵니다.
+    var item = tip[i];
+    
+    // 지도에 표시할 선을 생성합니다
+    var polyline = new kakao.maps.Polyline({
+    
+        map: map, //지도에 선을 표시합니다.
+        path: item.path, // 선을 구성하는 좌표배열 입니다
+        strokeWeight: 6, // 선의 두께 입니다
+        strokeColor: item.color, // 선의 색깔입니다
+        strokeOpacity: 0.6, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'solid' // 선의 스타일입니다
+    });
+    
+    }
+    
+    }
+
+
+
+
     function infowindowON () {
 
         for (var i = 0; i < infow.length; i ++) {
@@ -2800,16 +2872,6 @@ function elasticityON() {
 
 
     
-// 단속팁 배열
-    var positions2 = [
-
-        {
-            content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">단속팁</div>',
-        
-            latlng: new kakao.maps.LatLng(37.40579395999288, 126.67873150535965),
-            
-            
-        },];
     
     
         
