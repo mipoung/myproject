@@ -1,19 +1,180 @@
   
 
+var overlayOn = false, // 지도 위에 로드뷰 오버레이가 추가된 상태를 가지고 있을 변수
+container = document.getElementById('container'), // 지도와 로드뷰를 감싸고 있는 div 입니다
+mapWrapper = document.getElementById('mapWrapper'), // 지도를 감싸고 있는 div 입니다
+mapContainer = document.getElementById('map'), // 지도를 표시할 div 입니다 
+rvContainer = document.getElementById('roadview'); //로드뷰를 표시할 div 입니다
+
+
+   
+
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places(); 
 
 // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new kakao.maps.LatLng(37.40960506201756, 126.67865875458125), // 지도의 중심좌표
-        level: 6 // 지도의 확대 레벨
-    };  
 
-// 지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+
+
+
+
+var mapCenter = new kakao.maps.LatLng(37.40960506201756, 126.67865875458125), // 지도의 중심좌표
+mapOption = {
+    center: mapCenter, // 지도의 중심좌표
+    level: 6 // 지도의 확대 레벨
+};
+
+// 지도를 표시할 div와 지도 옵션으로 지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption);
+
+// 로드뷰 객체를 생성합니다 
+var rv = new kakao.maps.Roadview(rvContainer); 
+
+
+
+
+
+
+
+// 좌표로부터 로드뷰 파노라마 ID를 가져올 로드뷰 클라이언트 객체를 생성합니다 
+var rvClient = new kakao.maps.RoadviewClient(); 
+
+// 로드뷰에 좌표가 바뀌었을 때 발생하는 이벤트를 등록합니다 
+kakao.maps.event.addListener(rv, 'position_changed', function() {
+
+// 현재 로드뷰의 위치 좌표를 얻어옵니다 
+var rvPosition = rv.getPosition();
+
+// 지도의 중심을 현재 로드뷰의 위치로 설정합니다
+map.setCenter(rvPosition);
+
+// 지도 위에 로드뷰 도로 오버레이가 추가된 상태이면
+if(overlayOn) {
+    // 마커의 위치를 현재 로드뷰의 위치로 설정합니다
+    marker.setPosition(rvPosition);
+}
+});
+
+
+
+
+//지도에 클릭 이벤트를 등록합니다
+kakao.maps.event.addListener(map, 'click', function(mouseEvent){
+
+// 지도 위에 로드뷰 도로 오버레이가 추가된 상태가 아니면 클릭이벤트를 무시합니다 
+if(!overlayOn) {
+    return;
+}
+
+// 클릭한 위치의 좌표입니다 
+var position = mouseEvent.latLng;
+
+// 마커를 클릭한 위치로 옮깁니다
+marker.setPosition(position);
+
+// 클락한 위치를 기준으로 로드뷰를 설정합니다
+toggleRoadview(position);
+});
+
+// 전달받은 좌표(position)에 가까운 로드뷰의 파노라마 ID를 추출하여
+// 로드뷰를 설정하는 함수입니다
+function toggleRoadview(position){
+rvClient.getNearestPanoId(position, 50, function(panoId) {
+    // 파노라마 ID가 null 이면 로드뷰를 숨깁니다
+    if (panoId === null) {
+        toggleMapWrapper(true, position);
+    } else {
+     toggleMapWrapper(false, position);
+
+        // panoId로 로드뷰를 설정합니다
+        rv.setPanoId(panoId, position);
+    }
+});
+}
+
+// 지도를 감싸고 있는 div의 크기를 조정하는 함수입니다
+function toggleMapWrapper(active, position) {
+if (active) {
+
+    // 지도를 감싸고 있는 div의 너비가 100%가 되도록 class를 변경합니다 
+    container.className = '';
+
+    // 지도의 크기가 변경되었기 때문에 relayout 함수를 호출합니다
+    map.relayout();
+
+    // 지도의 너비가 변경될 때 지도중심을 입력받은 위치(position)로 설정합니다
+    map.setCenter(position);
+} else {
+
+    // 지도만 보여지고 있는 상태이면 지도의 너비가 50%가 되도록 class를 변경하여
+    // 로드뷰가 함께 표시되게 합니다
+    if (container.className.indexOf('view_roadview') === -1) {
+        container.className = 'view_roadview';
+
+        // 지도의 크기가 변경되었기 때문에 relayout 함수를 호출합니다
+        map.relayout();
+
+        // 지도의 너비가 변경될 때 지도중심을 입력받은 위치(position)로 설정합니다
+        map.setCenter(position);
+    }
+}
+}
+
+// 지도 위의 로드뷰 도로 오버레이를 추가,제거하는 함수입니다
+function toggleOverlay(active) {
+if (active) {
+    overlayOn = true;
+
+    // 지도 위에 로드뷰 도로 오버레이를 추가합니다
+    map.addOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW);
+
+    // 지도 위에 마커를 표시합니다
+    marker.setMap(map);
+
+    // 마커의 위치를 지도 중심으로 설정합니다 
+    marker.setPosition(map.getCenter());
+
+    // 로드뷰의 위치를 지도 중심으로 설정합니다
+    toggleRoadview(map.getCenter());
+} else {
+    overlayOn = false;
+
+    // 지도 위의 로드뷰 도로 오버레이를 제거합니다
+    map.removeOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW);
+
+    // 지도 위의 마커를 제거합니다
+    marker.setMap(null);
+}
+}
+
+// 지도 위의 로드뷰 버튼을 눌렀을 때 호출되는 함수입니다
+function setRoadviewRoad() {
+var control = document.getElementById('roadviewControl');
+
+// 버튼이 눌린 상태가 아니면
+if (control.className.indexOf('active') === -1) {
+    control.className = 'active';
+
+    // 로드뷰 도로 오버레이가 보이게 합니다
+    toggleOverlay(true);
+} else {
+    control.className = '';
+
+    // 로드뷰 도로 오버레이를 제거합니다
+    toggleOverlay(false);
+}
+}
+
+// 로드뷰에서 X버튼을 눌렀을 때 로드뷰를 지도 뒤로 숨기는 함수입니다
+function closeRoadview() {
+var position = marker.getPosition();
+toggleMapWrapper(true, position);
+}
+
+
 
 //
 // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
@@ -34,24 +195,24 @@ searchPlaces();
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
 
-    var keyword = document.getElementById('keyword').value;
+var keyword = document.getElementById('keyword').value;
 
-    //var places = new kakao.maps.services.Places();
-    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-    ps.keywordSearch( keyword, placesSearchCB,{
-    radius : 10000,
-    location: new kakao.maps.LatLng(37.39787605239137, 126.6562262064169)
+//var places = new kakao.maps.services.Places();
+// 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+ps.keywordSearch( keyword, placesSearchCB,{
+radius : 10000,
+location: new kakao.maps.LatLng(37.39787605239137, 126.6562262064169)
 
-    
-    
+
+
 }); 
-   
-   
-   // function MoveFocus(next) {
-       // if(keycode == 13){
-         //   document.getElementById(map).focus();
-      //  }
-   // }
+
+
+// function MoveFocus(next) {
+   // if(keycode == 13){
+     //   document.getElementById(map).focus();
+  //  }
+// }
 }
 
 
@@ -59,41 +220,44 @@ function searchPlaces() {
 
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
 function placesSearchCB (data, status, pagination) {
-    if (status === kakao.maps.services.Status.OK) {
+if (status === kakao.maps.services.Status.OK) {
 
-        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-        // LatLngBounds 객체에 좌표를 추가합니다
-        var bounds = new kakao.maps.LatLngBounds();
+    // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+    // LatLngBounds 객체에 좌표를 추가합니다
+    var bounds = new kakao.maps.LatLngBounds();
 
-        for (var i=0; i<data.length; i++) {
-            displayMarker(data[i]);    
-            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-        }       
+    for (var i=0; i<data.length; i++) {
+        displayMarker(data[i]);    
+        bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+    }       
 
-        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-        map.setBounds(bounds);
-        map.setLevel(3); // 검색 후 맵 레벨을 변경합니다.
-    } 
+    // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+    map.setBounds(bounds);
+    map.setLevel(3); // 검색 후 맵 레벨을 변경합니다.
+} 
 }
 
 // 지도에 마커를 표시하는 함수입니다
 function displayMarker(place) {
-    
-    // 마커를 생성하고 지도에 표시합니다
-    var marker = new kakao.maps.Marker({
-        map: map,
-        position: new kakao.maps.LatLng(place.y, place.x) 
-    });
 
-    
+// 마커를 생성하고 지도에 표시합니다
+var marker = new kakao.maps.Marker({
+    map: map,
+    position: new kakao.maps.LatLng(place.y, place.x) 
+});
 
-    // 마커에 클릭이벤트를 등록합니다
-    kakao.maps.event.addListener(marker, 'click', function() {
-        // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-        infowindow.setContent('<div style="width:100%; padding:5px;font-size:12px;">' + place.place_name + '</div>');
-        infowindow.open(map, marker);
-    });
+
+
+// 마커에 클릭이벤트를 등록합니다
+kakao.maps.event.addListener(marker, 'click', function() {
+    // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+    infowindow.setContent('<div style="width:100%; padding:5px;font-size:12px;">' + place.place_name + '</div>');
+    infowindow.open(map, marker);
+});
 }
+
+
+
 
 
 // 클릭하면 주소 나오게 하기
@@ -102,44 +266,44 @@ function displayMarker(place) {
 var geocoder = new kakao.maps.services.Geocoder();
 
 
-    var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입니다
-    infowindow = new kakao.maps.InfoWindow ({
-        zindex:1,
-        removable : true
+var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입니다
+infowindow = new kakao.maps.InfoWindow ({
+    zindex:1,
+    removable : true
+
     
-        
-    }); 
+}); 
 
 
 // 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
 kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-    searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-        if (status === kakao.maps.services.Status.OK) {
-            var detailAddr = !!result[0].road_address ? '<div style="width:100%; padding:2px;">도로명: ' + result[0].road_address.address_name + '</div>' : '';
-            detailAddr += '<div style="width:100%; padding:2px;">지번: ' + result[0].address.address_name + '</div>';
- 
-            var content = '<div class="bAddr">' +
-                            '<span class="title">법정동 주소정보</span>' + 
-                            detailAddr + 
-                        '</div>';
+searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
+    if (status === kakao.maps.services.Status.OK) {
+        var detailAddr = !!result[0].road_address ? '<div style="width:100%; padding:2px;">도로명: ' + result[0].road_address.address_name + '</div>' : '';
+        detailAddr += '<div style="width:100%; padding:2px;">지번: ' + result[0].address.address_name + '</div>';
 
-            // 마커를 클릭한 위치에 표시합니다 
-            marker.setPosition(mouseEvent.latLng);
-            marker.setMap(map);
+        var content = '<div class="bAddr">' +
+                        '<span class="title">법정동 주소정보</span>' + 
+                        detailAddr + 
+                    '</div>';
 
-            // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
-            infowindow.setContent(content);
-            infowindow.open(map, marker);
-        }   
-    });
+        // 마커를 클릭한 위치에 표시합니다 
+        marker.setPosition(mouseEvent.latLng);
+        marker.setMap(map);
+
+        // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
+        infowindow.setContent(content);
+        infowindow.open(map, marker);
+    }   
+});
 });
 
 
 
 
 function searchDetailAddrFromCoords(coords, callback) {
-    // 좌표로 법정동 상세 주소 정보를 요청합니다
-    geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+// 좌표로 법정동 상세 주소 정보를 요청합니다
+geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
 }
 
 
@@ -1494,14 +1658,14 @@ var elasticity = [
     
   {
        path: [
-       new kakao.maps.LatLng(37.415317862648884, 126.67713760707622), new kakao.maps.LatLng(37.413087818913354, 126.68044273905454)
+       new kakao.maps.LatLng(37.414656066685154, 126.67812885398433), new kakao.maps.LatLng(37.413087818913354, 126.68044273905454)
        ],
 
        color: 'blue' 
     },
     {
        path: [
-       new kakao.maps.LatLng(37.41523846928627, 126.67693461702058), new kakao.maps.LatLng(37.4129186055825, 126.68034179560398)
+       new kakao.maps.LatLng(37.41523846928627, 126.67693461702058), new kakao.maps.LatLng(37.4145430104173, 126.67797119301486)
        ],
 
        color: 'blue' 
@@ -1531,14 +1695,14 @@ var elasticity = [
      // 금지시간: 7:00~9:00, 18:00~20:00
      {
        path: [
-       new kakao.maps.LatLng(37.41431614236596, 126.67737912324601), new kakao.maps.LatLng(37.413823567549336, 126.67682208660979)
+       new kakao.maps.LatLng(37.41453976506156, 126.67760690918156), new kakao.maps.LatLng(37.413823567549336, 126.67682208660979)
        ],
 
        color: 'blue' 
     },
     {
        path: [
-       new kakao.maps.LatLng(37.4142534726536, 126.67752624017898), new kakao.maps.LatLng(37.41372022983676, 126.67692419396474)
+       new kakao.maps.LatLng(37.41442289621267, 126.67770342639929), new kakao.maps.LatLng(37.41372022983676, 126.67692419396474)
        ],
 
        color: 'blue' 
@@ -2165,89 +2329,6 @@ var elasticity = [
 */
 
 
-// 여러개 배열 만들고 data라는 배열 값으로 합쳐 하나의 배열로 만들기
-var data = [
-    ...child,
-]
-
-
-//소화전, 탄력구간 배열
-//var fireplug = []
-//var elasticity = []
-//var area_line = []
-
-
-
-
-function childON() {
-    
-//배열 이용해서 폴리라인 여러개 표시하기
-for(var i=0; i<data.length; i++) {
-
-    //i번째 정보를 가져옵니다.
-    var item = data[i];
-
-    // 지도에 표시할 선을 생성합니다
-	var polyline = new kakao.maps.Polyline({
-
-        map: map, //지도에 선을 표시합니다.
-    	path: item.path, // 선을 구성하는 좌표배열 입니다
-	    strokeWeight: 5, // 선의 두께 입니다
-    	strokeColor: item.color, // 선의 색깔입니다
-	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-    	strokeStyle: 'solid' // 선의 스타일입니다
-	});
-
-}
-}
-
-
-//배열 이용해서 폴리라인 여러개 표시하기
-for(var i=0; i<area_line.length; i++) {
-
-    //i번째 정보를 가져옵니다.
-    var item = area_line[i];
-    
-    // 지도에 표시할 선을 생성합니다
-    var polyline = new kakao.maps.Polyline({
-    
-        map: map, //지도에 선을 표시합니다.
-        path: item.path, // 선을 구성하는 좌표배열 입니다
-        strokeWeight: 2, // 선의 두께 입니다
-        strokeColor: item.color, // 선의 색깔입니다
-        strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-        strokeStyle: 'solid' // 선의 스타일입니다
-    });
-    
-    }
-
-
-
-
-function elasticityON() {
-    //배열 이용해서 폴리라인 여러개 표시하기
-    for(var i=0; i<elasticity.length; i++) {
-    
-    //i번째 정보를 가져옵니다.
-    var item = elasticity[i];
-    
-    // 지도에 표시할 선을 생성합니다
-    var polyline = new kakao.maps.Polyline({
-    
-        map: map, //지도에 선을 표시합니다.
-        path: item.path, // 선을 구성하는 좌표배열 입니다
-        strokeWeight: 4, // 선의 두께 입니다
-        strokeColor: item.color, // 선의 색깔입니다
-        strokeOpacity: 0.6, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-        strokeStyle: 'dashed' // 선의 스타일입니다
-    });
-    
-    }
-    
-    }
-
-// 지도에 선을 표시합니다 
-polyline.setMap(map);  
 
 
 ///////////////////////////
@@ -2441,6 +2522,51 @@ var positions = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+        // 단속팁 폴리라인
+        var tip = [
+      
+            //예술로 20번길
+    {
+        path: [new kakao.maps.LatLng(37.4358277580962, 126.69868194816998), new kakao.maps.LatLng(37.43540388924175, 126.70029943229744),new kakao.maps.LatLng(37.43408208650406, 126.70494859044543),new kakao.maps.LatLng(37.43403861398525, 126.70558150459077),new kakao.maps.LatLng(37.434175563564565, 126.70630410491871)], 
+
+        color: 'red'
+
+    },
+    
+];
+
+        // 단속팁 배열
+        var positions2 = [
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">예술로 20번길(CC)</div>',
+    
+        latlng: new kakao.maps.LatLng(37.43526158852669, 126.70103444599857),
+        
+        
+    },];
+
+
+
+
+
+
+
+
+
+
+
 ///// 인포 윈도우
 
 var infow = [
@@ -2494,6 +2620,128 @@ var infow = [
     ];
     
     
+// 여러개 배열 만들고 data라는 배열 값으로 합쳐 하나의 배열로 만들기
+var data = [
+    ...child,
+]
+
+
+//소화전, 탄력구간 배열
+//var fireplug = []
+//var elasticity = []
+//var area_line = []
+
+
+
+
+function childON() {
+    
+//배열 이용해서 폴리라인 여러개 표시하기
+for(var i=0; i<data.length; i++) {
+
+    //i번째 정보를 가져옵니다.
+    var item = data[i];
+
+    // 지도에 표시할 선을 생성합니다
+	var polyline = new kakao.maps.Polyline({
+
+        map: map, //지도에 선을 표시합니다.
+    	path: item.path, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 5, // 선의 두께 입니다
+    	strokeColor: item.color, // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    	strokeStyle: 'solid' // 선의 스타일입니다
+	});
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//배열 이용해서 폴리라인 여러개 표시하기
+for(var i=0; i<area_line.length; i++) {
+
+    //i번째 정보를 가져옵니다.
+    var item = area_line[i];
+    
+    // 지도에 표시할 선을 생성합니다
+    var polyline = new kakao.maps.Polyline({
+    
+        map: map, //지도에 선을 표시합니다.
+        path: item.path, // 선을 구성하는 좌표배열 입니다
+        strokeWeight: 2, // 선의 두께 입니다
+        strokeColor: item.color, // 선의 색깔입니다
+        strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'solid' // 선의 스타일입니다
+    });
+    
+    }
+
+
+
+
+function elasticityON() {
+    //배열 이용해서 폴리라인 여러개 표시하기
+    for(var i=0; i<elasticity.length; i++) {
+    
+    //i번째 정보를 가져옵니다.
+    var item = elasticity[i];
+    
+    // 지도에 표시할 선을 생성합니다
+    var polyline = new kakao.maps.Polyline({
+    
+        map: map, //지도에 선을 표시합니다.
+        path: item.path, // 선을 구성하는 좌표배열 입니다
+        strokeWeight: 4, // 선의 두께 입니다
+        strokeColor: item.color, // 선의 색깔입니다
+        strokeOpacity: 0.6, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'dashed' // 선의 스타일입니다
+    });
+    
+    }
+    
+    }
+
+
+
+
+
+function tipON() {
+    //배열 이용해서 폴리라인 여러개 표시하기
+    for(var i=0; i<tip.length; i++) {
+    
+    //i번째 정보를 가져옵니다.
+    var item = tip[i];
+    
+    // 지도에 표시할 선을 생성합니다
+    var polyline = new kakao.maps.Polyline({
+    
+        map: map, //지도에 선을 표시합니다.
+        path: item.path, // 선을 구성하는 좌표배열 입니다
+        strokeWeight: 6, // 선의 두께 입니다
+        strokeColor: item.color, // 선의 색깔입니다
+        strokeOpacity: 0.6, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'solid' // 선의 스타일입니다
+    });
+    
+    }
+    
+    }
+
+
+
 
     function infowindowON () {
 
@@ -2576,6 +2824,59 @@ var infow = [
 
 
 
+    // 단속팁 아이콘
+    var imageSrc2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Cup_of_coffee.svg/256px-Cup_of_coffee.svg.png"; 
+
+
+
+    // 단속팁 마커, 인포윈도우 표시 함수
+    function elasticityON33() {
+    
+    for (var i = 0; i < positions2.length; i ++) {
+    
+    
+      // 마커 이미지의 이미지 크기 입니다
+      var imageSize = new kakao.maps.Size(24, 35); 
+        
+      // 마커 이미지를 생성합니다    
+      var markerImage = new kakao.maps.MarkerImage(imageSrc2, imageSize); 
+      
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: positions2[i].latlng // 마커의 위치
+            , image : markerImage // 마커 이미지 
+        });
+    
+        // 마커에 표시할 인포윈도우를 생성합니다 
+        var infowindow = new kakao.maps.InfoWindow({
+            content: positions2[i].content, // 인포윈도우에 표시할 내용
+            removable : true
+        });
+    
+        // 마커에 이벤트를 등록하는 함수 만들고 즉시 호출하여 클로저를 만듭니다
+        // 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+        (function(marker, infowindow) {
+            // 마커에 mouseover 이벤트를 등록하고 마우스 오버 시 인포윈도우를 표시합니다 
+            kakao.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map, marker);
+            });
+    
+            // 마커에 mouseout 이벤트를 등록하고 마우스 아웃 시 인포윈도우를 닫습니다
+            kakao.maps.event.addListener(map, 'click', function() {
+                infowindow.close();
+            });
+        })(marker, infowindow);
+    }
+    }
+
+
     
     
     
+        
+
+
+
+        // 지도에 선을 표시합니다 
+polyline.setMap(map);  
