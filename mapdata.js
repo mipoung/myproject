@@ -2534,6 +2534,14 @@ var positions = [
 
 
         // 단속팁 폴리라인
+
+        /* 
+            {
+        path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
+
+        color: 'red' },
+    */
+
         var tip = [
       
             //예술로 20번길
@@ -2543,10 +2551,26 @@ var positions = [
         color: 'red'
 
     },
+
+     {
+        path: [new kakao.maps.LatLng(37.41181864497088, 126.67758750840612),new kakao.maps.LatLng(37.41349953679277, 126.679427183138)], 
+
+        color: 'red'
+
+    },
     
 ];
 
         // 단속팁 배열
+        /*
+            {
+                content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">내용</div>',
+            
+                latlng: new kakao.maps.LatLng(),
+        
+        
+            },
+    */
         var positions2 = [
 
     {
@@ -2555,7 +2579,17 @@ var positions = [
         latlng: new kakao.maps.LatLng(37.43526158852669, 126.70103444599857),
         
         
-    },];
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">샘말로(CC, 4대 불법)</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41349953679277, 126.679427183138),
+
+
+    },
+
+];
 
 
 
