@@ -2558,6 +2558,86 @@ var positions = [
         color: 'red'
 
     },
+
+        
+    
+    // 송도로타리
+        {
+            path: [new kakao.maps.LatLng(37.41832170124777, 126.64986315053659),new kakao.maps.LatLng(37.418149012633826, 126.65088064735923),new kakao.maps.LatLng(37.41706173625749, 126.6503547624831),new kakao.maps.LatLng(37.41826712243286, 126.64968830725883)], 
+
+            color: 'red' },
+
+        {
+            path: [new kakao.maps.LatLng(37.417039094270095, 126.65031533027049),new kakao.maps.LatLng(37.4164856126597, 126.65053253399239),new kakao.maps.LatLng(37.41519112029827, 126.65153825720067),new kakao.maps.LatLng(37.41424895565458, 126.6528642542116),new kakao.maps.LatLng(37.41208127955874, 126.65415066904255)], 
+    
+            color: 'red' },
+
+       
+       
+     //홍두깨식당
+        {
+            path: [new kakao.maps.LatLng(37.41734742550415, 126.65175137214818),new kakao.maps.LatLng(37.417347508690064, 126.65177961293135)], 
+
+            color: 'red' },
+
+
+        //나사렛병원 이중실선
+             {
+                path: [new kakao.maps.LatLng(37.40860246199092, 126.67120540677791),new kakao.maps.LatLng(37.40814638576901, 126.67082336682452),new kakao.maps.LatLng(37.40789834198412, 126.67072844411975),new kakao.maps.LatLng(37.406659207918885, 126.67064350809005)], 
+                
+                color: 'red' },
+
+            {
+                path: [new kakao.maps.LatLng(37.40825957729509, 126.67102618353083),new kakao.maps.LatLng(37.40729494773109, 126.67245356683375)], 
+        
+                color: 'red' },
+            {
+                path: [new kakao.maps.LatLng(37.4074764308461, 126.67291587139609),new kakao.maps.LatLng(37.407196306355935, 126.67262342050681)], 
+        
+                color: 'red' },
+            {
+                path: [new kakao.maps.LatLng(37.406706016271585, 126.67208622352192),new kakao.maps.LatLng(37.40651575510372, 126.67170867535373)], 
+        
+                color: 'red' },
+            {
+                path: [new kakao.maps.LatLng(37.406491958956096, 126.67125133802868),new kakao.maps.LatLng(37.40654541737182, 126.67022609671255)], 
+        
+                color: 'red' },
+
+
+                //능허대로
+
+                {
+                    path: [new kakao.maps.LatLng(37.43030284827616, 126.63567586688552),new kakao.maps.LatLng(37.42955122047646, 126.63737425387819),new kakao.maps.LatLng(37.42358003022335, 126.6411537891307),new kakao.maps.LatLng(37.42069298028606, 126.64586710445664),new kakao.maps.LatLng(37.420202560917936, 126.64758654186487),new kakao.maps.LatLng(37.419009234657814, 126.64927534453058),new kakao.maps.LatLng(37.418217994036496, 126.64983256771235)], 
+            
+                    color: 'red' },
+                {
+                    path: [new kakao.maps.LatLng(37.417012055857406, 126.6503126318781),new kakao.maps.LatLng(37.41649898576719, 126.65048446241276),new kakao.maps.LatLng(37.41512378647519, 126.65162046611113),new kakao.maps.LatLng(37.41427148901254, 126.65286697422104),new kakao.maps.LatLng(37.41205879578335, 126.6541648920052),new kakao.maps.LatLng(37.405176764004736, 126.65785598953687)], 
+            
+                    color: 'red' },
+                {
+                    path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
+            
+                    color: 'red' },
+                {
+                    path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
+            
+                    color: 'red' },
+            
+
+                    // 석산
+
+                    {
+                        path: [new kakao.maps.LatLng(37.42618661430368, 126.63980538499574),new kakao.maps.LatLng(37.42725850289646, 126.6426699298097),new kakao.maps.LatLng(37.426954025308845, 126.64478408572243)], 
+                
+                        color: 'red' },
+                   
+      
+
+
+
+
+
     
 ];
 
@@ -2574,7 +2654,7 @@ var positions = [
         var positions2 = [
 
     {
-        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">예술로 20번길(CC)</div>',
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">예술로 20번길: CC</div>',
     
         latlng: new kakao.maps.LatLng(37.43526158852669, 126.70103444599857),
         
@@ -2582,13 +2662,78 @@ var positions = [
     },
 
     {
-        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">샘말로(CC, 4대 불법)</div>',
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">샘말로 4대불법: CC</div>',
     
         latlng: new kakao.maps.LatLng(37.41349953679277, 126.679427183138),
 
 
     },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">홍두깨식당 소화전: PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.417347508690064, 126.65177961293135),
 
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">송도로타리: CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41829147018248, 126.65030385901554),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">나사렛병원 이중실선: CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.40862014436822, 126.67108390650179),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">능허대로:CC<br>무적차량:PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.42912064562012, 126.6379977335346),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">보물섬 앞 이중주차: 계도</div>',
+    
+        latlng: new kakao.maps.LatLng(37.418291050287806, 126.65245304081877),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">크로바주유소 옆 안전지대: CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.42228599117941, 126.64753158916014),
+
+
+    },
+                //
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">석산, 베스트요양병원: CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.42730280129306, 126.64242116414665),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">송도고: PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.429080802584025, 126.64566377243898),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">내용</div>',
+    
+        latlng: new kakao.maps.LatLng(),
+
+
+    },
 ];
 
 
