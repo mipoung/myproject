@@ -2620,15 +2620,11 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
     
                 color: 'red' },
                 {
-                path: [new kakao.maps.LatLng(37.40870922342631, 126.66589903160072),new kakao.maps.LatLng(37.40742856701268, 126.66546986178672)], 
+                path: [new kakao.maps.LatLng(37.40870922342631, 126.66589903160072),new kakao.maps.LatLng(37.40742856701268, 126.66546986178672)], }
     
     
     
-                //
-    
-                color: 'red' },
-                {
-                path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
+                /*
     
                 color: 'red' },
                 {
@@ -2647,8 +2643,12 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
                 path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
     
                 color: 'red' },
+                {
+                path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
     
+                color: 'red' },
     
+    */
     
     
     
@@ -2747,7 +2747,7 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
     
     
         },
-    
+    /*
         {
             content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">내용</div>',
         
@@ -2755,6 +2755,7 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
     
     
         },
+        */
     ];
     
     
