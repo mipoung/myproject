@@ -3026,7 +3026,7 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
         
         
           // 마커 이미지의 이미지 크기 입니다
-          var imageSize = new kakao.maps.Size(24, 35); 
+          var imageSize = new kakao.maps.Size(25, 40); 
             
           // 마커 이미지를 생성합니다    
           var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
@@ -3064,7 +3064,7 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
     
     
         // 단속팁 아이콘
-        var imageSrc2 = "https://raw.githubusercontent.com/mipoung/myproject/main/2323.png"; 
+        var imageSrc2 = "https://raw.githubusercontent.com/mipoung/myproject/main/tipicon.png"; 
     
     
     
@@ -3075,7 +3075,7 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
         
         
           // 마커 이미지의 이미지 크기 입니다
-          var imageSize = new kakao.maps.Size(24, 35); 
+          var imageSize = new kakao.maps.Size(20, 25); 
             
           // 마커 이미지를 생성합니다    
           var markerImage = new kakao.maps.MarkerImage(imageSrc2, imageSize); 
