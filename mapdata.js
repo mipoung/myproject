@@ -2620,7 +2620,22 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
     
                 color: 'red' },
                 {
-                path: [new kakao.maps.LatLng(37.40870922342631, 126.66589903160072),new kakao.maps.LatLng(37.40742856701268, 126.66546986178672)], }
+                path: [new kakao.maps.LatLng(37.40870922342631, 126.66589903160072),new kakao.maps.LatLng(37.40742856701268, 126.66546986178672)], },
+
+
+            // 독배로
+            {
+                path: [new kakao.maps.LatLng(37.42752054791842, 126.64516271636265),new kakao.maps.LatLng(37.425554670969156, 126.64460710932053),new kakao.maps.LatLng(37.42425729856901, 126.64463583646717),new kakao.maps.LatLng(37.421916665004645, 126.6453021327586),new kakao.maps.LatLng(37.42092752814707, 126.64596202445735)], 
+    
+                color: 'red' },
+    
+    
+                //한나루로
+                {
+                path: [new kakao.maps.LatLng(37.42153634486566, 126.64467128937517),new kakao.maps.LatLng(37.422281125027375, 126.64665607842778),new kakao.maps.LatLng(37.42270800523115, 126.65083406303783),new kakao.maps.LatLng(37.4226973661668, 126.65334210662671),new kakao.maps.LatLng(37.42461432361845, 126.65567186377821),new kakao.maps.LatLng(37.42760172536758, 126.65740937367642)], 
+    
+                color: 'red' },
+    
     
     
     
@@ -2747,6 +2762,29 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
     
     
         },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">송도파크자이 앞: CC<br>무적차량: PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.40938754577657, 126.65579804356999),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">독배로: CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.4265731406281, 126.64471527367223),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">한나루로 CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.422862842457555, 126.65139820884163),
+
+
+    },
     /*
         {
             content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">내용</div>',
