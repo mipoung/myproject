@@ -3064,7 +3064,7 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
     
     
         // 단속팁 아이콘
-        var imageSrc2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Cup_of_coffee.svg/256px-Cup_of_coffee.svg.png"; 
+        var imageSrc2 = "https://raw.githubusercontent.com/mipoung/myproject/main/234.png"; 
     
     
     
