@@ -187,10 +187,18 @@ querySnapshot.forEach((doc) => {
   var 템플릿 = `<h3>${doc.data().날짜} - 근무일정</h3>
   <table class="table1">
       <colgroup>
-      <col style="width: 36.005682px">
+      <col style="width: 30px">
       <col style="width: 231.005682px">
       </colgroup>
       <thead>
+        <tr class="tr3">
+          <td>근무시간</td>
+          <td>조출:  7:00 ~
+            <br>오전:  9:00 ~ 14:00
+            <br>오후:  14:00 ~ 17:00
+            <br>저녁:  17:00 ~ 22:00
+            </td>
+        </tr>
         <tr>
           <th>조</th>
           <th>해당 구역</th>

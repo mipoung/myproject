@@ -247,7 +247,7 @@ border-radius: 10px;
 }
 
 .table1 thead {
-   background-color: #b6b6f7;
+   background-color: #9e9ef5;
    
 }
 
@@ -261,6 +261,10 @@ border-radius: 10px;
 
 .tr2 {
     background-color: #d4c695;
+}
+
+.tr3 {
+    background-color: #c7c7f7;
 }
  
 
