@@ -3005,6 +3005,34 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
 
 
     },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">청학로<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.42736210971195, 126.66338709413293),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">전원까치빌라<br>계도우선, PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.42900531161398, 126.66695844895725),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">청학중학교<br>계도우선 후 CC<br>(주로 학교 입구 민원)</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41807609210196, 126.67100866660942),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">연수역4번출구<br>공여주차장 입구 주변 황색복선 CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.418131542275205, 126.67723284621403),
+
+
+    },
 
     /*
         {
