@@ -2635,29 +2635,30 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
                 path: [new kakao.maps.LatLng(37.42153634486566, 126.64467128937517),new kakao.maps.LatLng(37.422281125027375, 126.64665607842778),new kakao.maps.LatLng(37.42270800523115, 126.65083406303783),new kakao.maps.LatLng(37.4226973661668, 126.65334210662671),new kakao.maps.LatLng(37.42461432361845, 126.65567186377821),new kakao.maps.LatLng(37.42760172536758, 126.65740937367642)], 
     
                 color: 'red' },
+
+                //함박로
+                {
+                    path: [new kakao.maps.LatLng(37.42470602926085, 126.67864224338766),new kakao.maps.LatLng(37.42594086439309, 126.67880643212982),new kakao.maps.LatLng(37.4253615264298, 126.68619194126249),new kakao.maps.LatLng(37.42412689589608, 126.68610106526127)], 
+        
+                    color: 'red' },
+
+                    {
+                        path: [new kakao.maps.LatLng(37.4256232212915, 126.68296534983142),new kakao.maps.LatLng(37.42437038663729, 126.68280681812165)], 
+            
+                        color: 'red' },
+                
+                    
     
     
-    
+                //함박안로중앙선
+                {
+                    path: [new kakao.maps.LatLng(37.42399089197465, 126.6874799250847),new kakao.maps.LatLng(37.42520305619037, 126.68759351225228)], 
+        
+                    color: 'red' },
     
                 /*
     
-                color: 'red' },
-                {
-                path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
-    
-                color: 'red' },
-                {
-                path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
-    
-                color: 'red' },
-                {
-                path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
-    
-                color: 'red' },
-                {
-                path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
-    
-                color: 'red' },
+               //
                 {
                 path: [new kakao.maps.LatLng(),new kakao.maps.LatLng()], 
     
@@ -2726,9 +2727,9 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
     
         },
         {
-            content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">능허대로<br>일반차량:CC, 무적차량:PDA</div>',
+            content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">능허대공원주변<br>일반차량:CC, 무적차량:PDA</div>',
         
-            latlng: new kakao.maps.LatLng(37.42912064562012, 126.6379977335346),
+            latlng: new kakao.maps.LatLng(37.422305698888664, 126.64284033030569),
     
     
         },
@@ -2879,7 +2880,7 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
 
     },
     {
-        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">이학갈비뒷편<br>CC</div>',
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">이학갈비뒷편<br>CC(황색단선+복선)</div>',
     
         latlng: new kakao.maps.LatLng(37.41620497954351, 126.67782287358249),
 
@@ -2990,7 +2991,20 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
 
 
     },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">함박뫼로50번길<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41969040127327, 126.67644667482442),
 
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">새말로69번길<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41804977979343, 126.67946992013096),
+
+
+    },
 
     /*
         {
