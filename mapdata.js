@@ -3020,7 +3020,7 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
 
     },
     {
-        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">청학중학교<br>계도우선 후 CC<br>(주로 학교 입구 민원)</div>',
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">청학중학교<br>계도우선<br>(주로 학교 입구 민원)</div>',
     
         latlng: new kakao.maps.LatLng(37.41807609210196, 126.67100866660942),
 
@@ -3030,6 +3030,295 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
         content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">연수역4번출구<br>공여주차장 입구 주변 황색복선 CC</div>',
     
         latlng: new kakao.maps.LatLng(37.418131542275205, 126.67723284621403),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">아카데미로801번길<br>무적, 샤시 PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.4264285099034, 126.6116246309595),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">인천타워대로639번길<br>무적, 샤시 PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.4264285099034, 126.6116246309595),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">국제항만대로<br></div>',
+    
+        latlng: new kakao.maps.LatLng(37.41873976488059, 126.62745707899933),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">폐기물자동집하시설<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41645488436849, 126.61732994637354),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">폐기물자동집하시설 사잇길<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41521313192231, 126.61783894206016),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">미송초등학교<br>-</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41424998766295, 126.61259120022696),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">랜드마크로<br>-</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41466953985695, 126.62040873227596),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">SK뷰 사잇길<br>-</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41144622264801, 126.62679570022952),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">더테라스 버스정류장<br>-</div>',
+    
+        latlng: new kakao.maps.LatLng(37.41035996290207, 126.62805487963054),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">힐스테이트레이크 로터리<br>-</div>',
+    
+        latlng: new kakao.maps.LatLng(37.402359869797415, 126.6212501354688),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">대방건설공사현장<br>-</div>',
+    
+        latlng: new kakao.maps.LatLng(37.40241377484648, 126.62686873657765),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">센트로드<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.3990568059672, 126.62951681597046),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">아트포레<br>-</div>',
+    
+        latlng: new kakao.maps.LatLng(37.39322880950841, 126.63146528412567),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">커넬워크뒷길<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.400265618819425, 126.6387210380907),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">채드윅국제학교<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.399134685601226, 126.64311972786828),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">송도마트<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.396225410309576, 126.64570274696463),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">신송로150번길<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.39808077243838, 126.6507563574792),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">해돋이로152번길<br></div>',
+    
+        latlng: new kakao.maps.LatLng(37.39567626465243, 126.64812490260516),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">내용<br></div>',
+    
+        latlng: new kakao.maps.LatLng(),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">위드프리상뜨<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.39618356783946, 126.65286006602103),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">해돋이로120번길<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.39428730379409, 126.6514571855644),
+
+
+    },
+
+
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">풍림아이원4단지<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.39393504920433, 126.6581075431043),
+
+
+    },  {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">하모니로36번길<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.392203406166196, 126.65059447377551),
+
+
+    },  {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">해양경찰청<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.39202010557285, 126.64954792988752),
+
+
+    },  {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">타임스페이스<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.383621618679086, 126.64169997409462),
+
+
+    },  {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">허브여성병원<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.38503254620628, 126.64346604391035),
+
+
+    },  {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">벤처로12번길<br>PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.38147963701584, 126.6365953059513),
+
+
+    },  {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">솔찬공원<br>-</div>',
+    
+        latlng: new kakao.maps.LatLng(37.3723199834801, 126.62908668359147),
+
+
+    },  {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">인천대하모니로<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.37271607901406, 126.6347634848526),
+
+
+    },  {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">하모니로303번길<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.37089886438046, 126.63568674390967),
+
+
+    },
+
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">송도동 230,231,234<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.38591446443998, 126.66149479251773),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">ITBT<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.38100008444428, 126.66331215473296),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">송도문화로28번길<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.37506357422642, 126.6543630419184),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">첨단초등학교<br>CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.373257220354965, 126.6559744892624),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">스마트밸리<br>4대불법 CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.36726246470043, 126.64732065710506),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">지식기반로107번길<br>4대불법 CC</div>',
+    
+        latlng: new kakao.maps.LatLng(37.36088811220382, 126.65201243226188),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">경인제일교회<br>PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.36347156189456, 126.65889206290875),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">삼성바이오로직스 4공장<br>PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.36442069495895, 126.6599545326449),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">송도바이오대로<br>PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.363986055291846, 126.66234964872069),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">송도문화로120번길<br>PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.369834356243494, 126.66258309512344),
+
+
+    },
+    {
+        content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">삼성바이오로직스2공장<br>PDA</div>',
+    
+        latlng: new kakao.maps.LatLng(37.36937420596365, 126.659220952569),
 
 
     },
