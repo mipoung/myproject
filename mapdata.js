@@ -3045,7 +3045,7 @@ geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
     {
         content: '<div style="padding-left:5px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100%">인천타워대로639번길<br>무적, 샤시 PDA</div>',
     
-        latlng: new kakao.maps.LatLng(37.4264285099034, 126.6116246309595),
+        latlng: new kakao.maps.LatLng(37.4264163494258, 126.61756734574294),
 
 
     },
