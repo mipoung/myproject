@@ -29,7 +29,7 @@
 -->
 
 
-    <div class="main-menu-real">
+    <div class="main-menu-real" id="menu-hide" style="display: none;">
      
       <div class="menu-button">
         <a href="./notice.html">공지사항</a>
@@ -169,9 +169,11 @@
                    
                     const uid = user.uid;
 
+
                     console.log(uid);
                 
-                 
+                    document.getElementById("menu-hide").style.display = "block";
+
                     document.getElementById('buttonchange').innerHTML = '로그아웃';
 
                   
