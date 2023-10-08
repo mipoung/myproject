@@ -18,10 +18,10 @@
 3. 구성원 간 일정 공유
 
 ### 개발환경
-개발 OS : MAC OS(Big Sur)
-개발 언어 : JavaScript, HTML5, CSS3
-개발 Tool : VS Code
-기타 기술 : 구글 파이어베이스, 카카오 맵 API, 구글 캘린더
+개발 OS : MAC OS(Big Sur) <br>
+개발 언어 : JavaScript, HTML5, CSS3<br>
+개발 Tool : VS Code<br>
+기타 기술 : 구글 파이어베이스, 카카오 맵 API, 구글 캘린더<br>
 
 ### 주요 기능
 1. 지도에 인천광역시 연수구의 어린이보호구역, 주정차 탄력 구간, 주소 정보, 로드맵 표시, 주소 및 키워드 검색
